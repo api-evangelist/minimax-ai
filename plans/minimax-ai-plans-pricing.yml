@@ -5,37 +5,131 @@ provider: MiniMax
 providerId: minimax-ai
 created: '2026-05-08'
 modified: '2026-05-08'
-reconciled: false
+reconciled: true
 tags:
 - AI
 - LLM
-- Inference
 - Multimodal
-- Voice
 - Plans
-description: Placeholder plans/pricing artifact for MiniMax. Replace with real published pricing once
-  the pipeline researches the provider's plans page.
-notes: Initial scaffold — plans/pricing have not yet been reconciled against the provider's documentation.
+description: >-
+  MiniMax offers four commercial models: Token Plan (per-token unified access across modalities),
+  Pay-as-you-go (enterprise/professional API access), Audio Subscription (speech bundles), and
+  Video Packages (video generation bundles).
+notes: >-
+  Per-token rates and bundle prices are published on the dedicated pricing pages. Some models
+  (e.g. M2 release window) include time-limited free access.
 sources:
-- https://www.minimax.io/
+- https://platform.minimax.io/docs/pricing/overview
+- https://platform.minimax.io/docs/guides/pricing-paygo
+- https://platform.minimax.io/docs/guides/pricing-token-plan
+- https://platform.minimax.io/docs/guides/pricing-speech
+- https://platform.minimax.io/docs/guides/pricing-video
 plans:
-- id: minimax-ai-default
-  name: To Be Reconciled
-  type: enterprise
-  description: Initial scaffold; replace with provider plan tiers once pricing is reconciled.
+- id: minimax-ai-pay-as-you-go
+  name: Pay As You Go
+  type: usage
+  description: Enterprise/professional API access metered per request and per token.
   entries:
-  - label: API Access
-    name: api_access
-    type: flat
-    metric: varies
+  - label: Text Tokens
+    name: text_tokens
+    type: usage
+    metric: tokens
+    limit: -1
+    timeFrame: usage
+    geo: global
+    unit: 1000000
+    price: see https://platform.minimax.io/docs/guides/pricing-paygo
+    userMultiplied: false
+  - label: Speech Synthesis
+    name: speech_chars
+    type: usage
+    metric: characters
     limit: -1
     timeFrame: usage
     geo: global
     unit: 1
-    price: see https://www.minimax.io/
+    price: see pricing-speech
+    userMultiplied: false
+  - label: Video Generation
+    name: video_seconds
+    type: usage
+    metric: seconds
+    limit: -1
+    timeFrame: usage
+    geo: global
+    unit: 1
+    price: see pricing-video
+    userMultiplied: false
+  - label: Image Generation
+    name: image_count
+    type: usage
+    metric: images
+    limit: -1
+    timeFrame: usage
+    geo: global
+    unit: 1
+    price: see pricing-paygo
     userMultiplied: false
   elements:
-  - name: Pending Reconciliation
+  - name: Text models (M2.7, M2.5, M2.1, M2, M1, Text-01)
+  - name: Speech 2.8/2.6/2.5
+  - name: Hailuo 2.3 video
+  - name: Image-01
+  - name: Music-2.6
+- id: minimax-ai-token-plan
+  name: Token Plan
+  type: subscription
+  description: Unified subscription for builders accessing all MiniMax modalities under a token quota.
+  entries:
+  - label: Monthly Token Quota
+    name: token_quota
+    type: subscription
+    metric: tokens
+    limit: -1
+    timeFrame: monthly
+    geo: global
+    unit: 1
+    price: see https://platform.minimax.io/docs/guides/pricing-token-plan
+    userMultiplied: false
+  elements:
+  - name: Cross-modality token pool
+  - name: Used by Codex CLI and AI coding tool integrations
+- id: minimax-ai-audio-subscription
+  name: Audio Subscription
+  type: subscription
+  description: Speech model bundles for high-volume voice synthesis use cases.
+  entries:
+  - label: Audio Bundle
+    name: audio_bundle
+    type: subscription
+    metric: bundle
+    limit: -1
+    timeFrame: monthly
+    geo: global
+    unit: 1
+    price: see pricing-speech
+    userMultiplied: false
+  elements:
+  - name: Speech 2.8 / 2.6 / 2.5
+  - name: Voice cloning
+- id: minimax-ai-video-packages
+  name: Video Packages
+  type: prepaid
+  description: Resource bundles for Hailuo video generation.
+  entries:
+  - label: Video Package
+    name: video_pkg
+    type: prepaid
+    metric: bundle
+    limit: -1
+    timeFrame: usage
+    geo: global
+    unit: 1
+    price: see pricing-video
+    userMultiplied: false
+  elements:
+  - name: Hailuo 2.3 / 2.3 Fast
+  - name: T2V/I2V Director
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com

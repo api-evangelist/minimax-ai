@@ -5,31 +5,63 @@ provider: MiniMax
 providerId: minimax-ai
 created: '2026-05-08'
 modified: '2026-05-08'
-reconciled: false
+reconciled: true
 tags:
 - AI
 - LLM
-- Inference
 - Multimodal
-- Voice
 - Rate Limiting
 - Quotas
-- Throttling
-description: Placeholder rate-limit artifact for MiniMax. Replace with real limits once researched.
-notes: Initial scaffold — limits have not yet been reconciled.
+description: >-
+  Per-modality rate limits for the MiniMax API. Text APIs share a single 500 RPM / 20M TPM
+  pool; speech, video, image, and music APIs each have their own caps.
+notes: Higher limits available on request via api@minimax.io.
 sources:
-- https://www.minimax.io/
+- https://platform.minimax.io/docs/guides/rate-limits
 responseCodes:
   throttled: 429
 limits:
-- name: Default
+- name: Text APIs (all models)
   scope: account
-  metric: varies
-  limit: see provider documentation
-  notes: Pending reconciliation.
+  metric: requests-per-minute
+  limit: 500
+  notes: Combined with 20,000,000 TPM (input + output).
+- name: Text APIs TPM
+  scope: account
+  metric: tokens-per-minute
+  limit: 20000000
+- name: Speech (T2A)
+  scope: account
+  metric: requests-per-minute
+  limit: 60
+  notes: 20,000 TPM.
+- name: Voice Cloning
+  scope: account
+  metric: requests-per-minute
+  limit: 60
+- name: Voice Design
+  scope: account
+  metric: requests-per-minute
+  limit: 20
+- name: Video Generation
+  scope: account
+  metric: requests-per-minute
+  limit: 5
+- name: Image Generation
+  scope: account
+  metric: requests-per-minute
+  limit: 10
+  notes: 60 TPM.
+- name: Music Generation
+  scope: account
+  metric: requests-per-minute
+  limit: 120
+  notes: Max 20 concurrent connections.
 policies:
 - name: Backoff Strategy
-  description: Clients should implement exponential backoff with jitter and honor any Retry-After header.
+  description: Exponential backoff with jitter; honor Retry-After.
+- name: Limit Increase
+  description: Contact api@minimax.io for higher caps.
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com

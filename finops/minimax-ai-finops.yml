@@ -5,20 +5,22 @@ provider: MiniMax
 providerId: minimax-ai
 created: '2026-05-08'
 modified: '2026-05-08'
-reconciled: false
+reconciled: true
 tags:
 - AI
 - LLM
-- Inference
 - Multimodal
-- Voice
 - FinOps
-- Cost Management
 - FOCUS
-description: FOCUS-aligned FinOps placeholder for MiniMax. Pipeline will replace with real billing details.
-notes: Initial scaffold — billing model has not yet been reconciled.
+description: >-
+  FOCUS-aligned FinOps profile for MiniMax. Mixed billing model: PAYG token/character/second
+  metering plus subscription Token Plan, Audio Subscription, and Video Packages.
+notes: >-
+  Multi-modality means meter dimensions span tokens, characters, seconds, and image counts.
+  Subscription products map to FOCUS Purchase; consumption maps to Usage.
 sources:
-- https://www.minimax.io/
+- https://platform.minimax.io/docs/pricing/overview
+- https://platform.minimax.io/docs/guides/rate-limits
 - https://focus.finops.org/focus-specification/v1-3/
 alignedWith:
   framework: FinOps Foundation Framework
@@ -27,40 +29,63 @@ alignedWith:
   dataSpecVersion: '1.3'
   dataSpecUrl: https://focus.finops.org/focus-specification/v1-3/
 publisherName: MiniMax
-serviceCategory: AI
+serviceCategory: AI and Machine Learning
 billingModel:
-  pricingCategory: To Be Reconciled
-  billingFrequency: Monthly
-  billingCurrency: USD
+  pricingCategory: Mixed (Usage and Subscription)
+  billingFrequency: Monthly / On-Demand
+  billingCurrency: USD/CNY
   chargeCategories:
   - Usage
   - Purchase
   - Adjustment
 focusColumns:
-  ServiceName: MiniMax
-  ServiceCategory: AI
+  ServiceName: MiniMax Platform
+  ServiceCategory: AI and Machine Learning
   ProviderName: MiniMax
   PublisherName: MiniMax
   InvoiceIssuerName: MiniMax
   BillingCurrency: USD
   ChargeCategory: Usage
 meters:
-- name: api_usage
-  description: Catch-all meter pending reconciliation.
-  unit: varies
+- name: text_input_tokens
+  description: Input tokens for text models.
+  unit: tokens
   aggregation: sum
-  dimensions:
-  - account
-  - resource
+  dimensions: [model, account]
+- name: text_output_tokens
+  description: Output tokens for text models.
+  unit: tokens
+  aggregation: sum
+  dimensions: [model, account]
+- name: speech_characters
+  description: Characters synthesized.
+  unit: characters
+  aggregation: sum
+  dimensions: [voice_model, account]
+- name: video_seconds
+  description: Generated video seconds.
+  unit: seconds
+  aggregation: sum
+  dimensions: [video_model, account]
+- name: image_generations
+  description: Images generated.
+  unit: images
+  aggregation: sum
+  dimensions: [model, account]
+- name: music_generations
+  description: Music tracks generated.
+  unit: tracks
+  aggregation: sum
+  dimensions: [model, account]
 principles:
 - name: Visibility
-  description: Pull provider invoices or usage exports until a self-serve usage feed is documented.
+  description: Console exports usage by modality; balance API tracks prepaid spend.
 - name: Allocation
-  description: Tag invoice line items to consuming business units in your FinOps store.
+  description: Tag API keys to attribute multi-modal spend across teams.
 - name: Optimization
-  description: Levers depend on the provider's billing model; review at renewal once reconciled.
+  description: Use highspeed variants for latency-sensitive paths; switch to Token Plan if monthly token spend stabilizes.
 - name: Accountability
-  description: Assign a contract owner to review billing against negotiated terms.
+  description: Subscription products require renewal review; PAYG requires balance alerting.
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
