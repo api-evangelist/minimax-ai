@@ -1,7 +1,7 @@
 aid: minimax-ai
 url: https://raw.githubusercontent.com/api-evangelist/minimax-ai/refs/heads/main/apis.yml
 name: MiniMax
-x-type: company
+kind: company
 description: >-
   MiniMax is a Chinese foundation model company offering full-stack multimodal APIs: text
   generation (M2.7, M2.5, M2.1, M2, M1, Text-01), speech synthesis (Speech 2.8/2.6/2.5),
