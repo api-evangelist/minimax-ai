@@ -2,69 +2,81 @@ aid: minimax-ai
 url: https://raw.githubusercontent.com/api-evangelist/minimax-ai/refs/heads/main/apis.yml
 name: MiniMax
 kind: company
-description: >-
-  MiniMax is a Chinese foundation model company offering full-stack multimodal APIs: text
-  generation (M2.7, M2.5, M2.1, M2, M1, Text-01), speech synthesis (Speech 2.8/2.6/2.5),
-  voice cloning, voice design, image generation (Image-01), video generation (Hailuo 2.3),
-  and music generation (Music-2.6).
+description: 'MiniMax is a Chinese foundation model company offering full-stack multimodal APIs: text generation (M2.7, M2.5,
+  M2.1, M2, M1, Text-01), speech synthesis (Speech 2.8/2.6/2.5), voice cloning, voice design, image generation (Image-01),
+  video generation (Hailuo 2.3), and music generation (Music-2.6).'
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
-  - AI
-  - LLM
-  - Inference
-  - Multimodal
-  - Voice
-  - Video
-  - Music
-  - Image
+- AI
+- LLM
+- Inference
+- Multimodal
+- Voice
+- Video
+- Music
+- Image
 created: '2026-05-08'
-modified: '2026-05-08'
+modified: '2026-05-19'
 specificationVersion: '0.19'
 apis:
-  - aid: minimax-ai:platform
-    name: MiniMax Platform API
-    description: >-
-      Multimodal generative AI API covering text chat (native + OpenAI-compatible + Anthropic-
-      compatible), image generation, video generation (Hailuo), speech synthesis, voice cloning,
-      voice design, music generation, and file management. International base URL https://api.minimax.io;
-      China base URL https://api.minimaxi.com.
-    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
-    humanURL: https://platform.minimax.io/docs/api-reference/api-overview
-    baseURL: https://api.minimax.io
-    tags:
-      - AI
-      - LLM
-      - Chat Completions
-      - Image Generation
-      - Video Generation
-      - Audio
-      - Music
-      - Voice Cloning
-      - Files
-    properties:
-      - type: Documentation
-        url: https://platform.minimax.io/docs/api-reference/api-overview
-      - type: OpenAPI
-        url: openapi/minimax-ai-openapi.json
-      - type: SignUp
-        url: https://platform.minimax.io
-      - type: Pricing
-        url: https://platform.minimax.io/docs/pricing/overview
-      - type: RateLimits
-        url: https://platform.minimax.io/docs/guides/rate-limits
-      - type: ChinaBaseURL
-        url: https://api.minimaxi.com
-common:
-  - type: Website
-    url: https://www.minimax.io/
+- aid: minimax-ai:platform
+  name: MiniMax Platform API
+  description: Multimodal generative AI API covering text chat (native + OpenAI-compatible + Anthropic- compatible), image
+    generation, video generation (Hailuo), speech synthesis, voice cloning, voice design, music generation, and file management.
+    International base URL https://api.minimax.io; China base URL https://api.minimaxi.com.
+  image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+  humanURL: https://platform.minimax.io/docs/api-reference/api-overview
+  baseURL: https://api.minimax.io
+  tags:
+  - AI
+  - LLM
+  - Chat Completions
+  - Image Generation
+  - Video Generation
+  - Audio
+  - Music
+  - Voice Cloning
+  - Files
+  properties:
   - type: Documentation
-    url: https://platform.minimax.io/docs
-  - type: Plans
-    url: plans/minimax-ai-plans-pricing.yml
+    url: https://platform.minimax.io/docs/api-reference/api-overview
+  - type: OpenAPI
+    url: openapi/minimax-ai-openapi.json
+  - type: SignUp
+    url: https://platform.minimax.io
+  - type: Pricing
+    url: https://platform.minimax.io/docs/pricing/overview
   - type: RateLimits
-    url: rate-limits/minimax-ai-rate-limits.yml
-  - type: FinOps
-    url: finops/minimax-ai-finops.yml
+    url: https://platform.minimax.io/docs/guides/rate-limits
+  - type: ChinaBaseURL
+    url: https://api.minimaxi.com
+  - type: NaftikoCapability
+    url: capabilities/minimax-ai-files.yaml
+  - type: NaftikoCapability
+    url: capabilities/minimax-ai-image.yaml
+  - type: NaftikoCapability
+    url: capabilities/minimax-ai-music.yaml
+  - type: NaftikoCapability
+    url: capabilities/minimax-ai-text-generation.yaml
+  - type: NaftikoCapability
+    url: capabilities/minimax-ai-text-to-audio.yaml
+  - type: NaftikoCapability
+    url: capabilities/minimax-ai-video.yaml
+  - type: NaftikoCapability
+    url: capabilities/minimax-ai-voice.yaml
+common:
+- type: LinkedIn
+  url: https://www.linkedin.com/company/minimax-ai
+- type: Website
+  url: https://www.minimax.io/
+- type: Documentation
+  url: https://platform.minimax.io/docs
+- type: Plans
+  url: plans/minimax-ai-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/minimax-ai-rate-limits.yml
+- type: FinOps
+  url: finops/minimax-ai-finops.yml
 maintainers:
-  - FN: Kin Lane
-    email: kin@apievangelist.com
+- FN: Kin Lane
+  email: kin@apievangelist.com

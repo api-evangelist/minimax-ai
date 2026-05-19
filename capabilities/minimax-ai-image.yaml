@@ -1,0 +1,80 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: MiniMax API — Image
+  description: 'MiniMax API — Image. 1 operations. Lead operation: Image Generation. Self-contained Naftiko capability covering
+    one Minimax Ai business surface.'
+  tags:
+  - Minimax Ai
+  - Image
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    MINIMAX_AI_API_KEY: MINIMAX_AI_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: minimax-ai-image
+    baseUri: https://api.minimax.io
+    description: MiniMax API — Image business capability. Self-contained, no shared references.
+    resources:
+    - name: v1-image_generation
+      path: /v1/image_generation
+      operations:
+      - name: imagegeneration
+        method: POST
+        description: Image Generation
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.MINIMAX_AI_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: minimax-ai-image-rest
+    port: 8080
+    description: REST adapter for MiniMax API — Image. One Spectral-compliant resource per consumed operation, prefixed with
+      /v1.
+    resources:
+    - path: /v1/v1/image-generation
+      name: v1-image-generation
+      description: REST surface for v1-image_generation.
+      operations:
+      - method: POST
+        name: imagegeneration
+        description: Image Generation
+        call: minimax-ai-image.imagegeneration
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: minimax-ai-image-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for MiniMax API — Image. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: image-generation
+      description: Image Generation
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: minimax-ai-image.imagegeneration
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
