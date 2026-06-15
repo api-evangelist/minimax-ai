@@ -1,0 +1,5166 @@
+{
+  "item": [
+    {
+      "id": "e8e2d6b2-797a-480d-9466-b5b8e6fc63de",
+      "name": "Text Generation",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "2302b064-4aa6-4918-9661-d620f772f297",
+          "name": "Text Generation V2",
+          "request": {
+            "name": "Text Generation V2",
+            "description": {
+              "content": "Generate text using MiniMax models with support for single-turn and multi-turn conversations",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "text",
+                "chatcompletion_v2"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"model\": \"<string>\",\n  \"messages\": [\n    {\n      \"role\": \"<string>\",\n      \"content\": \"<string>\"\n    },\n    {\n      \"role\": \"<string>\",\n      \"content\": \"<string>\"\n    }\n  ],\n  \"temperature\": 0.7,\n  \"max_tokens\": \"<integer>\",\n  \"stream\": false,\n  \"top_p\": 0.9\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "47334d50-370a-4497-bd59-8a7713cbd612",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "text",
+                    "chatcompletion_v2"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"model\": \"<string>\",\n  \"messages\": [\n    {\n      \"role\": \"system\",\n      \"content\": \"string\"\n    },\n    {\n      \"role\": \"user\",\n      \"content\": \"string\"\n    }\n  ],\n  \"temperature\": 0.7,\n  \"max_tokens\": \"<integer>\",\n  \"stream\": false,\n  \"top_p\": 0.9\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"object\": \"chat.completion\",\n  \"created\": 7578,\n  \"model\": \"string\",\n  \"choices\": [\n    {\n      \"index\": 4988,\n      \"message\": {\n        \"role\": \"assistant\",\n        \"content\": \"string\"\n      },\n      \"finish_reason\": \"length\"\n    },\n    {\n      \"index\": 1417,\n      \"message\": {\n        \"role\": \"user\",\n        \"content\": \"string\"\n      },\n      \"finish_reason\": \"content_filter\"\n    }\n  ],\n  \"usage\": {\n    \"prompt_tokens\": 9637,\n    \"completion_tokens\": 444,\n    \"total_tokens\": 9460\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ae2e816c-9378-497f-8cb3-3a4ae4b78699",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "text",
+                    "chatcompletion_v2"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"model\": \"<string>\",\n  \"messages\": [\n    {\n      \"role\": \"system\",\n      \"content\": \"string\"\n    },\n    {\n      \"role\": \"user\",\n      \"content\": \"string\"\n    }\n  ],\n  \"temperature\": 0.7,\n  \"max_tokens\": \"<integer>\",\n  \"stream\": false,\n  \"top_p\": 0.9\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": 2951,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "40bd5eaf-e1c4-4859-b8e3-545f913d1f2e",
+              "name": "Authentication failed",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "text",
+                    "chatcompletion_v2"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"model\": \"<string>\",\n  \"messages\": [\n    {\n      \"role\": \"system\",\n      \"content\": \"string\"\n    },\n    {\n      \"role\": \"user\",\n      \"content\": \"string\"\n    }\n  ],\n  \"temperature\": 0.7,\n  \"max_tokens\": \"<integer>\",\n  \"stream\": false,\n  \"top_p\": 0.9\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": 2951,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9e9c9acc-5318-4352-a63a-c94d401d555d",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "text",
+                    "chatcompletion_v2"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"model\": \"<string>\",\n  \"messages\": [\n    {\n      \"role\": \"system\",\n      \"content\": \"string\"\n    },\n    {\n      \"role\": \"user\",\n      \"content\": \"string\"\n    }\n  ],\n  \"temperature\": 0.7,\n  \"max_tokens\": \"<integer>\",\n  \"stream\": false,\n  \"top_p\": 0.9\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": 2951,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "afcc0dbe-e684-4d91-9bf3-0f4e8605a870",
+      "name": "Text to Audio",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "eaacccc5-9e95-4887-8839-a06035461d57",
+          "name": "Text to Audio V2",
+          "request": {
+            "name": "Text to Audio V2",
+            "description": {
+              "content": "Convert text to audio using MiniMax T2A V2 API with support for streaming and non-streaming output",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "t2a_v2"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"model\": \"<string>\",\n  \"text\": \"<string>\",\n  \"voice_setting\": {\n    \"voice_id\": \"<string>\",\n    \"speed\": \"<double>\",\n    \"vol\": \"<double>\",\n    \"pitch\": \"<long>\",\n    \"emotion\": \"<string>\",\n    \"latex_read\": \"<boolean>\",\n    \"add_silence\": \"<double>\",\n    \"english_normalization\": \"<boolean>\",\n    \"text_normalization\": \"<boolean>\"\n  },\n  \"audio_setting\": {\n    \"sample_rate\": \"<long>\",\n    \"bitrate\": \"<long>\",\n    \"format\": \"<string>\",\n    \"channel\": \"<long>\",\n    \"force_cbr\": \"<boolean>\"\n  },\n  \"pronunciation_dict\": {\n    \"tone\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"phonetic\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"timber_weights\": [\n    {\n      \"weight\": \"<double>\",\n      \"voice_id\": \"<string>\"\n    },\n    {\n      \"weight\": \"<double>\",\n      \"voice_id\": \"<string>\"\n    }\n  ],\n  \"speed_rate\": \"<long>\",\n  \"stream\": \"<boolean>\",\n  \"language_boost\": \"<string>\",\n  \"subtitle_enable\": \"<boolean>\",\n  \"output_format\": \"<string>\",\n  \"voice_modify\": {\n    \"modify_type\": \"<string>\",\n    \"modify_value\": \"<double>\"\n  },\n  \"stream_options\": {\n    \"include_usage\": \"<boolean>\"\n  },\n  \"subtitle_type\": \"<string>\",\n  \"aigc_watermark\": \"<boolean>\",\n  \"with_propagator_meta\": \"<boolean>\",\n  \"timbre_weights\": [\n    {\n      \"weight\": \"<double>\",\n      \"voice_id\": \"<string>\"\n    },\n    {\n      \"weight\": \"<double>\",\n      \"voice_id\": \"<string>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "fe7a4215-cd10-45a8-90cf-9d09fcc8e131",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "t2a_v2"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"model\": \"<string>\",\n  \"text\": \"<string>\",\n  \"voice_setting\": {\n    \"voice_id\": \"string\",\n    \"speed\": 802.976800037889,\n    \"vol\": 1015.1171719556406,\n    \"pitch\": 2617,\n    \"emotion\": \"string\",\n    \"latex_read\": true,\n    \"add_silence\": 4305.681107869662,\n    \"english_normalization\": true,\n    \"text_normalization\": false\n  },\n  \"audio_setting\": {\n    \"sample_rate\": 5517,\n    \"bitrate\": 9149,\n    \"format\": \"string\",\n    \"channel\": 5977,\n    \"force_cbr\": false\n  },\n  \"pronunciation_dict\": {\n    \"tone\": [\n      \"string\",\n      \"string\"\n    ],\n    \"phonetic\": [\n      \"string\",\n      \"string\"\n    ]\n  },\n  \"timber_weights\": [\n    {\n      \"weight\": 3720.358670127808,\n      \"voice_id\": \"string\"\n    },\n    {\n      \"weight\": 2339.9322767331264,\n      \"voice_id\": \"string\"\n    }\n  ],\n  \"speed_rate\": \"<long>\",\n  \"stream\": \"<boolean>\",\n  \"language_boost\": \"<string>\",\n  \"subtitle_enable\": \"<boolean>\",\n  \"output_format\": \"<string>\",\n  \"voice_modify\": {\n    \"modify_type\": \"string\",\n    \"modify_value\": 7581.0362171551715\n  },\n  \"stream_options\": {\n    \"include_usage\": true\n  },\n  \"subtitle_type\": \"<string>\",\n  \"aigc_watermark\": \"<boolean>\",\n  \"with_propagator_meta\": \"<boolean>\",\n  \"timbre_weights\": [\n    {\n      \"weight\": 4330.545883002198,\n      \"voice_id\": \"string\"\n    },\n    {\n      \"weight\": 1469.3871022206195,\n      \"voice_id\": \"string\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"audio\": \"string\",\n    \"status\": 8008,\n    \"ced\": \"string\",\n    \"subtitle_file\": \"string\",\n    \"subtitle\": {\n      \"text\": \"string\",\n      \"start_time\": 6228.311713962824,\n      \"end_time\": 6477.3152598347415\n    }\n  },\n  \"extra_info\": {\n    \"usage\": {\n      \"total_characters\": 2402,\n      \"total_tokens\": 7008\n    }\n  },\n  \"trace_id\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "44b05de3-1249-4a56-823e-3a27ec4a21db",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "t2a_v2"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"model\": \"<string>\",\n  \"text\": \"<string>\",\n  \"voice_setting\": {\n    \"voice_id\": \"string\",\n    \"speed\": 802.976800037889,\n    \"vol\": 1015.1171719556406,\n    \"pitch\": 2617,\n    \"emotion\": \"string\",\n    \"latex_read\": true,\n    \"add_silence\": 4305.681107869662,\n    \"english_normalization\": true,\n    \"text_normalization\": false\n  },\n  \"audio_setting\": {\n    \"sample_rate\": 5517,\n    \"bitrate\": 9149,\n    \"format\": \"string\",\n    \"channel\": 5977,\n    \"force_cbr\": false\n  },\n  \"pronunciation_dict\": {\n    \"tone\": [\n      \"string\",\n      \"string\"\n    ],\n    \"phonetic\": [\n      \"string\",\n      \"string\"\n    ]\n  },\n  \"timber_weights\": [\n    {\n      \"weight\": 3720.358670127808,\n      \"voice_id\": \"string\"\n    },\n    {\n      \"weight\": 2339.9322767331264,\n      \"voice_id\": \"string\"\n    }\n  ],\n  \"speed_rate\": \"<long>\",\n  \"stream\": \"<boolean>\",\n  \"language_boost\": \"<string>\",\n  \"subtitle_enable\": \"<boolean>\",\n  \"output_format\": \"<string>\",\n  \"voice_modify\": {\n    \"modify_type\": \"string\",\n    \"modify_value\": 7581.0362171551715\n  },\n  \"stream_options\": {\n    \"include_usage\": true\n  },\n  \"subtitle_type\": \"<string>\",\n  \"aigc_watermark\": \"<boolean>\",\n  \"with_propagator_meta\": \"<boolean>\",\n  \"timbre_weights\": [\n    {\n      \"weight\": 4330.545883002198,\n      \"voice_id\": \"string\"\n    },\n    {\n      \"weight\": 1469.3871022206195,\n      \"voice_id\": \"string\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": 2951,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "58febaa2-4ca5-4ff8-b411-7c726c0f3d78",
+              "name": "Authentication failed",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "t2a_v2"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"model\": \"<string>\",\n  \"text\": \"<string>\",\n  \"voice_setting\": {\n    \"voice_id\": \"string\",\n    \"speed\": 802.976800037889,\n    \"vol\": 1015.1171719556406,\n    \"pitch\": 2617,\n    \"emotion\": \"string\",\n    \"latex_read\": true,\n    \"add_silence\": 4305.681107869662,\n    \"english_normalization\": true,\n    \"text_normalization\": false\n  },\n  \"audio_setting\": {\n    \"sample_rate\": 5517,\n    \"bitrate\": 9149,\n    \"format\": \"string\",\n    \"channel\": 5977,\n    \"force_cbr\": false\n  },\n  \"pronunciation_dict\": {\n    \"tone\": [\n      \"string\",\n      \"string\"\n    ],\n    \"phonetic\": [\n      \"string\",\n      \"string\"\n    ]\n  },\n  \"timber_weights\": [\n    {\n      \"weight\": 3720.358670127808,\n      \"voice_id\": \"string\"\n    },\n    {\n      \"weight\": 2339.9322767331264,\n      \"voice_id\": \"string\"\n    }\n  ],\n  \"speed_rate\": \"<long>\",\n  \"stream\": \"<boolean>\",\n  \"language_boost\": \"<string>\",\n  \"subtitle_enable\": \"<boolean>\",\n  \"output_format\": \"<string>\",\n  \"voice_modify\": {\n    \"modify_type\": \"string\",\n    \"modify_value\": 7581.0362171551715\n  },\n  \"stream_options\": {\n    \"include_usage\": true\n  },\n  \"subtitle_type\": \"<string>\",\n  \"aigc_watermark\": \"<boolean>\",\n  \"with_propagator_meta\": \"<boolean>\",\n  \"timbre_weights\": [\n    {\n      \"weight\": 4330.545883002198,\n      \"voice_id\": \"string\"\n    },\n    {\n      \"weight\": 1469.3871022206195,\n      \"voice_id\": \"string\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": 2951,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ade1de21-a4d2-4fa2-ba21-9e97b9ce7b94",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "t2a_v2"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"model\": \"<string>\",\n  \"text\": \"<string>\",\n  \"voice_setting\": {\n    \"voice_id\": \"string\",\n    \"speed\": 802.976800037889,\n    \"vol\": 1015.1171719556406,\n    \"pitch\": 2617,\n    \"emotion\": \"string\",\n    \"latex_read\": true,\n    \"add_silence\": 4305.681107869662,\n    \"english_normalization\": true,\n    \"text_normalization\": false\n  },\n  \"audio_setting\": {\n    \"sample_rate\": 5517,\n    \"bitrate\": 9149,\n    \"format\": \"string\",\n    \"channel\": 5977,\n    \"force_cbr\": false\n  },\n  \"pronunciation_dict\": {\n    \"tone\": [\n      \"string\",\n      \"string\"\n    ],\n    \"phonetic\": [\n      \"string\",\n      \"string\"\n    ]\n  },\n  \"timber_weights\": [\n    {\n      \"weight\": 3720.358670127808,\n      \"voice_id\": \"string\"\n    },\n    {\n      \"weight\": 2339.9322767331264,\n      \"voice_id\": \"string\"\n    }\n  ],\n  \"speed_rate\": \"<long>\",\n  \"stream\": \"<boolean>\",\n  \"language_boost\": \"<string>\",\n  \"subtitle_enable\": \"<boolean>\",\n  \"output_format\": \"<string>\",\n  \"voice_modify\": {\n    \"modify_type\": \"string\",\n    \"modify_value\": 7581.0362171551715\n  },\n  \"stream_options\": {\n    \"include_usage\": true\n  },\n  \"subtitle_type\": \"<string>\",\n  \"aigc_watermark\": \"<boolean>\",\n  \"with_propagator_meta\": \"<boolean>\",\n  \"timbre_weights\": [\n    {\n      \"weight\": 4330.545883002198,\n      \"voice_id\": \"string\"\n    },\n    {\n      \"weight\": 1469.3871022206195,\n      \"voice_id\": \"string\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": 2951,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b160e67d-9bf1-4cea-81b4-6321755e6ad9",
+          "name": "Text to Audio Async V2",
+          "request": {
+            "name": "Text to Audio Async V2",
+            "description": {
+              "content": "Convert text to audio asynchronously using MiniMax T2A Async V2 API with support for long text processing",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "t2a_async_v2"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"model\": \"<string>\",\n  \"voice_setting\": {\n    \"voice_id\": \"<string>\",\n    \"speed\": \"<double>\",\n    \"vol\": \"<double>\",\n    \"pitch\": \"<long>\",\n    \"emotion\": \"<string>\",\n    \"english_normalization\": \"<boolean>\",\n    \"add_silence\": \"<double>\",\n    \"text_normalization\": \"<boolean>\"\n  },\n  \"text\": \"<string>\",\n  \"text_file_id\": \"<long>\",\n  \"audio_setting\": {\n    \"audio_sample_rate\": \"<long>\",\n    \"bitrate\": \"<long>\",\n    \"format\": \"<string>\",\n    \"channel\": \"<string>\",\n    \"force_cbr\": \"<boolean>\"\n  },\n  \"pronunciation_dict\": {\n    \"tone\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"language_boost\": \"<string>\",\n  \"callback_url\": \"<string>\",\n  \"voice_modify\": {\n    \"modify_type\": \"<string>\",\n    \"modify_value\": \"<double>\"\n  },\n  \"aigc_watermark\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "07875936-1b65-4269-8be1-04ef00c9ab76",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "t2a_async_v2"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"model\": \"<string>\",\n  \"voice_setting\": {\n    \"voice_id\": \"string\",\n    \"speed\": 865.7758987313224,\n    \"vol\": 4582.973551254405,\n    \"pitch\": 360,\n    \"emotion\": \"string\",\n    \"english_normalization\": true,\n    \"add_silence\": 1614.294736571711,\n    \"text_normalization\": false\n  },\n  \"text\": \"<string>\",\n  \"text_file_id\": \"<long>\",\n  \"audio_setting\": {\n    \"audio_sample_rate\": 7948,\n    \"bitrate\": 7101,\n    \"format\": \"string\",\n    \"channel\": \"Binaural\",\n    \"force_cbr\": false\n  },\n  \"pronunciation_dict\": {\n    \"tone\": [\n      \"string\",\n      \"string\"\n    ]\n  },\n  \"language_boost\": \"<string>\",\n  \"callback_url\": \"<string>\",\n  \"voice_modify\": {\n    \"modify_type\": \"string\",\n    \"modify_value\": 6785.1949024471405\n  },\n  \"aigc_watermark\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"task_id\": 2145,\n  \"task_token\": \"string\",\n  \"file_id\": 9581,\n  \"usage_characters\": 3488\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8fdbf044-2f7f-48fd-bfcd-f533ffb7d682",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "t2a_async_v2"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"model\": \"<string>\",\n  \"voice_setting\": {\n    \"voice_id\": \"string\",\n    \"speed\": 865.7758987313224,\n    \"vol\": 4582.973551254405,\n    \"pitch\": 360,\n    \"emotion\": \"string\",\n    \"english_normalization\": true,\n    \"add_silence\": 1614.294736571711,\n    \"text_normalization\": false\n  },\n  \"text\": \"<string>\",\n  \"text_file_id\": \"<long>\",\n  \"audio_setting\": {\n    \"audio_sample_rate\": 7948,\n    \"bitrate\": 7101,\n    \"format\": \"string\",\n    \"channel\": \"Binaural\",\n    \"force_cbr\": false\n  },\n  \"pronunciation_dict\": {\n    \"tone\": [\n      \"string\",\n      \"string\"\n    ]\n  },\n  \"language_boost\": \"<string>\",\n  \"callback_url\": \"<string>\",\n  \"voice_modify\": {\n    \"modify_type\": \"string\",\n    \"modify_value\": 6785.1949024471405\n  },\n  \"aigc_watermark\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": 2951,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a033e4c0-f9b8-4bf5-a804-1392e3efe1b0",
+              "name": "Authentication failed",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "t2a_async_v2"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"model\": \"<string>\",\n  \"voice_setting\": {\n    \"voice_id\": \"string\",\n    \"speed\": 865.7758987313224,\n    \"vol\": 4582.973551254405,\n    \"pitch\": 360,\n    \"emotion\": \"string\",\n    \"english_normalization\": true,\n    \"add_silence\": 1614.294736571711,\n    \"text_normalization\": false\n  },\n  \"text\": \"<string>\",\n  \"text_file_id\": \"<long>\",\n  \"audio_setting\": {\n    \"audio_sample_rate\": 7948,\n    \"bitrate\": 7101,\n    \"format\": \"string\",\n    \"channel\": \"Binaural\",\n    \"force_cbr\": false\n  },\n  \"pronunciation_dict\": {\n    \"tone\": [\n      \"string\",\n      \"string\"\n    ]\n  },\n  \"language_boost\": \"<string>\",\n  \"callback_url\": \"<string>\",\n  \"voice_modify\": {\n    \"modify_type\": \"string\",\n    \"modify_value\": 6785.1949024471405\n  },\n  \"aigc_watermark\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": 2951,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "38bc448a-e0bd-4d4e-8bca-f7f29dd6fc3a",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "t2a_async_v2"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"model\": \"<string>\",\n  \"voice_setting\": {\n    \"voice_id\": \"string\",\n    \"speed\": 865.7758987313224,\n    \"vol\": 4582.973551254405,\n    \"pitch\": 360,\n    \"emotion\": \"string\",\n    \"english_normalization\": true,\n    \"add_silence\": 1614.294736571711,\n    \"text_normalization\": false\n  },\n  \"text\": \"<string>\",\n  \"text_file_id\": \"<long>\",\n  \"audio_setting\": {\n    \"audio_sample_rate\": 7948,\n    \"bitrate\": 7101,\n    \"format\": \"string\",\n    \"channel\": \"Binaural\",\n    \"force_cbr\": false\n  },\n  \"pronunciation_dict\": {\n    \"tone\": [\n      \"string\",\n      \"string\"\n    ]\n  },\n  \"language_boost\": \"<string>\",\n  \"callback_url\": \"<string>\",\n  \"voice_modify\": {\n    \"modify_type\": \"string\",\n    \"modify_value\": 6785.1949024471405\n  },\n  \"aigc_watermark\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": 2951,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "98a30ac1-cb72-42cc-850d-4feb10c4cde5",
+          "name": "Query T2A Async V2 Task Status",
+          "request": {
+            "name": "Query T2A Async V2 Task Status",
+            "description": {
+              "content": "Query the status of an asynchronous text-to-audio task",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "query",
+                "t2a_async_query_v2"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"task_id\": \"<long>\",\n  \"group_id\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "f3b1c31a-62e7-4fe1-be6f-f576d64270a0",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "query",
+                    "t2a_async_query_v2"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"task_id\": \"<long>\",\n  \"group_id\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"success\",\n  \"task_id\": 247,\n  \"file_id\": 5845\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8f83b8d4-9ae8-497a-a9be-db57fcd1c3ba",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "query",
+                    "t2a_async_query_v2"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"task_id\": \"<long>\",\n  \"group_id\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": 2951,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0ab3f9e8-d34b-40c7-91e8-4e4968a5541d",
+              "name": "Authentication failed",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "query",
+                    "t2a_async_query_v2"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"task_id\": \"<long>\",\n  \"group_id\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": 2951,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "49631822-aa85-4d30-a5e9-c52edc2785e8",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "query",
+                    "t2a_async_query_v2"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"task_id\": \"<long>\",\n  \"group_id\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": 2951,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "c10eda35-08eb-4c92-9c97-05fd1f0d3e4d",
+      "name": "Files",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "003656a5-be8e-48c8-883a-7db32590b62b",
+          "name": "Upload File",
+          "request": {
+            "name": "Upload File",
+            "description": {
+              "content": "Upload a file to the platform for processing",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "files",
+                "upload"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "GroupId",
+                  "value": "<string>",
+                  "description": "(Required) Group ID"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "multipart/form-data"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "purpose",
+                  "value": "<string>",
+                  "type": "text",
+                  "description": "(Required) Purpose of the file upload (This can only be one of fine-tune,assistants,batch,vision)"
+                },
+                {
+                  "key": "file",
+                  "type": "file",
+                  "description": "(Required) File to upload"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "ccb524f8-1641-41c4-8cd6-b4b74c1dffc7",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "files",
+                    "upload"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "GroupId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "(Required) Purpose of the file upload (This can only be one of fine-tune,assistants,batch,vision)",
+                        "type": "text/plain"
+                      },
+                      "key": "purpose",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "(Required) File to upload",
+                        "type": "text/plain"
+                      },
+                      "key": "file",
+                      "value": "<binary>",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"file\": {\n    \"id\": \"string\",\n    \"object\": \"file\",\n    \"bytes\": 224,\n    \"created_at\": 5266,\n    \"filename\": \"string\",\n    \"purpose\": \"vision\",\n    \"status\": \"processed\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6d22ca1c-f11f-47df-a27f-8ff9e41ef41c",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "files",
+                    "upload"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "GroupId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "(Required) Purpose of the file upload (This can only be one of fine-tune,assistants,batch,vision)",
+                        "type": "text/plain"
+                      },
+                      "key": "purpose",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "(Required) File to upload",
+                        "type": "text/plain"
+                      },
+                      "key": "file",
+                      "value": "<binary>",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": 2951,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "89349310-6d33-4a07-9989-2012c2a0f6ae",
+              "name": "Authentication failed",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "files",
+                    "upload"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "GroupId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "(Required) Purpose of the file upload (This can only be one of fine-tune,assistants,batch,vision)",
+                        "type": "text/plain"
+                      },
+                      "key": "purpose",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "(Required) File to upload",
+                        "type": "text/plain"
+                      },
+                      "key": "file",
+                      "value": "<binary>",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": 2951,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "fc506fac-1488-4283-b5b6-511e1b3b4813",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "files",
+                    "upload"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "GroupId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "(Required) Purpose of the file upload (This can only be one of fine-tune,assistants,batch,vision)",
+                        "type": "text/plain"
+                      },
+                      "key": "purpose",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "(Required) File to upload",
+                        "type": "text/plain"
+                      },
+                      "key": "file",
+                      "value": "<binary>",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": 2951,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "78049fad-3f1a-4cdb-98be-907d7af3eb77",
+          "name": "Retrieve File",
+          "request": {
+            "name": "Retrieve File",
+            "description": {
+              "content": "Retrieve file information by ID",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "files",
+                "retrieve"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "GroupId",
+                  "value": "<string>",
+                  "description": "(Required) Group ID"
+                },
+                {
+                  "disabled": false,
+                  "key": "file_id",
+                  "value": "<long>",
+                  "description": "(Required) File ID to retrieve"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3b96bcc1-784e-4fda-ac76-f9e1d3acbe5c",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "files",
+                    "retrieve"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "GroupId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "file_id",
+                      "value": "<long>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"file\": {\n    \"id\": \"string\",\n    \"object\": \"file\",\n    \"bytes\": 224,\n    \"created_at\": 5266,\n    \"filename\": \"string\",\n    \"purpose\": \"vision\",\n    \"status\": \"processed\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c0d10e35-3aef-4745-ae67-231a0ac2aaa4",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "files",
+                    "retrieve"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "GroupId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "file_id",
+                      "value": "<long>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": 2951,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1106bac6-f950-40f0-9748-9186d08c2044",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "files",
+                    "retrieve"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "GroupId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "file_id",
+                      "value": "<long>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": 2951,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0c2582a1-f757-4e66-969b-82194f10370d",
+              "name": "File not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "files",
+                    "retrieve"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "GroupId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "file_id",
+                      "value": "<long>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": 2951,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "22fd7748-7698-4b78-ae5b-1e4525d1ed0f",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "files",
+                    "retrieve"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "GroupId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "file_id",
+                      "value": "<long>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": 2951,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "efc68897-3c3f-4bae-b2f4-6d7a86d8f2e1",
+          "name": "List Files",
+          "request": {
+            "name": "List Files",
+            "description": {
+              "content": "List files with optional filtering and pagination",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "files",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "GroupId",
+                  "value": "<string>",
+                  "description": "(Required) Group ID"
+                },
+                {
+                  "disabled": false,
+                  "key": "purpose",
+                  "value": "<string>",
+                  "description": "Filter by file purpose"
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "<long>",
+                  "description": "Page number for pagination"
+                },
+                {
+                  "disabled": false,
+                  "key": "size",
+                  "value": "<long>",
+                  "description": "Number of files per page"
+                },
+                {
+                  "disabled": false,
+                  "key": "after_file_id",
+                  "value": "<long>",
+                  "description": "File ID to start listing after"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "36b45cfb-0b25-478f-b04b-bc6671c32a9f",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "files",
+                    "list"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "GroupId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "purpose",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "<long>"
+                    },
+                    {
+                      "key": "size",
+                      "value": "<long>"
+                    },
+                    {
+                      "key": "after_file_id",
+                      "value": "<long>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"files\": [\n    {\n      \"id\": \"string\",\n      \"object\": \"file\",\n      \"bytes\": 5980,\n      \"created_at\": 7380,\n      \"filename\": \"string\",\n      \"purpose\": \"fine-tune\",\n      \"status\": \"uploaded\"\n    },\n    {\n      \"id\": \"string\",\n      \"object\": \"file\",\n      \"bytes\": 4804,\n      \"created_at\": 7739,\n      \"filename\": \"string\",\n      \"purpose\": \"batch\",\n      \"status\": \"processed\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d15a5951-e8f3-43b3-9fd3-346022544b2d",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "files",
+                    "list"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "GroupId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "purpose",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "<long>"
+                    },
+                    {
+                      "key": "size",
+                      "value": "<long>"
+                    },
+                    {
+                      "key": "after_file_id",
+                      "value": "<long>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": 2951,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0486f4db-4e15-4c01-9715-b6320283bfc3",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "files",
+                    "list"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "GroupId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "purpose",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "<long>"
+                    },
+                    {
+                      "key": "size",
+                      "value": "<long>"
+                    },
+                    {
+                      "key": "after_file_id",
+                      "value": "<long>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": 2951,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0a5a8c42-a392-469c-bc59-415ffb6adbe3",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "files",
+                    "list"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "GroupId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "purpose",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "<long>"
+                    },
+                    {
+                      "key": "size",
+                      "value": "<long>"
+                    },
+                    {
+                      "key": "after_file_id",
+                      "value": "<long>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": 2951,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "33fb2916-cd6d-41cf-bb34-f7b0cb92cdce",
+          "name": "Retrieve File Content",
+          "request": {
+            "name": "Retrieve File Content",
+            "description": {
+              "content": "Retrieve file content by ID",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "files",
+                "retrieve_content"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "GroupId",
+                  "value": "<string>",
+                  "description": "(Required) Group ID"
+                },
+                {
+                  "disabled": false,
+                  "key": "file_id",
+                  "value": "<long>",
+                  "description": "(Required) File ID to retrieve content"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/octet-stream"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7da9c8fb-677f-4175-ab2f-3fe8ffe36d26",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "files",
+                    "retrieve_content"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "GroupId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "file_id",
+                      "value": "<long>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/octet-stream"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/octet-stream"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "238487c6-2728-43ac-abbd-81b80348e981",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "files",
+                    "retrieve_content"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "GroupId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "file_id",
+                      "value": "<long>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": 2951,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5634f290-65f4-4fa6-8bf3-f026204137e2",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "files",
+                    "retrieve_content"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "GroupId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "file_id",
+                      "value": "<long>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": 2951,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "278ace12-deae-4b10-b28b-f97b6c98ec73",
+              "name": "File not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "files",
+                    "retrieve_content"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "GroupId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "file_id",
+                      "value": "<long>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": 2951,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "067ec119-fc2b-4d2f-a646-4e02271fe5d2",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "files",
+                    "retrieve_content"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "GroupId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "file_id",
+                      "value": "<long>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": 2951,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "870aec7a-5957-414b-b835-96ec0fd3018f",
+          "name": "Delete File",
+          "request": {
+            "name": "Delete File",
+            "description": {
+              "content": "Delete a file by ID",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "files",
+                "delete"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "GroupId",
+                  "value": "<string>",
+                  "description": "(Required) Group ID"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"file_id\": \"<long>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "57368128-2726-4734-b0c1-5c80b45cf42d",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "files",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "GroupId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"file_id\": \"<long>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"file_id\": 9833\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "925ebdd2-75b7-409c-b187-3657fcaa3686",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "files",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "GroupId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"file_id\": \"<long>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": 2951,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "91d99773-3997-40e4-a27b-ac03f36aede9",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "files",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "GroupId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"file_id\": \"<long>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": 2951,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0ba0bb5f-83d5-472e-b781-b9674707c44d",
+              "name": "File not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "files",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "GroupId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"file_id\": \"<long>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": 2951,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b88a1bf8-8479-4f7b-8f12-e3304b8ff537",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "files",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "GroupId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"file_id\": \"<long>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": 2951,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "ea970445-5788-4f7c-966b-8b96edefe43e",
+      "name": "Voice",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "ebae08de-b96c-4a9f-8bd6-6dd0f3d1e543",
+          "name": "Voice Clone",
+          "request": {
+            "name": "Voice Clone",
+            "description": {
+              "content": "Create a voice clone from an audio file",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "voice_clone"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"voice_id\": \"<string>\",\n  \"file_id\": \"<long>\",\n  \"output_format\": \"<string>\",\n  \"need_noise_reduction\": \"<boolean>\",\n  \"text\": \"<string>\",\n  \"model\": \"<string>\",\n  \"text_validation\": \"<string>\",\n  \"accuracy\": \"<double>\",\n  \"need_volume_normalization\": \"<boolean>\",\n  \"language_boost\": \"<string>\",\n  \"clone_prompt\": {\n    \"prompt_audio\": \"<long>\",\n    \"prompt_text\": \"<string>\"\n  },\n  \"aigc_watermark\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "8b602c5d-f228-4054-bdb6-ce6e2bb10fa2",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "voice_clone"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"voice_id\": \"<string>\",\n  \"file_id\": \"<long>\",\n  \"output_format\": \"<string>\",\n  \"need_noise_reduction\": \"<boolean>\",\n  \"text\": \"<string>\",\n  \"model\": \"<string>\",\n  \"text_validation\": \"<string>\",\n  \"accuracy\": \"<double>\",\n  \"need_volume_normalization\": \"<boolean>\",\n  \"language_boost\": \"<string>\",\n  \"clone_prompt\": {\n    \"prompt_audio\": 3233,\n    \"prompt_text\": \"string\"\n  },\n  \"aigc_watermark\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"input_sensitive\": false,\n  \"input_sensitive_type\": \"Ad\",\n  \"demo_audio\": \"string\",\n  \"trace_id\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "10deed94-8c2e-4599-bdf8-4486398ddf34",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "voice_clone"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"voice_id\": \"<string>\",\n  \"file_id\": \"<long>\",\n  \"output_format\": \"<string>\",\n  \"need_noise_reduction\": \"<boolean>\",\n  \"text\": \"<string>\",\n  \"model\": \"<string>\",\n  \"text_validation\": \"<string>\",\n  \"accuracy\": \"<double>\",\n  \"need_volume_normalization\": \"<boolean>\",\n  \"language_boost\": \"<string>\",\n  \"clone_prompt\": {\n    \"prompt_audio\": 3233,\n    \"prompt_text\": \"string\"\n  },\n  \"aigc_watermark\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": 2951,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c586ca86-ca77-40c0-8879-034bd1fdd7bc",
+              "name": "Authentication failed",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "voice_clone"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"voice_id\": \"<string>\",\n  \"file_id\": \"<long>\",\n  \"output_format\": \"<string>\",\n  \"need_noise_reduction\": \"<boolean>\",\n  \"text\": \"<string>\",\n  \"model\": \"<string>\",\n  \"text_validation\": \"<string>\",\n  \"accuracy\": \"<double>\",\n  \"need_volume_normalization\": \"<boolean>\",\n  \"language_boost\": \"<string>\",\n  \"clone_prompt\": {\n    \"prompt_audio\": 3233,\n    \"prompt_text\": \"string\"\n  },\n  \"aigc_watermark\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": 2951,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b07145eb-0c3b-4a5b-b30f-1360032ef7aa",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "voice_clone"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"voice_id\": \"<string>\",\n  \"file_id\": \"<long>\",\n  \"output_format\": \"<string>\",\n  \"need_noise_reduction\": \"<boolean>\",\n  \"text\": \"<string>\",\n  \"model\": \"<string>\",\n  \"text_validation\": \"<string>\",\n  \"accuracy\": \"<double>\",\n  \"need_volume_normalization\": \"<boolean>\",\n  \"language_boost\": \"<string>\",\n  \"clone_prompt\": {\n    \"prompt_audio\": 3233,\n    \"prompt_text\": \"string\"\n  },\n  \"aigc_watermark\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": 2951,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4938c9db-3bf1-4c1c-8094-2c4418a69fbb",
+          "name": "Voice Design",
+          "request": {
+            "name": "Voice Design",
+            "description": {
+              "content": "Generate voice design based on text prompt",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "voice_design"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"prompt\": \"<string>\",\n  \"preview_text\": \"<string>\",\n  \"voice_id\": \"<string>\",\n  \"aigc_watermark\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "807ea21d-d608-419d-935a-a524a035aae3",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "voice_design"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"prompt\": \"<string>\",\n  \"preview_text\": \"<string>\",\n  \"voice_id\": \"<string>\",\n  \"aigc_watermark\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"trial_audio\": \"string\",\n  \"voice_id\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0693bd54-f2bb-4bf9-8a13-194582dc2444",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "voice_design"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"prompt\": \"<string>\",\n  \"preview_text\": \"<string>\",\n  \"voice_id\": \"<string>\",\n  \"aigc_watermark\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": 2951,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c490217e-e36b-4a28-9705-664c29e8b787",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "voice_design"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"prompt\": \"<string>\",\n  \"preview_text\": \"<string>\",\n  \"voice_id\": \"<string>\",\n  \"aigc_watermark\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": 2951,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3b18452d-cd67-422c-bcf7-d8954267d30e",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "voice_design"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"prompt\": \"<string>\",\n  \"preview_text\": \"<string>\",\n  \"voice_id\": \"<string>\",\n  \"aigc_watermark\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": 2951,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1ea5ac79-fbb7-4a20-8146-4ba747a2e6d0",
+          "name": "Get Voice",
+          "request": {
+            "name": "Get Voice",
+            "description": {
+              "content": "Get available voices by type",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "get_voice"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"voice_type\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "fb074db2-9d7e-41b5-a60e-750a14e2b64a",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "get_voice"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"voice_type\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"system_voice\": [\n    {\n      \"voice_id\": \"string\",\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"gender\": \"string\",\n      \"language\": \"string\",\n      \"age\": \"string\",\n      \"style\": \"string\",\n      \"created_at\": 8115,\n      \"updated_at\": 2028\n    },\n    {\n      \"voice_id\": \"string\",\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"gender\": \"string\",\n      \"language\": \"string\",\n      \"age\": \"string\",\n      \"style\": \"string\",\n      \"created_at\": 9189,\n      \"updated_at\": 9472\n    }\n  ],\n  \"voice_cloning\": [\n    {\n      \"voice_id\": \"string\",\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"gender\": \"string\",\n      \"language\": \"string\",\n      \"age\": \"string\",\n      \"style\": \"string\",\n      \"created_at\": 5500,\n      \"updated_at\": 4973\n    },\n    {\n      \"voice_id\": \"string\",\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"gender\": \"string\",\n      \"language\": \"string\",\n      \"age\": \"string\",\n      \"style\": \"string\",\n      \"created_at\": 2328,\n      \"updated_at\": 4836\n    }\n  ],\n  \"voice_generation\": [\n    {\n      \"voice_id\": \"string\",\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"gender\": \"string\",\n      \"language\": \"string\",\n      \"age\": \"string\",\n      \"style\": \"string\",\n      \"created_at\": 1370,\n      \"updated_at\": 2699\n    },\n    {\n      \"voice_id\": \"string\",\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"gender\": \"string\",\n      \"language\": \"string\",\n      \"age\": \"string\",\n      \"style\": \"string\",\n      \"created_at\": 6122,\n      \"updated_at\": 5275\n    }\n  ],\n  \"music_generation\": [\n    {\n      \"voice_id\": \"string\",\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"gender\": \"string\",\n      \"language\": \"string\",\n      \"age\": \"string\",\n      \"style\": \"string\",\n      \"created_at\": 8465,\n      \"updated_at\": 4839\n    },\n    {\n      \"voice_id\": \"string\",\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"gender\": \"string\",\n      \"language\": \"string\",\n      \"age\": \"string\",\n      \"style\": \"string\",\n      \"created_at\": 7331,\n      \"updated_at\": 6132\n    }\n  ],\n  \"voice_slots\": [\n    {\n      \"voice_id\": \"string\",\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"gender\": \"string\",\n      \"language\": \"string\",\n      \"age\": \"string\",\n      \"style\": \"string\",\n      \"created_at\": 509,\n      \"updated_at\": 2104\n    },\n    {\n      \"voice_id\": \"string\",\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"gender\": \"string\",\n      \"language\": \"string\",\n      \"age\": \"string\",\n      \"style\": \"string\",\n      \"created_at\": 5347,\n      \"updated_at\": 8269\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "90811c57-ff29-43b4-96d0-286c4f6a66ff",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "get_voice"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"voice_type\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": 2951,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "dbb7cc67-4c4c-43f7-b72b-7a391f9dbee2",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "get_voice"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"voice_type\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": 2951,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d45e65da-ba72-41a6-b7f7-9c953d3cb0a6",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "get_voice"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"voice_type\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": 2951,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c50f0edf-6f00-4e14-96f1-415e6088cd59",
+          "name": "Delete Voice",
+          "request": {
+            "name": "Delete Voice",
+            "description": {
+              "content": "Delete a voice by ID and type",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "delete_voice"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"voice_id\": \"<string>\",\n  \"voice_type\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "eb2e9788-c6a1-49a9-a97e-cdb88db51d7d",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "delete_voice"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"voice_id\": \"<string>\",\n  \"voice_type\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"voice_id\": \"string\",\n  \"description\": [\n    \"string\",\n    \"string\"\n  ],\n  \"created_time\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b0f0305c-fb1e-4a1a-bbf4-145ef9e948f0",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "delete_voice"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"voice_id\": \"<string>\",\n  \"voice_type\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": 2951,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "99401f66-6da7-4d4f-ba0d-eb89acb261e2",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "delete_voice"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"voice_id\": \"<string>\",\n  \"voice_type\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": 2951,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "84ff4dd1-342b-42d6-ad95-7226d4c25f76",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "delete_voice"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"voice_id\": \"<string>\",\n  \"voice_type\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": 2951,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "54b82465-7b5c-41bb-b4c1-57d5a1f16ba7",
+      "name": "Video",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "bf8836f0-c78d-4b66-a5ab-c3e1e57c1ff0",
+          "name": "Video Generation",
+          "request": {
+            "name": "Video Generation",
+            "description": {
+              "content": "Generate video from text prompt",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "video_generation"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"model\": \"<string>\",\n  \"prompt\": \"<string>\",\n  \"prompt_optimizer\": \"<boolean>\",\n  \"seed\": \"<long>\",\n  \"callback_url\": \"<string>\",\n  \"first_frame_image\": \"<string>\",\n  \"watermark\": \"<string>\",\n  \"subject_reference\": [\n    {\n      \"type\": \"<string>\",\n      \"image\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"type\": \"<string>\",\n      \"image\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ],\n  \"duration\": \"<long>\",\n  \"resolution\": \"<string>\",\n  \"aigc_watermark\": \"<boolean>\",\n  \"fast_pretreatment\": \"<boolean>\",\n  \"ignore_pretreatment_error\": \"<boolean>\",\n  \"user_translate\": \"<boolean>\",\n  \"last_frame_image\": \"<string>\",\n  \"priority\": \"<long>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "1e6673c5-1128-40aa-9722-39c67cf48dd7",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "video_generation"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"model\": \"<string>\",\n  \"prompt\": \"<string>\",\n  \"prompt_optimizer\": \"<boolean>\",\n  \"seed\": \"<long>\",\n  \"callback_url\": \"<string>\",\n  \"first_frame_image\": \"<string>\",\n  \"watermark\": \"<string>\",\n  \"subject_reference\": [\n    {\n      \"type\": \"string\",\n      \"image\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    {\n      \"type\": \"string\",\n      \"image\": [\n        \"string\",\n        \"string\"\n      ]\n    }\n  ],\n  \"duration\": \"<long>\",\n  \"resolution\": \"<string>\",\n  \"aigc_watermark\": \"<boolean>\",\n  \"fast_pretreatment\": \"<boolean>\",\n  \"ignore_pretreatment_error\": \"<boolean>\",\n  \"user_translate\": \"<boolean>\",\n  \"last_frame_image\": \"<string>\",\n  \"priority\": \"<long>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"task_id\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4855b60c-6436-44d1-8dfc-a2629cf36386",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "video_generation"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"model\": \"<string>\",\n  \"prompt\": \"<string>\",\n  \"prompt_optimizer\": \"<boolean>\",\n  \"seed\": \"<long>\",\n  \"callback_url\": \"<string>\",\n  \"first_frame_image\": \"<string>\",\n  \"watermark\": \"<string>\",\n  \"subject_reference\": [\n    {\n      \"type\": \"string\",\n      \"image\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    {\n      \"type\": \"string\",\n      \"image\": [\n        \"string\",\n        \"string\"\n      ]\n    }\n  ],\n  \"duration\": \"<long>\",\n  \"resolution\": \"<string>\",\n  \"aigc_watermark\": \"<boolean>\",\n  \"fast_pretreatment\": \"<boolean>\",\n  \"ignore_pretreatment_error\": \"<boolean>\",\n  \"user_translate\": \"<boolean>\",\n  \"last_frame_image\": \"<string>\",\n  \"priority\": \"<long>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": 2951,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8f238a28-92ab-4d95-bf0c-31c7cc92cd17",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "video_generation"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"model\": \"<string>\",\n  \"prompt\": \"<string>\",\n  \"prompt_optimizer\": \"<boolean>\",\n  \"seed\": \"<long>\",\n  \"callback_url\": \"<string>\",\n  \"first_frame_image\": \"<string>\",\n  \"watermark\": \"<string>\",\n  \"subject_reference\": [\n    {\n      \"type\": \"string\",\n      \"image\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    {\n      \"type\": \"string\",\n      \"image\": [\n        \"string\",\n        \"string\"\n      ]\n    }\n  ],\n  \"duration\": \"<long>\",\n  \"resolution\": \"<string>\",\n  \"aigc_watermark\": \"<boolean>\",\n  \"fast_pretreatment\": \"<boolean>\",\n  \"ignore_pretreatment_error\": \"<boolean>\",\n  \"user_translate\": \"<boolean>\",\n  \"last_frame_image\": \"<string>\",\n  \"priority\": \"<long>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": 2951,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8103e78b-2df8-4e0e-b4bd-18a7aaa5f7fe",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "video_generation"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"model\": \"<string>\",\n  \"prompt\": \"<string>\",\n  \"prompt_optimizer\": \"<boolean>\",\n  \"seed\": \"<long>\",\n  \"callback_url\": \"<string>\",\n  \"first_frame_image\": \"<string>\",\n  \"watermark\": \"<string>\",\n  \"subject_reference\": [\n    {\n      \"type\": \"string\",\n      \"image\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    {\n      \"type\": \"string\",\n      \"image\": [\n        \"string\",\n        \"string\"\n      ]\n    }\n  ],\n  \"duration\": \"<long>\",\n  \"resolution\": \"<string>\",\n  \"aigc_watermark\": \"<boolean>\",\n  \"fast_pretreatment\": \"<boolean>\",\n  \"ignore_pretreatment_error\": \"<boolean>\",\n  \"user_translate\": \"<boolean>\",\n  \"last_frame_image\": \"<string>\",\n  \"priority\": \"<long>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": 2951,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3431b9db-b80a-4a4a-a3d9-00952c5eb7dd",
+          "name": "Video Template Generation",
+          "request": {
+            "name": "Video Template Generation",
+            "description": {
+              "content": "Generate video using template",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "video_template_generation"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "5ecd4260-0ca3-458a-b8d6-98b63a864092",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "video_template_generation"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "79586a9b-e6e8-4da8-8c2c-45f10f7aac2a",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "video_template_generation"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": 2951,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b12abd87-257b-44bd-b849-540cce460bf4",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "video_template_generation"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": 2951,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d3964383-5912-459b-a287-d29e7656a950",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "video_template_generation"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": 2951,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7c78e0a5-0d6a-4928-8a89-cdfdd8b06683",
+          "name": "Query Video Template Generation Task",
+          "request": {
+            "name": "Query Video Template Generation Task",
+            "description": {
+              "content": "Query the status of a video template generation task",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "query",
+                "video_template_generation"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "task_id",
+                  "value": "<string>",
+                  "description": "(Required) Task ID to query"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7239da53-d6b2-44d6-8348-dd8b2d91ab40",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "query",
+                    "video_template_generation"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "task_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"task_id\": \"string\",\n  \"status\": \"Processing\",\n  \"video_url\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6954a692-a03b-4529-85cb-d1be7e758dca",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "query",
+                    "video_template_generation"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "task_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": 2951,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3eed6558-e370-4256-97f8-5a19555817d7",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "query",
+                    "video_template_generation"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "task_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": 2951,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f3fd7303-d94e-4998-9ab9-9a80108b2cbd",
+              "name": "Task not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "query",
+                    "video_template_generation"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "task_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": 2951,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5ade8aa4-f238-4974-b898-3c6e9b7f6550",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "query",
+                    "video_template_generation"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "task_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": 2951,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "2ad237fe-9e4f-44ae-90eb-af2d41ca8b64",
+      "name": "Image",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "4de29800-ff40-4f3b-978b-d4f6191252ca",
+          "name": "Image Generation",
+          "request": {
+            "name": "Image Generation",
+            "description": {
+              "content": "Generate images from text prompt",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "image_generation"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"prompt\": \"<string>\",\n  \"model\": \"<string>\",\n  \"prompt_optimizer\": \"<boolean>\",\n  \"seed\": \"<long>\",\n  \"aspect_ratio\": \"<string>\",\n  \"response_format\": \"<string>\",\n  \"n\": \"<long>\",\n  \"metadata\": {\n    \"key_0\": \"<string>\"\n  },\n  \"subject_reference\": [\n    {\n      \"type\": \"<string>\",\n      \"image_file\": \"<string>\"\n    },\n    {\n      \"type\": \"<string>\",\n      \"image_file\": \"<string>\"\n    }\n  ],\n  \"style\": {\n    \"type\": \"<string>\",\n    \"weight\": \"<double>\"\n  },\n  \"width\": \"<long>\",\n  \"height\": \"<long>\",\n  \"aigc_watermark\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "2ab64da9-b8cc-4d8f-9722-ec5f4f046b1b",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "image_generation"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"prompt\": \"<string>\",\n  \"model\": \"<string>\",\n  \"prompt_optimizer\": \"<boolean>\",\n  \"seed\": \"<long>\",\n  \"aspect_ratio\": \"<string>\",\n  \"response_format\": \"base64\",\n  \"n\": \"<long>\",\n  \"metadata\": {\n    \"key_0\": \"<string>\"\n  },\n  \"subject_reference\": [\n    {\n      \"type\": \"string\",\n      \"image_file\": \"string\"\n    },\n    {\n      \"type\": \"string\",\n      \"image_file\": \"string\"\n    }\n  ],\n  \"style\": {\n    \"type\": \"中世纪\",\n    \"weight\": 4458.005726328648\n  },\n  \"width\": \"<long>\",\n  \"height\": \"<long>\",\n  \"aigc_watermark\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"data\": {\n    \"image_urls\": [\n      \"string\",\n      \"string\"\n    ],\n    \"image_base64\": [\n      \"string\",\n      \"string\"\n    ]\n  },\n  \"metadata\": {\n    \"key_0\": \"string\",\n    \"key_1\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e04cf9c3-9044-4f7a-b284-df5fd349e45f",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "image_generation"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"prompt\": \"<string>\",\n  \"model\": \"<string>\",\n  \"prompt_optimizer\": \"<boolean>\",\n  \"seed\": \"<long>\",\n  \"aspect_ratio\": \"<string>\",\n  \"response_format\": \"base64\",\n  \"n\": \"<long>\",\n  \"metadata\": {\n    \"key_0\": \"<string>\"\n  },\n  \"subject_reference\": [\n    {\n      \"type\": \"string\",\n      \"image_file\": \"string\"\n    },\n    {\n      \"type\": \"string\",\n      \"image_file\": \"string\"\n    }\n  ],\n  \"style\": {\n    \"type\": \"中世纪\",\n    \"weight\": 4458.005726328648\n  },\n  \"width\": \"<long>\",\n  \"height\": \"<long>\",\n  \"aigc_watermark\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": 2951,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a704cefd-d6de-4aa6-bdf6-3ce1336896b8",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "image_generation"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"prompt\": \"<string>\",\n  \"model\": \"<string>\",\n  \"prompt_optimizer\": \"<boolean>\",\n  \"seed\": \"<long>\",\n  \"aspect_ratio\": \"<string>\",\n  \"response_format\": \"base64\",\n  \"n\": \"<long>\",\n  \"metadata\": {\n    \"key_0\": \"<string>\"\n  },\n  \"subject_reference\": [\n    {\n      \"type\": \"string\",\n      \"image_file\": \"string\"\n    },\n    {\n      \"type\": \"string\",\n      \"image_file\": \"string\"\n    }\n  ],\n  \"style\": {\n    \"type\": \"中世纪\",\n    \"weight\": 4458.005726328648\n  },\n  \"width\": \"<long>\",\n  \"height\": \"<long>\",\n  \"aigc_watermark\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": 2951,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0fdafe99-6cb5-4e1b-a5cf-2fd6e93e9e83",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "image_generation"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"prompt\": \"<string>\",\n  \"model\": \"<string>\",\n  \"prompt_optimizer\": \"<boolean>\",\n  \"seed\": \"<long>\",\n  \"aspect_ratio\": \"<string>\",\n  \"response_format\": \"base64\",\n  \"n\": \"<long>\",\n  \"metadata\": {\n    \"key_0\": \"<string>\"\n  },\n  \"subject_reference\": [\n    {\n      \"type\": \"string\",\n      \"image_file\": \"string\"\n    },\n    {\n      \"type\": \"string\",\n      \"image_file\": \"string\"\n    }\n  ],\n  \"style\": {\n    \"type\": \"中世纪\",\n    \"weight\": 4458.005726328648\n  },\n  \"width\": \"<long>\",\n  \"height\": \"<long>\",\n  \"aigc_watermark\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": 2951,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "cfe078b7-88b0-4bd3-832e-044ac95c3d87",
+      "name": "Music",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "46715430-6a30-4a4e-a9cc-cd437c2b1918",
+          "name": "Music Generation",
+          "request": {
+            "name": "Music Generation",
+            "description": {
+              "content": "Generate music from text prompt",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "music_generation"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"lyrics\": \"<string>\",\n  \"model\": \"<string>\",\n  \"refer_voice\": \"<string>\",\n  \"refer_instrumental\": \"<string>\",\n  \"stream\": \"<boolean>\",\n  \"audio_setting\": {\n    \"value\": \"reference #/components/schemas/AudioSetting not found in the OpenAPI spec\"\n  },\n  \"refer_vocal\": \"<string>\",\n  \"prompt\": \"<string>\",\n  \"reference_music_id\": \"<string>\",\n  \"seed\": \"<long>\",\n  \"output_format\": \"<string>\",\n  \"aigc_watermark\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "4ab5b92c-9118-40da-9064-2aff4110f030",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "music_generation"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"lyrics\": \"<string>\",\n  \"model\": \"<string>\",\n  \"refer_voice\": \"<string>\",\n  \"refer_instrumental\": \"<string>\",\n  \"stream\": \"<boolean>\",\n  \"audio_setting\": {\n    \"value\": \"reference #/components/schemas/AudioSetting not found in the OpenAPI spec\"\n  },\n  \"refer_vocal\": \"<string>\",\n  \"prompt\": \"<string>\",\n  \"reference_music_id\": \"<string>\",\n  \"seed\": \"<long>\",\n  \"output_format\": \"<string>\",\n  \"aigc_watermark\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"audio\": \"string\",\n    \"status\": 7240\n  },\n  \"trace_id\": \"string\",\n  \"extra_info\": {\n    \"audio_length\": 7554,\n    \"audio_size\": 7693,\n    \"audio_bitrate\": 3299,\n    \"audio_sample_rate\": 1506,\n    \"music_duration\": 8972,\n    \"create_at\": 6252,\n    \"finish_at\": 2198,\n    \"music_sample_rate\": 2156,\n    \"music_channel\": 4566,\n    \"bitrate\": 8136,\n    \"music_size\": 9841\n  },\n  \"analysis_info\": {\n    \"song_information_analysis\": {},\n    \"vocal_information_analysis\": {},\n    \"arrangement_features_analysis\": {}\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d4b5fcb5-54ec-4780-9179-67c01d1d060c",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "music_generation"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"lyrics\": \"<string>\",\n  \"model\": \"<string>\",\n  \"refer_voice\": \"<string>\",\n  \"refer_instrumental\": \"<string>\",\n  \"stream\": \"<boolean>\",\n  \"audio_setting\": {\n    \"value\": \"reference #/components/schemas/AudioSetting not found in the OpenAPI spec\"\n  },\n  \"refer_vocal\": \"<string>\",\n  \"prompt\": \"<string>\",\n  \"reference_music_id\": \"<string>\",\n  \"seed\": \"<long>\",\n  \"output_format\": \"<string>\",\n  \"aigc_watermark\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": 2951,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "30ba73af-859f-4f24-84bd-5e6faed3a0de",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "music_generation"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"lyrics\": \"<string>\",\n  \"model\": \"<string>\",\n  \"refer_voice\": \"<string>\",\n  \"refer_instrumental\": \"<string>\",\n  \"stream\": \"<boolean>\",\n  \"audio_setting\": {\n    \"value\": \"reference #/components/schemas/AudioSetting not found in the OpenAPI spec\"\n  },\n  \"refer_vocal\": \"<string>\",\n  \"prompt\": \"<string>\",\n  \"reference_music_id\": \"<string>\",\n  \"seed\": \"<long>\",\n  \"output_format\": \"<string>\",\n  \"aigc_watermark\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": 2951,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "dc79bfa9-dcbc-4efb-9a17-5bbaa3ef457a",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "music_generation"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"lyrics\": \"<string>\",\n  \"model\": \"<string>\",\n  \"refer_voice\": \"<string>\",\n  \"refer_instrumental\": \"<string>\",\n  \"stream\": \"<boolean>\",\n  \"audio_setting\": {\n    \"value\": \"reference #/components/schemas/AudioSetting not found in the OpenAPI spec\"\n  },\n  \"refer_vocal\": \"<string>\",\n  \"prompt\": \"<string>\",\n  \"reference_music_id\": \"<string>\",\n  \"seed\": \"<long>\",\n  \"output_format\": \"<string>\",\n  \"aigc_watermark\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": 2951,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.minimax.io",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "e562807d-d664-44cf-968f-a83afdbddf43",
+    "name": "MiniMax API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "MiniMax text generation API with support for chat completion and streaming output",
+      "type": "text/plain"
+    }
+  }
+}
