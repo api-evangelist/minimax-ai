@@ -6,7 +6,7 @@ description: >-
   MiniMax is a Chinese foundation model company offering full-stack multimodal APIs: text generation (M2.7, M2.5, M2.1,
   M2, M1, Text-01), speech synthesis (Speech 2.8/2.6/2.5), voice cloning, voice design, image generation (Image-01),
   video generation (Hailuo 2.3), and music generation (Music-2.6).
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
   - AI
   - LLM
@@ -26,7 +26,7 @@ apis:
       Multimodal generative AI API covering text chat (native + OpenAI-compatible + Anthropic- compatible), image
       generation, video generation (Hailuo), speech synthesis, voice cloning, voice design, music generation, and file
       management. International base URL https://api.minimax.io; China base URL https://api.minimaxi.com.
-    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://platform.minimax.io/docs/api-reference/api-overview
     baseURL: https://api.minimax.io
     tags:
