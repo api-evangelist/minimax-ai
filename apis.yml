@@ -44,7 +44,7 @@ apis:
         url: https://platform.minimax.io/docs/api-reference/api-overview
       - type: OpenAPI
         url: openapi/minimax-ai-openapi.json
-      - type: SignUp
+      - type: Signup
         url: https://platform.minimax.io
       - type: Pricing
         url: https://platform.minimax.io/docs/pricing/overview
