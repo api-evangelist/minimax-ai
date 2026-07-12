@@ -1,0 +1,13 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/minimax-ai-openapi.json
+summary:
+  types:
+  - http
+schemes:
+- name: bearerAuth
+  type: http
+  scheme: bearer
+  bearerFormat: JWT
+  sources:
+  - openapi/minimax-ai-openapi.json

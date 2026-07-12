@@ -53,6 +53,10 @@ apis:
       - type: ChinaBaseURL
         url: https://api.minimaxi.com
 common:
+  - type: DomainSecurity
+    url: security/minimax-ai-domain-security.yml
+  - type: Authentication
+    url: authentication/minimax-ai-authentication.yml
   - type: GitHubOrganization
     url: https://github.com/MiniMax-AI
   - type: LinkedIn
@@ -67,6 +71,8 @@ common:
     url: rate-limits/minimax-ai-rate-limits.yml
   - type: FinOps
     url: finops/minimax-ai-finops.yml
+  - type: Blog
+    url: https://www.minimax.io/blog
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
