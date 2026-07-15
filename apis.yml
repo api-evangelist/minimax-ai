@@ -53,6 +53,8 @@ apis:
       - type: ChinaBaseURL
         url: https://api.minimaxi.com
 common:
+  - type: AgenticAccess
+    url: agentic-access/minimax-ai-agentic-access.yml
   - type: DomainSecurity
     url: security/minimax-ai-domain-security.yml
   - type: Authentication
