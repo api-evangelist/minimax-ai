@@ -1,0 +1,259 @@
+openapi: 3.1.0
+info:
+  title: MiniMax Files Video API
+  description: MiniMax text generation API with support for chat completion and streaming output
+  license:
+    name: MIT
+  version: 1.0.0
+servers:
+- url: https://api.minimax.io
+security:
+- bearerAuth: []
+tags:
+- name: Video
+paths:
+  /v1/video_generation:
+    post:
+      summary: Video Generation
+      description: Generate video from text prompt
+      operationId: videoGeneration
+      tags:
+      - Video
+      requestBody:
+        description: Video generation request parameters
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/VideoGenerationReq'
+        required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VideoGenerationResp'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /v1/video_template_generation:
+    post:
+      summary: Video Template Generation
+      description: Generate video using template
+      operationId: videoTemplateGeneration
+      tags:
+      - Video
+      requestBody:
+        description: Video template generation request parameters
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/VideoTemplateGenerationReq'
+        required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VideoTemplateGenerationResp'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /v1/query/video_template_generation:
+    get:
+      summary: Query Video Template Generation Task
+      description: Query the status of a video template generation task
+      operationId: queryVideoTemplateGenerationTask
+      tags:
+      - Video
+      parameters:
+      - name: task_id
+        in: query
+        required: true
+        description: Task ID to query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/QueryVideoTemplateGenerationTaskResp'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Task not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+components:
+  schemas:
+    QueryVideoTemplateGenerationTaskResp:
+      type: object
+      properties:
+        task_id:
+          type: string
+          description: Task ID
+        status:
+          $ref: '#/components/schemas/VideoProcessStatus'
+        video_url:
+          type: string
+          description: Generated video URL
+    Error:
+      type: object
+      required:
+      - error
+      - message
+      properties:
+        error:
+          type: integer
+          format: int32
+          description: Error code
+        message:
+          type: string
+          description: Error message
+    SubjectReference:
+      type: object
+      required:
+      - type
+      - image
+      properties:
+        type:
+          type: string
+          description: Reference type
+        image:
+          type: array
+          items:
+            type: string
+          description: Reference image URLs
+    VideoProcessStatus:
+      type: string
+      enum:
+      - Preparing
+      - Queueing
+      - Processing
+      - Success
+      - Fail
+      description: Video processing status
+    VideoGenerationResp:
+      type: object
+      properties:
+        task_id:
+          type: string
+          description: Task ID for tracking video generation
+    VideoGenerationReq:
+      type: object
+      required:
+      - model
+      properties:
+        prompt:
+          type: string
+          description: Text prompt for video generation
+        model:
+          type: string
+          description: Model to use for video generation
+          enum:
+          - MiniMax-Hailuo-02
+          - T2V-01-Director
+          - T2V-01
+        prompt_optimizer:
+          type: boolean
+          description: Whether to optimize the prompt
+        seed:
+          type: integer
+          format: int64
+          description: Random seed for generation
+        callback_url:
+          type: string
+          description: Callback URL for completion notification
+        first_frame_image:
+          type: string
+          description: First frame image URL
+        watermark:
+          type: string
+          description: Watermark settings
+        subject_reference:
+          type: array
+          items:
+            $ref: '#/components/schemas/SubjectReference'
+          description: Subject reference images
+        duration:
+          type: integer
+          format: int64
+          description: Video duration in seconds
+        resolution:
+          type: string
+          description: Video resolution
+        aigc_watermark:
+          type: boolean
+          description: Whether to add AIGC watermark
+        fast_pretreatment:
+          type: boolean
+          description: Whether to use fast pretreatment
+        ignore_pretreatment_error:
+          type: boolean
+          description: Whether to ignore pretreatment errors
+        user_translate:
+          type: boolean
+          description: Whether to use user translation
+        last_frame_image:
+          type: string
+          description: Last frame image URL
+        priority:
+          type: integer
+          format: int64
+          description: Task priority
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT

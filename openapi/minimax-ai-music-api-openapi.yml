@@ -1,0 +1,202 @@
+openapi: 3.1.0
+info:
+  title: MiniMax Files Music API
+  description: MiniMax text generation API with support for chat completion and streaming output
+  license:
+    name: MIT
+  version: 1.0.0
+servers:
+- url: https://api.minimax.io
+security:
+- bearerAuth: []
+tags:
+- name: Music
+paths:
+  /v1/music_generation:
+    post:
+      summary: Music Generation
+      description: Generate music from text prompt
+      operationId: generateMusic
+      tags:
+      - Music
+      requestBody:
+        description: Music generation request parameters
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GenerateMusicReq'
+        required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenerateMusicResp'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+components:
+  schemas:
+    Error:
+      type: object
+      required:
+      - error
+      - message
+      properties:
+        error:
+          type: integer
+          format: int32
+          description: Error code
+        message:
+          type: string
+          description: Error message
+    MusicData:
+      type: object
+      properties:
+        audio:
+          type: string
+          description: Generated music data in hex encoding
+        status:
+          type: integer
+          format: int64
+          description: 'Synthesis status: 1-synthesizing, 2-completed'
+    MusicExtraInfo:
+      type: object
+      properties:
+        audio_length:
+          type: integer
+          format: int64
+          description: Audio duration in milliseconds
+        audio_size:
+          type: integer
+          format: int64
+          description: Audio size in bytes
+        audio_bitrate:
+          type: integer
+          format: int64
+          description: Bitrate
+        audio_sample_rate:
+          type: integer
+          format: int64
+          description: Sample rate
+        music_duration:
+          type: integer
+          format: int32
+          description: Music duration
+        create_at:
+          type: integer
+          format: int32
+          description: Creation timestamp
+        finish_at:
+          type: integer
+          format: int32
+          description: Completion timestamp
+        music_sample_rate:
+          type: integer
+          format: int32
+          description: Music sample rate
+        music_channel:
+          type: integer
+          format: int32
+          description: Music channel
+        bitrate:
+          type: integer
+          format: int32
+          description: Bitrate
+        music_size:
+          type: integer
+          format: int32
+          description: Music size
+    GenerateMusicReq:
+      type: object
+      required:
+      - lyrics
+      - model
+      properties:
+        refer_voice:
+          type: string
+          description: Reference music voice_id
+        refer_instrumental:
+          type: string
+          description: Reference instrumental file_id
+        lyrics:
+          type: string
+          description: Music lyrics
+        model:
+          type: string
+          description: Model to use for music generation
+        stream:
+          type: boolean
+          description: Whether to use streaming
+        audio_setting:
+          $ref: '#/components/schemas/AudioSetting'
+        refer_vocal:
+          type: string
+          description: Reference vocal voice_id
+        prompt:
+          type: string
+          description: Music creation inspiration description
+        reference_music_id:
+          type: string
+          description: Reference music ID
+        seed:
+          type: integer
+          format: int64
+          description: Random seed for generation
+        output_format:
+          type: string
+          description: Output format
+        aigc_watermark:
+          type: boolean
+          description: Whether to add AIGC watermark
+    MusicAnalysisInfo:
+      type: object
+      properties:
+        song_information_analysis:
+          $ref: '#/components/schemas/SongInformationAnalysis'
+        vocal_information_analysis:
+          $ref: '#/components/schemas/VocalInformationAnalysis'
+        arrangement_features_analysis:
+          $ref: '#/components/schemas/ArrangementFeaturesAnalysis'
+    ArrangementFeaturesAnalysis:
+      type: object
+      description: Arrangement features analysis
+    SongInformationAnalysis:
+      type: object
+      description: Song information analysis
+    GenerateMusicResp:
+      type: object
+      properties:
+        data:
+          $ref: '#/components/schemas/MusicData'
+        trace_id:
+          type: string
+          description: Request unique identifier
+        extra_info:
+          $ref: '#/components/schemas/MusicExtraInfo'
+        analysis_info:
+          $ref: '#/components/schemas/MusicAnalysisInfo'
+    VocalInformationAnalysis:
+      type: object
+      description: Vocal information analysis
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT

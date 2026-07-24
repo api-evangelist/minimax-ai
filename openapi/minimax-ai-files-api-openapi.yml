@@ -1,0 +1,396 @@
+openapi: 3.1.0
+info:
+  title: MiniMax Files API
+  description: MiniMax text generation API with support for chat completion and streaming output
+  license:
+    name: MIT
+  version: 1.0.0
+servers:
+- url: https://api.minimax.io
+security:
+- bearerAuth: []
+tags:
+- name: Files
+paths:
+  /v1/files/upload:
+    post:
+      summary: Upload File
+      description: Upload a file to the platform for processing
+      operationId: uploadFile
+      tags:
+      - Files
+      parameters:
+      - name: GroupId
+        in: query
+        required: true
+        description: Group ID
+        schema:
+          type: string
+      requestBody:
+        description: File upload request
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required:
+              - purpose
+              - file
+              properties:
+                purpose:
+                  type: string
+                  description: Purpose of the file upload
+                  enum:
+                  - fine-tune
+                  - assistants
+                  - batch
+                  - vision
+                file:
+                  type: string
+                  format: binary
+                  description: File to upload
+        required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UploadFileResp'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: Authentication failed
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /v1/files/retrieve:
+    get:
+      summary: Retrieve File
+      description: Retrieve file information by ID
+      operationId: retrieveFile
+      tags:
+      - Files
+      parameters:
+      - name: GroupId
+        in: query
+        required: true
+        description: Group ID
+        schema:
+          type: string
+      - name: file_id
+        in: query
+        required: true
+        description: File ID to retrieve
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RetrieveFileResp'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: File not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /v1/files/list:
+    get:
+      summary: List Files
+      description: List files with optional filtering and pagination
+      operationId: listFiles
+      tags:
+      - Files
+      parameters:
+      - name: GroupId
+        in: query
+        required: true
+        description: Group ID
+        schema:
+          type: string
+      - name: purpose
+        in: query
+        required: false
+        description: Filter by file purpose
+        schema:
+          type: string
+          enum:
+          - fine-tune
+          - assistants
+          - batch
+          - vision
+      - name: page
+        in: query
+        required: false
+        description: Page number for pagination
+        schema:
+          type: integer
+          format: int64
+      - name: size
+        in: query
+        required: false
+        description: Number of files per page
+        schema:
+          type: integer
+          format: int64
+      - name: after_file_id
+        in: query
+        required: false
+        description: File ID to start listing after
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListFileResp'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /v1/files/retrieve_content:
+    get:
+      summary: Retrieve File Content
+      description: Retrieve file content by ID
+      operationId: retrieveFileContent
+      tags:
+      - Files
+      parameters:
+      - name: GroupId
+        in: query
+        required: true
+        description: Group ID
+        schema:
+          type: string
+      - name: file_id
+        in: query
+        required: true
+        description: File ID to retrieve content
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: File not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /v1/files/delete:
+    post:
+      summary: Delete File
+      description: Delete a file by ID
+      operationId: deleteFile
+      tags:
+      - Files
+      parameters:
+      - name: GroupId
+        in: query
+        required: true
+        description: Group ID
+        schema:
+          type: string
+      requestBody:
+        description: Delete file request parameters
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DeleteFileReq'
+        required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeleteFileResp'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: File not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+components:
+  schemas:
+    RetrieveFileResp:
+      type: object
+      properties:
+        file:
+          $ref: '#/components/schemas/FileObject'
+    FileObject:
+      type: object
+      properties:
+        id:
+          type: string
+          description: File ID
+        object:
+          type: string
+          description: Object type
+          enum:
+          - file
+        bytes:
+          type: integer
+          format: int64
+          description: File size in bytes
+        created_at:
+          type: integer
+          format: int64
+          description: Unix timestamp of file creation
+        filename:
+          type: string
+          description: Original filename
+        purpose:
+          type: string
+          description: Purpose of the file
+          enum:
+          - fine-tune
+          - assistants
+          - batch
+          - vision
+        status:
+          type: string
+          description: File processing status
+          enum:
+          - uploaded
+          - processing
+          - processed
+          - error
+    Error:
+      type: object
+      required:
+      - error
+      - message
+      properties:
+        error:
+          type: integer
+          format: int32
+          description: Error code
+        message:
+          type: string
+          description: Error message
+    DeleteFileReq:
+      type: object
+      required:
+      - file_id
+      properties:
+        file_id:
+          type: integer
+          format: int64
+          description: File ID to delete
+    ListFileResp:
+      type: object
+      properties:
+        files:
+          type: array
+          items:
+            $ref: '#/components/schemas/FileObject'
+          description: List of files
+    UploadFileResp:
+      type: object
+      properties:
+        file:
+          $ref: '#/components/schemas/FileObject'
+    DeleteFileResp:
+      type: object
+      properties:
+        file_id:
+          type: integer
+          format: int64
+          description: Deleted file ID
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT

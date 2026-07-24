@@ -1,0 +1,410 @@
+openapi: 3.1.0
+info:
+  title: MiniMax Files Voice API
+  description: MiniMax text generation API with support for chat completion and streaming output
+  license:
+    name: MIT
+  version: 1.0.0
+servers:
+- url: https://api.minimax.io
+security:
+- bearerAuth: []
+tags:
+- name: Voice
+paths:
+  /v1/voice_clone:
+    post:
+      summary: Voice Clone
+      description: Create a voice clone from an audio file
+      operationId: voiceClone
+      tags:
+      - Voice
+      requestBody:
+        description: Voice clone request parameters
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/VoiceCloneReq'
+        required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VoiceCloneResp'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: Authentication failed
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /v1/voice_design:
+    post:
+      summary: Voice Design
+      description: Generate voice design based on text prompt
+      operationId: voiceDesign
+      tags:
+      - Voice
+      requestBody:
+        description: Voice design request parameters
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/T2VReq'
+        required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/T2VResp'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /v1/get_voice:
+    post:
+      summary: Get Voice
+      description: Get available voices by type
+      operationId: getVoice
+      tags:
+      - Voice
+      requestBody:
+        description: Get voice request parameters
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GetVoiceReq'
+        required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetVoiceResp'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /v1/delete_voice:
+    post:
+      summary: Delete Voice
+      description: Delete a voice by ID and type
+      operationId: deleteVoice
+      tags:
+      - Voice
+      requestBody:
+        description: Delete voice request parameters
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DeleteVoiceReq'
+        required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeleteVoiceResp'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+components:
+  schemas:
+    SensitiveType:
+      type: string
+      enum:
+      - Politics
+      - Porn
+      - Ad
+      - Illegal
+      - Abuse
+      - Terror
+      - Other
+      description: Sensitive content type
+    DeleteVoiceResp:
+      type: object
+      properties:
+        voice_id:
+          type: string
+          description: Deleted voice ID
+        description:
+          type: array
+          items:
+            type: string
+          description: Deletion description
+        created_time:
+          type: string
+          description: Voice creation time
+    GetVoiceReq:
+      type: object
+      required:
+      - voice_type
+      properties:
+        voice_type:
+          type: string
+          description: Type of voice to retrieve
+          enum:
+          - system_voice
+          - voice_cloning
+          - voice_generation
+          - music_generation
+          - voice_slots
+    T2VReq:
+      type: object
+      required:
+      - prompt
+      - preview_text
+      properties:
+        prompt:
+          type: string
+          description: Text prompt for voice design
+        preview_text:
+          type: string
+          description: Preview text for voice generation
+        voice_id:
+          type: string
+          description: Voice ID (optional)
+        aigc_watermark:
+          type: boolean
+          description: Whether to add AIGC watermark
+    Error:
+      type: object
+      required:
+      - error
+      - message
+      properties:
+        error:
+          type: integer
+          format: int32
+          description: Error code
+        message:
+          type: string
+          description: Error message
+    DeleteVoiceReq:
+      type: object
+      required:
+      - voice_id
+      properties:
+        voice_id:
+          type: string
+          description: Voice ID to delete
+        voice_type:
+          type: string
+          description: Type of voice to delete
+          enum:
+          - system_voice
+          - voice_cloning
+          - voice_generation
+          - music_generation
+          - voice_slots
+    VoiceCloneReq:
+      type: object
+      required:
+      - voice_id
+      - file_id
+      - output_format
+      - need_noise_reduction
+      - text
+      - model
+      - text_validation
+      - accuracy
+      - need_volume_normalization
+      properties:
+        voice_id:
+          type: string
+          description: User-provided voice ID
+        file_id:
+          type: integer
+          format: int64
+          description: Audio file ID uploaded by user
+        output_format:
+          type: string
+          description: Output audio format
+        need_noise_reduction:
+          type: boolean
+          description: Whether noise reduction is needed
+        text:
+          type: string
+          description: Text for generating demo audio
+        model:
+          type: string
+          description: Model for generating demo audio
+        text_validation:
+          type: string
+          description: Text validation setting
+        accuracy:
+          type: number
+          format: double
+          description: Accuracy requirement
+        need_volume_normalization:
+          type: boolean
+          description: Whether volume normalization is needed
+        language_boost:
+          type: string
+          description: Language boost for demo audio
+        clone_prompt:
+          $ref: '#/components/schemas/ClonePrompt'
+        aigc_watermark:
+          type: boolean
+          description: Whether to add AIGC watermark
+    ClonePrompt:
+      type: object
+      required:
+      - prompt_audio
+      - prompt_text
+      properties:
+        prompt_audio:
+          type: integer
+          format: int64
+          description: Prompt audio ID
+        prompt_text:
+          type: string
+          description: Prompt text
+    GetVoiceResp:
+      type: object
+      properties:
+        system_voice:
+          type: array
+          items:
+            $ref: '#/components/schemas/VoiceInfo'
+          description: System voices
+        voice_cloning:
+          type: array
+          items:
+            $ref: '#/components/schemas/VoiceInfo'
+          description: Voice cloning voices
+        voice_generation:
+          type: array
+          items:
+            $ref: '#/components/schemas/VoiceInfo'
+          description: Voice generation voices
+        music_generation:
+          type: array
+          items:
+            $ref: '#/components/schemas/VoiceInfo'
+          description: Music generation voices
+        voice_slots:
+          type: array
+          items:
+            $ref: '#/components/schemas/VoiceInfo'
+          description: Voice slots
+    T2VResp:
+      type: object
+      properties:
+        trial_audio:
+          type: string
+          description: Trial audio URL
+        voice_id:
+          type: string
+          description: Generated voice ID
+    VoiceCloneResp:
+      type: object
+      properties:
+        input_sensitive:
+          type: boolean
+          description: Whether input contains sensitive content
+        input_sensitive_type:
+          $ref: '#/components/schemas/SensitiveType'
+        demo_audio:
+          type: string
+          description: Demo audio URL
+        trace_id:
+          type: string
+          description: Trace ID for request tracking
+    VoiceInfo:
+      type: object
+      properties:
+        voice_id:
+          type: string
+          description: Voice ID
+        name:
+          type: string
+          description: Voice name
+        description:
+          type: string
+          description: Voice description
+        gender:
+          type: string
+          description: Voice gender
+        language:
+          type: string
+          description: Voice language
+        age:
+          type: string
+          description: Voice age
+        style:
+          type: string
+          description: Voice style
+        created_at:
+          type: integer
+          format: int64
+          description: Creation timestamp
+        updated_at:
+          type: integer
+          format: int64
+          description: Last update timestamp
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT

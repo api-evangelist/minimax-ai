@@ -1,0 +1,525 @@
+openapi: 3.1.0
+info:
+  title: MiniMax Files Text to Audio API
+  description: MiniMax text generation API with support for chat completion and streaming output
+  license:
+    name: MIT
+  version: 1.0.0
+servers:
+- url: https://api.minimax.io
+security:
+- bearerAuth: []
+tags:
+- name: Text to Audio
+paths:
+  /v1/t2a_v2:
+    post:
+      summary: Text to Audio V2
+      description: Convert text to audio using MiniMax T2A V2 API with support for streaming and non-streaming output
+      operationId: t2aV2
+      tags:
+      - Text to Audio
+      requestBody:
+        description: T2A V2 request parameters
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/T2aV2Req'
+        required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/T2aV2Resp'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: Authentication failed
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /v1/t2a_async_v2:
+    post:
+      summary: Text to Audio Async V2
+      description: Convert text to audio asynchronously using MiniMax T2A Async V2 API with support for long text processing
+      operationId: t2aAsyncV2
+      tags:
+      - Text to Audio
+      requestBody:
+        description: T2A Async V2 request parameters
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/T2AAsyncV2Req'
+        required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/T2AAsyncV2Resp'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: Authentication failed
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /v1/query/t2a_async_query_v2:
+    post:
+      summary: Query T2A Async V2 Task Status
+      description: Query the status of an asynchronous text-to-audio task
+      operationId: t2aAsyncV2Query
+      tags:
+      - Text to Audio
+      requestBody:
+        description: Query request parameters
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/T2AAsyncV2QueryReq'
+        required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/T2AAsyncV2QueryResp'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: Authentication failed
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+components:
+  schemas:
+    T2AAsyncV2QueryReq:
+      type: object
+      required:
+      - task_id
+      - group_id
+      properties:
+        task_id:
+          type: integer
+          format: int64
+          description: Task ID to query
+        group_id:
+          type: string
+          description: Group ID
+    PronunciationDict:
+      type: object
+      properties:
+        tone:
+          type: array
+          description: Tone replacement list
+          items:
+            type: string
+        phonetic:
+          type: array
+          description: Phonetic correction list
+          items:
+            type: string
+    T2AStreamOption:
+      type: object
+      properties:
+        include_usage:
+          type: boolean
+          description: Whether to include usage information
+    VoiceModify:
+      type: object
+      properties:
+        modify_type:
+          type: string
+          description: Voice modification type
+        modify_value:
+          type: number
+          format: double
+          description: Modification value
+    T2AAsyncV2Req:
+      type: object
+      required:
+      - model
+      - voice_setting
+      properties:
+        model:
+          type: string
+          description: Model ID for text-to-audio conversion
+          enum:
+          - speech-2.5-hd-preview
+          - speech-2.5-turbo-preview
+          - speech-02-hd
+          - speech-02-turbo
+          - speech-01-hd
+          - speech-01-turbo
+        text:
+          type: string
+          description: Text content to convert to audio
+        text_file_id:
+          type: integer
+          format: int64
+          description: Text file ID for file-based input
+        voice_setting:
+          $ref: '#/components/schemas/T2AAsyncV2VoiceSetting'
+        audio_setting:
+          $ref: '#/components/schemas/T2AAsyncV2AudioSetting'
+        pronunciation_dict:
+          $ref: '#/components/schemas/T2AAsyncV2PronunciationDict'
+        language_boost:
+          type: string
+          description: Language boost setting
+        callback_url:
+          type: string
+          description: Callback URL for task completion notification
+        voice_modify:
+          $ref: '#/components/schemas/VoiceModify'
+        aigc_watermark:
+          type: boolean
+          description: Whether to add AIGC watermark
+    T2aV2Resp:
+      type: object
+      properties:
+        data:
+          $ref: '#/components/schemas/StreamData'
+        extra_info:
+          $ref: '#/components/schemas/T2AExtraInfo'
+        trace_id:
+          type: string
+          description: Trace ID for request tracking
+    T2aV2Req:
+      type: object
+      required:
+      - model
+      - text
+      properties:
+        model:
+          type: string
+          description: Model ID for text-to-audio conversion
+          enum:
+          - speech-2.5-hd-preview
+          - speech-2.5-turbo-preview
+          - speech-02-hd
+          - speech-02-turbo
+          - speech-01-hd
+          - speech-01-turbo
+        text:
+          type: string
+          description: Text content to convert to audio
+        voice_setting:
+          $ref: '#/components/schemas/T2AVoiceSetting'
+        audio_setting:
+          $ref: '#/components/schemas/T2AAudioSetting'
+        pronunciation_dict:
+          $ref: '#/components/schemas/PronunciationDict'
+        timber_weights:
+          type: array
+          description: Timbre weights (legacy field)
+          items:
+            $ref: '#/components/schemas/TimbreWeights'
+        speed_rate:
+          type: integer
+          format: int64
+          description: Speed rate for audio generation
+        stream:
+          type: boolean
+          description: Whether to enable streaming output
+        language_boost:
+          type: string
+          description: Language boost setting
+        subtitle_enable:
+          type: boolean
+          description: Whether to enable subtitle generation
+        output_format:
+          type: string
+          description: Output audio format
+        voice_modify:
+          $ref: '#/components/schemas/VoiceModify'
+        stream_options:
+          $ref: '#/components/schemas/T2AStreamOption'
+        subtitle_type:
+          type: string
+          description: Subtitle type
+        aigc_watermark:
+          type: boolean
+          description: Whether to add AIGC watermark
+        with_propagator_meta:
+          type: boolean
+          description: Whether to add propagator metadata
+        timbre_weights:
+          type: array
+          description: Timbre weights (takes priority over timber_weights)
+          items:
+            $ref: '#/components/schemas/TimbreWeights'
+    T2AAsyncV2AudioSetting:
+      type: object
+      properties:
+        audio_sample_rate:
+          type: integer
+          format: int64
+          description: Audio sample rate
+        bitrate:
+          type: integer
+          format: int64
+          description: Bitrate
+        format:
+          type: string
+          description: Generated audio file format
+        channel:
+          $ref: '#/components/schemas/Channel'
+        force_cbr:
+          type: boolean
+          description: Force CBR encoding
+    T2AAsyncV2Resp:
+      type: object
+      properties:
+        task_id:
+          type: integer
+          format: int64
+          description: Task ID for tracking the async operation
+        task_token:
+          type: string
+          description: Task token for authentication
+        file_id:
+          type: integer
+          format: int64
+          description: Expected file ID for downloading the result
+        usage_characters:
+          type: integer
+          format: int64
+          description: Estimated character consumption
+    TimbreWeights:
+      type: object
+      properties:
+        weight:
+          type: number
+          format: double
+          description: Weight value
+        voice_id:
+          type: string
+          description: Voice ID
+    T2AExtraInfo:
+      type: object
+      properties:
+        usage:
+          $ref: '#/components/schemas/T2AUsage'
+    Error:
+      type: object
+      required:
+      - error
+      - message
+      properties:
+        error:
+          type: integer
+          format: int32
+          description: Error code
+        message:
+          type: string
+          description: Error message
+    T2AAudioSetting:
+      type: object
+      properties:
+        sample_rate:
+          type: integer
+          format: int64
+          description: Sample rate
+        bitrate:
+          type: integer
+          format: int64
+          description: Bitrate
+        format:
+          type: string
+          description: Audio format
+        channel:
+          type: integer
+          format: int64
+          description: Number of audio channels
+        force_cbr:
+          type: boolean
+          description: Force CBR (only effective for MP3 format)
+    T2AVoiceSetting:
+      type: object
+      required:
+      - voice_id
+      properties:
+        speed:
+          type: number
+          format: double
+          description: Speech speed
+        vol:
+          type: number
+          format: double
+          description: Volume level
+        pitch:
+          type: integer
+          format: int64
+          description: Pitch level
+        voice_id:
+          type: string
+          description: Voice ID
+        emotion:
+          type: string
+          description: Emotion setting
+        latex_read:
+          type: boolean
+          description: Whether to read LaTeX
+        add_silence:
+          type: number
+          format: double
+          description: Add silence between sentences
+        english_normalization:
+          type: boolean
+          description: Whether to normalize English text
+        text_normalization:
+          type: boolean
+          description: Whether to normalize text
+    T2AAsyncV2QueryResp:
+      type: object
+      properties:
+        status:
+          type: string
+          description: Task status
+          enum:
+          - success
+          - failed
+          - expired
+          - processing
+        task_id:
+          type: integer
+          format: int64
+          description: Task ID
+        file_id:
+          type: integer
+          format: int64
+          description: File ID for downloading the result
+    T2AAsyncV2VoiceSetting:
+      type: object
+      required:
+      - voice_id
+      properties:
+        voice_id:
+          type: string
+          description: Voice ID
+        speed:
+          type: number
+          format: double
+          description: 'Speech speed (default: 1.0)'
+        vol:
+          type: number
+          format: double
+          description: 'Volume level (default: 1.0)'
+        pitch:
+          type: integer
+          format: int64
+          description: 'Pitch level (default: 0)'
+        emotion:
+          type: string
+          description: Emotion setting
+        english_normalization:
+          type: boolean
+          description: Whether to normalize English text (legacy field)
+        add_silence:
+          type: number
+          format: double
+          description: Add silence between sentences
+        text_normalization:
+          type: boolean
+          description: Whether to normalize text
+    StreamData:
+      type: object
+      properties:
+        audio:
+          type: string
+          description: Generated audio segment in base64 encoding
+        status:
+          type: integer
+          format: int64
+          description: 'Current audio stream status (1: generating, 2: completed)'
+        ced:
+          type: string
+          description: Generation progress in bytes
+        subtitle_file:
+          type: string
+          description: Subtitle file
+        subtitle:
+          $ref: '#/components/schemas/T2ASubtitle'
+    Channel:
+      type: string
+      enum:
+      - Mono
+      - Binaural
+      description: Audio channel configuration
+    T2ASubtitle:
+      type: object
+      properties:
+        text:
+          type: string
+          description: Subtitle text
+        start_time:
+          type: number
+          format: double
+          description: Start time in seconds
+        end_time:
+          type: number
+          format: double
+          description: End time in seconds
+    T2AUsage:
+      type: object
+      properties:
+        total_characters:
+          type: integer
+          format: int64
+          description: Total characters processed
+        total_tokens:
+          type: integer
+          format: int64
+          description: Total tokens used
+    T2AAsyncV2PronunciationDict:
+      type: object
+      properties:
+        tone:
+          type: array
+          description: Tone specification list for specific phrases
+          items:
+            type: string
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT

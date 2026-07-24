@@ -1,0 +1,189 @@
+openapi: 3.1.0
+info:
+  title: MiniMax Files Image API
+  description: MiniMax text generation API with support for chat completion and streaming output
+  license:
+    name: MIT
+  version: 1.0.0
+servers:
+- url: https://api.minimax.io
+security:
+- bearerAuth: []
+tags:
+- name: Image
+paths:
+  /v1/image_generation:
+    post:
+      summary: Image Generation
+      description: Generate images from text prompt
+      operationId: imageGeneration
+      tags:
+      - Image
+      requestBody:
+        description: Image generation request parameters
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ImageGenerationReq'
+        required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ImageGenerationResp'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+components:
+  schemas:
+    ReferType:
+      type: string
+      description: Reference type
+    ImageStyleType:
+      type: string
+      enum:
+      - 漫画
+      - 元气
+      - 中世纪
+      - 水彩
+      description: Image style type
+    ImageStyle:
+      type: object
+      required:
+      - type
+      properties:
+        type:
+          $ref: '#/components/schemas/ImageStyleType'
+        weight:
+          type: number
+          format: double
+          description: Style weight
+    Error:
+      type: object
+      required:
+      - error
+      - message
+      properties:
+        error:
+          type: integer
+          format: int32
+          description: Error code
+        message:
+          type: string
+          description: Error message
+    ImageObject:
+      type: object
+      properties:
+        image_urls:
+          type: array
+          items:
+            type: string
+          description: Generated image URLs
+        image_base64:
+          type: array
+          items:
+            type: string
+          description: Generated images in base64 format
+    ImageDataFormat:
+      type: string
+      enum:
+      - url
+      - base64
+      description: Image data format
+    ImageSubjectReference:
+      type: object
+      required:
+      - type
+      - image_file
+      properties:
+        type:
+          $ref: '#/components/schemas/ReferType'
+        image_file:
+          type: string
+          description: Reference image file
+    ImageGenerationResp:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Trace ID
+        data:
+          $ref: '#/components/schemas/ImageObject'
+        metadata:
+          type: object
+          additionalProperties:
+            type: string
+          description: Additional metadata
+    ImageGenerationReq:
+      type: object
+      required:
+      - prompt
+      - model
+      properties:
+        prompt:
+          type: string
+          description: Text prompt for image generation
+        model:
+          type: string
+          description: Model to use for image generation
+        prompt_optimizer:
+          type: boolean
+          description: Whether to optimize the prompt
+        seed:
+          type: integer
+          format: int64
+          description: Random seed for generation
+        aspect_ratio:
+          type: string
+          description: Aspect ratio of the generated image
+        response_format:
+          $ref: '#/components/schemas/ImageDataFormat'
+        n:
+          type: integer
+          format: int64
+          description: Number of images to generate
+        metadata:
+          type: object
+          additionalProperties:
+            type: string
+          description: Additional metadata
+        subject_reference:
+          type: array
+          items:
+            $ref: '#/components/schemas/ImageSubjectReference'
+          description: Subject reference images
+        style:
+          $ref: '#/components/schemas/ImageStyle'
+        width:
+          type: integer
+          format: int64
+          description: Image width
+        height:
+          type: integer
+          format: int64
+          description: Image height
+        aigc_watermark:
+          type: boolean
+          description: Whether to add AIGC watermark
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
