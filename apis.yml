@@ -6,7 +6,20 @@ description: >-
   MiniMax is a Chinese foundation model company offering full-stack multimodal APIs: text generation (M2.7, M2.5, M2.1,
   M2, M1, Text-01), speech synthesis (Speech 2.8/2.6/2.5), voice cloning, voice design, image generation (Image-01),
   video generation (Hailuo 2.3), and music generation (Music-2.6).
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: paid
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Paid · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/minimax-ai.png
 tags:
   - AI
   - LLM
@@ -20,38 +33,146 @@ created: '2026-05-08'
 modified: '2026-05-19'
 specificationVersion: '0.19'
 apis:
-  - aid: minimax-ai:platform
-    name: MiniMax Platform API
-    description: >-
-      Multimodal generative AI API covering text chat (native + OpenAI-compatible + Anthropic- compatible), image
-      generation, video generation (Hailuo), speech synthesis, voice cloning, voice design, music generation, and file
-      management. International base URL https://api.minimax.io; China base URL https://api.minimaxi.com.
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    humanURL: https://platform.minimax.io/docs/api-reference/api-overview
-    baseURL: https://api.minimax.io
-    tags:
-      - AI
-      - LLM
-      - Chat Completions
-      - Image Generation
-      - Video Generation
-      - Audio
-      - Music
-      - Voice Cloning
-      - Files
-    properties:
-      - type: Documentation
-        url: https://platform.minimax.io/docs/api-reference/api-overview
-      - type: OpenAPI
-        url: openapi/minimax-ai-openapi.json
-      - type: Signup
-        url: https://platform.minimax.io
-      - type: Pricing
-        url: https://platform.minimax.io/docs/pricing/overview
-      - type: RateLimits
-        url: https://platform.minimax.io/docs/guides/rate-limits
-      - type: ChinaBaseURL
-        url: https://api.minimaxi.com
+- aid: minimax-ai:minimax-ai-files-api
+  name: MiniMax Files API
+  description: The Files API from MiniMax — 5 operation(s) for files.
+  humanURL: https://platform.minimax.io/docs/api-reference/api-overview
+  baseURL: https://api.minimax.io
+  tags:
+  - Files
+  properties:
+  - type: OpenAPI
+    url: openapi/minimax-ai-files-api-openapi.yml
+  - type: Documentation
+    url: https://platform.minimax.io/docs/api-reference/api-overview
+  - type: Signup
+    url: https://platform.minimax.io
+  - type: Pricing
+    url: https://platform.minimax.io/docs/pricing/overview
+  - type: RateLimits
+    url: https://platform.minimax.io/docs/guides/rate-limits
+  - type: ChinaBaseURL
+    url: https://api.minimaxi.com
+- aid: minimax-ai:minimax-ai-image-api
+  name: MiniMax Image API
+  description: The Image API from MiniMax — 1 operation(s) for image.
+  humanURL: https://platform.minimax.io/docs/api-reference/api-overview
+  baseURL: https://api.minimax.io
+  tags:
+  - Image
+  properties:
+  - type: OpenAPI
+    url: openapi/minimax-ai-image-api-openapi.yml
+  - type: Documentation
+    url: https://platform.minimax.io/docs/api-reference/api-overview
+  - type: Signup
+    url: https://platform.minimax.io
+  - type: Pricing
+    url: https://platform.minimax.io/docs/pricing/overview
+  - type: RateLimits
+    url: https://platform.minimax.io/docs/guides/rate-limits
+  - type: ChinaBaseURL
+    url: https://api.minimaxi.com
+- aid: minimax-ai:minimax-ai-music-api
+  name: MiniMax Music API
+  description: The Music API from MiniMax — 1 operation(s) for music.
+  humanURL: https://platform.minimax.io/docs/api-reference/api-overview
+  baseURL: https://api.minimax.io
+  tags:
+  - Music
+  properties:
+  - type: OpenAPI
+    url: openapi/minimax-ai-music-api-openapi.yml
+  - type: Documentation
+    url: https://platform.minimax.io/docs/api-reference/api-overview
+  - type: Signup
+    url: https://platform.minimax.io
+  - type: Pricing
+    url: https://platform.minimax.io/docs/pricing/overview
+  - type: RateLimits
+    url: https://platform.minimax.io/docs/guides/rate-limits
+  - type: ChinaBaseURL
+    url: https://api.minimaxi.com
+- aid: minimax-ai:minimax-ai-text-generation-api
+  name: MiniMax Text Generation API
+  description: The Text Generation API from MiniMax — 1 operation(s) for text generation.
+  humanURL: https://platform.minimax.io/docs/api-reference/api-overview
+  baseURL: https://api.minimax.io
+  tags:
+  - Text Generation
+  properties:
+  - type: OpenAPI
+    url: openapi/minimax-ai-text-generation-api-openapi.yml
+  - type: Documentation
+    url: https://platform.minimax.io/docs/api-reference/api-overview
+  - type: Signup
+    url: https://platform.minimax.io
+  - type: Pricing
+    url: https://platform.minimax.io/docs/pricing/overview
+  - type: RateLimits
+    url: https://platform.minimax.io/docs/guides/rate-limits
+  - type: ChinaBaseURL
+    url: https://api.minimaxi.com
+- aid: minimax-ai:minimax-ai-text-to-audio-api
+  name: MiniMax Text to Audio API
+  description: The Text to Audio API from MiniMax — 3 operation(s) for text to audio.
+  humanURL: https://platform.minimax.io/docs/api-reference/api-overview
+  baseURL: https://api.minimax.io
+  tags:
+  - Text to Audio
+  properties:
+  - type: OpenAPI
+    url: openapi/minimax-ai-text-to-audio-api-openapi.yml
+  - type: Documentation
+    url: https://platform.minimax.io/docs/api-reference/api-overview
+  - type: Signup
+    url: https://platform.minimax.io
+  - type: Pricing
+    url: https://platform.minimax.io/docs/pricing/overview
+  - type: RateLimits
+    url: https://platform.minimax.io/docs/guides/rate-limits
+  - type: ChinaBaseURL
+    url: https://api.minimaxi.com
+- aid: minimax-ai:minimax-ai-video-api
+  name: MiniMax Video API
+  description: The Video API from MiniMax — 3 operation(s) for video.
+  humanURL: https://platform.minimax.io/docs/api-reference/api-overview
+  baseURL: https://api.minimax.io
+  tags:
+  - Video
+  properties:
+  - type: OpenAPI
+    url: openapi/minimax-ai-video-api-openapi.yml
+  - type: Documentation
+    url: https://platform.minimax.io/docs/api-reference/api-overview
+  - type: Signup
+    url: https://platform.minimax.io
+  - type: Pricing
+    url: https://platform.minimax.io/docs/pricing/overview
+  - type: RateLimits
+    url: https://platform.minimax.io/docs/guides/rate-limits
+  - type: ChinaBaseURL
+    url: https://api.minimaxi.com
+- aid: minimax-ai:minimax-ai-voice-api
+  name: MiniMax Voice API
+  description: The Voice API from MiniMax — 4 operation(s) for voice.
+  humanURL: https://platform.minimax.io/docs/api-reference/api-overview
+  baseURL: https://api.minimax.io
+  tags:
+  - Voice
+  properties:
+  - type: OpenAPI
+    url: openapi/minimax-ai-voice-api-openapi.yml
+  - type: Documentation
+    url: https://platform.minimax.io/docs/api-reference/api-overview
+  - type: Signup
+    url: https://platform.minimax.io
+  - type: Pricing
+    url: https://platform.minimax.io/docs/pricing/overview
+  - type: RateLimits
+    url: https://platform.minimax.io/docs/guides/rate-limits
+  - type: ChinaBaseURL
+    url: https://api.minimaxi.com
 common:
   - type: AgenticAccess
     url: agentic-access/minimax-ai-agentic-access.yml
