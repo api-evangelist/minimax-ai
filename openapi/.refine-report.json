@@ -1,0 +1,30 @@
+{
+  "provider": "minimax-ai",
+  "sources": [
+    "minimax-ai-files-api-openapi.yml",
+    "minimax-ai-image-api-openapi.yml",
+    "minimax-ai-music-api-openapi.yml",
+    "minimax-ai-text-generation-api-openapi.yml",
+    "minimax-ai-text-to-audio-api-openapi.yml",
+    "minimax-ai-video-api-openapi.yml",
+    "minimax-ai-voice-api-openapi.yml"
+  ],
+  "outputs": [
+    "minimax-ai-files-api-openapi.yml",
+    "minimax-ai-image-api-openapi.yml",
+    "minimax-ai-music-api-openapi.yml",
+    "minimax-ai-text-generation-api-openapi.yml",
+    "minimax-ai-text-to-audio-api-openapi.yml",
+    "minimax-ai-video-api-openapi.yml",
+    "minimax-ai-voice-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [
+    "minimax-ai-music-api-openapi.yml: dangling $ref: #/components/schemas/AudioSetting",
+    "minimax-ai-video-api-openapi.yml: dangling $ref: #/components/schemas/VideoTemplateGenerationReq",
+    "minimax-ai-video-api-openapi.yml: dangling $ref: #/components/schemas/VideoTemplateGenerationResp"
+  ],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
