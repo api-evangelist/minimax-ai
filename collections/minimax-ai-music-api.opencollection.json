@@ -1,0 +1,39 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "MiniMax Files Music API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Music",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Music Generation",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.minimax.io/v1/music_generation",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Generate music from text prompt"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

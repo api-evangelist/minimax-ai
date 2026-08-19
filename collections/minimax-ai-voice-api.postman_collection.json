@@ -1,0 +1,1069 @@
+{
+  "item": [
+    {
+      "id": "d1f091ab-0eae-4889-81d9-c0c8259a2432",
+      "name": "Voice",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "0e929aaf-39b0-487a-938f-7bc982c6ca97",
+          "name": "Voice Clone",
+          "request": {
+            "name": "Voice Clone",
+            "description": {
+              "content": "Create a voice clone from an audio file",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "voice_clone"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"voice_id\": \"<string>\",\n  \"file_id\": \"<long>\",\n  \"output_format\": \"<string>\",\n  \"need_noise_reduction\": \"<boolean>\",\n  \"text\": \"<string>\",\n  \"model\": \"<string>\",\n  \"text_validation\": \"<string>\",\n  \"accuracy\": \"<double>\",\n  \"need_volume_normalization\": \"<boolean>\",\n  \"language_boost\": \"<string>\",\n  \"clone_prompt\": {\n    \"prompt_audio\": \"<long>\",\n    \"prompt_text\": \"<string>\"\n  },\n  \"aigc_watermark\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "c39c4be1-3bc0-4dae-9b88-9452f4254edc",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "voice_clone"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"voice_id\": \"<string>\",\n  \"file_id\": \"<long>\",\n  \"output_format\": \"<string>\",\n  \"need_noise_reduction\": \"<boolean>\",\n  \"text\": \"<string>\",\n  \"model\": \"<string>\",\n  \"text_validation\": \"<string>\",\n  \"accuracy\": \"<double>\",\n  \"need_volume_normalization\": \"<boolean>\",\n  \"language_boost\": \"<string>\",\n  \"clone_prompt\": {\n    \"prompt_audio\": 3804,\n    \"prompt_text\": \"string\"\n  },\n  \"aigc_watermark\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"input_sensitive\": false,\n  \"input_sensitive_type\": \"Abuse\",\n  \"demo_audio\": \"string\",\n  \"trace_id\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4677c3f7-bd95-45ae-b3f1-f5fe86ac296c",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "voice_clone"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"voice_id\": \"<string>\",\n  \"file_id\": \"<long>\",\n  \"output_format\": \"<string>\",\n  \"need_noise_reduction\": \"<boolean>\",\n  \"text\": \"<string>\",\n  \"model\": \"<string>\",\n  \"text_validation\": \"<string>\",\n  \"accuracy\": \"<double>\",\n  \"need_volume_normalization\": \"<boolean>\",\n  \"language_boost\": \"<string>\",\n  \"clone_prompt\": {\n    \"prompt_audio\": 3804,\n    \"prompt_text\": \"string\"\n  },\n  \"aigc_watermark\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": 9195,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f95e4389-5bd2-43ea-900a-ff69b8c892ca",
+              "name": "Authentication failed",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "voice_clone"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"voice_id\": \"<string>\",\n  \"file_id\": \"<long>\",\n  \"output_format\": \"<string>\",\n  \"need_noise_reduction\": \"<boolean>\",\n  \"text\": \"<string>\",\n  \"model\": \"<string>\",\n  \"text_validation\": \"<string>\",\n  \"accuracy\": \"<double>\",\n  \"need_volume_normalization\": \"<boolean>\",\n  \"language_boost\": \"<string>\",\n  \"clone_prompt\": {\n    \"prompt_audio\": 3804,\n    \"prompt_text\": \"string\"\n  },\n  \"aigc_watermark\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": 9195,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f020507e-9b68-4475-897e-44fd955e3b36",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "voice_clone"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"voice_id\": \"<string>\",\n  \"file_id\": \"<long>\",\n  \"output_format\": \"<string>\",\n  \"need_noise_reduction\": \"<boolean>\",\n  \"text\": \"<string>\",\n  \"model\": \"<string>\",\n  \"text_validation\": \"<string>\",\n  \"accuracy\": \"<double>\",\n  \"need_volume_normalization\": \"<boolean>\",\n  \"language_boost\": \"<string>\",\n  \"clone_prompt\": {\n    \"prompt_audio\": 3804,\n    \"prompt_text\": \"string\"\n  },\n  \"aigc_watermark\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": 9195,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e3d1a6c6-39d2-4ddc-b21e-cea78c17bc8d",
+          "name": "Voice Design",
+          "request": {
+            "name": "Voice Design",
+            "description": {
+              "content": "Generate voice design based on text prompt",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "voice_design"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"prompt\": \"<string>\",\n  \"preview_text\": \"<string>\",\n  \"voice_id\": \"<string>\",\n  \"aigc_watermark\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "d30152ad-3d08-4bbf-bdc4-014d98cb188d",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "voice_design"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"prompt\": \"<string>\",\n  \"preview_text\": \"<string>\",\n  \"voice_id\": \"<string>\",\n  \"aigc_watermark\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"trial_audio\": \"string\",\n  \"voice_id\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6925936e-a5af-4bbc-9c25-b4f7e8eb0265",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "voice_design"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"prompt\": \"<string>\",\n  \"preview_text\": \"<string>\",\n  \"voice_id\": \"<string>\",\n  \"aigc_watermark\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": 9195,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "17f4ee2e-b17a-47f0-b4c2-eaba61b0ab28",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "voice_design"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"prompt\": \"<string>\",\n  \"preview_text\": \"<string>\",\n  \"voice_id\": \"<string>\",\n  \"aigc_watermark\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": 9195,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c8fb04f7-1c18-4085-83f8-588aecdd6551",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "voice_design"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"prompt\": \"<string>\",\n  \"preview_text\": \"<string>\",\n  \"voice_id\": \"<string>\",\n  \"aigc_watermark\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": 9195,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f076cd40-bbc4-49bc-94a8-d7d192308f34",
+          "name": "Get Voice",
+          "request": {
+            "name": "Get Voice",
+            "description": {
+              "content": "Get available voices by type",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "get_voice"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"voice_type\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "93c8f6c8-828f-4f99-9912-3263a90ae073",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "get_voice"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"voice_type\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"system_voice\": [\n    {\n      \"voice_id\": \"string\",\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"gender\": \"string\",\n      \"language\": \"string\",\n      \"age\": \"string\",\n      \"style\": \"string\",\n      \"created_at\": 404,\n      \"updated_at\": 4620\n    },\n    {\n      \"voice_id\": \"string\",\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"gender\": \"string\",\n      \"language\": \"string\",\n      \"age\": \"string\",\n      \"style\": \"string\",\n      \"created_at\": 3206,\n      \"updated_at\": 2067\n    }\n  ],\n  \"voice_cloning\": [\n    {\n      \"voice_id\": \"string\",\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"gender\": \"string\",\n      \"language\": \"string\",\n      \"age\": \"string\",\n      \"style\": \"string\",\n      \"created_at\": 5175,\n      \"updated_at\": 5774\n    },\n    {\n      \"voice_id\": \"string\",\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"gender\": \"string\",\n      \"language\": \"string\",\n      \"age\": \"string\",\n      \"style\": \"string\",\n      \"created_at\": 6712,\n      \"updated_at\": 430\n    }\n  ],\n  \"voice_generation\": [\n    {\n      \"voice_id\": \"string\",\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"gender\": \"string\",\n      \"language\": \"string\",\n      \"age\": \"string\",\n      \"style\": \"string\",\n      \"created_at\": 3593,\n      \"updated_at\": 9642\n    },\n    {\n      \"voice_id\": \"string\",\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"gender\": \"string\",\n      \"language\": \"string\",\n      \"age\": \"string\",\n      \"style\": \"string\",\n      \"created_at\": 9520,\n      \"updated_at\": 7711\n    }\n  ],\n  \"music_generation\": [\n    {\n      \"voice_id\": \"string\",\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"gender\": \"string\",\n      \"language\": \"string\",\n      \"age\": \"string\",\n      \"style\": \"string\",\n      \"created_at\": 5508,\n      \"updated_at\": 3616\n    },\n    {\n      \"voice_id\": \"string\",\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"gender\": \"string\",\n      \"language\": \"string\",\n      \"age\": \"string\",\n      \"style\": \"string\",\n      \"created_at\": 4403,\n      \"updated_at\": 6911\n    }\n  ],\n  \"voice_slots\": [\n    {\n      \"voice_id\": \"string\",\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"gender\": \"string\",\n      \"language\": \"string\",\n      \"age\": \"string\",\n      \"style\": \"string\",\n      \"created_at\": 877,\n      \"updated_at\": 8154\n    },\n    {\n      \"voice_id\": \"string\",\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"gender\": \"string\",\n      \"language\": \"string\",\n      \"age\": \"string\",\n      \"style\": \"string\",\n      \"created_at\": 8075,\n      \"updated_at\": 3237\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "79f5824b-a514-4fcb-b110-1bbbb5c55fb5",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "get_voice"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"voice_type\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": 9195,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3648e053-02ff-4d4f-af0a-f5f73e9a2ed0",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "get_voice"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"voice_type\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": 9195,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1ad90336-8363-4c32-9345-0ba3f22ba46d",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "get_voice"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"voice_type\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": 9195,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c8cfab01-372d-4a30-a73f-9e2985713272",
+          "name": "Delete Voice",
+          "request": {
+            "name": "Delete Voice",
+            "description": {
+              "content": "Delete a voice by ID and type",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "delete_voice"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"voice_id\": \"<string>\",\n  \"voice_type\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "1103ef58-8013-4895-b0f5-41bbcaa98dbc",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "delete_voice"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"voice_id\": \"<string>\",\n  \"voice_type\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"voice_id\": \"string\",\n  \"description\": [\n    \"string\",\n    \"string\"\n  ],\n  \"created_time\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7d91c0ed-3708-4a72-b7a3-e92e66fa136c",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "delete_voice"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"voice_id\": \"<string>\",\n  \"voice_type\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": 9195,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4f4b6716-2a4b-4644-b509-e973863f1298",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "delete_voice"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"voice_id\": \"<string>\",\n  \"voice_type\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": 9195,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ef150ef3-3da2-4d44-9841-90df39543b17",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "delete_voice"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"voice_id\": \"<string>\",\n  \"voice_type\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": 9195,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.minimax.io",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "9fbc2bae-3cd4-4f8a-ac1d-a40dc0bf3b1b",
+    "name": "MiniMax Files Voice API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "MiniMax text generation API with support for chat completion and streaming output",
+      "type": "text/plain"
+    }
+  }
+}

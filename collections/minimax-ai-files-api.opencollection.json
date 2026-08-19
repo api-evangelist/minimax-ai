@@ -1,0 +1,174 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "MiniMax Files API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Files",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Upload File",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.minimax.io/v1/files/upload",
+            "params": [
+              {
+                "name": "GroupId",
+                "value": "",
+                "type": "query",
+                "description": "Group ID"
+              }
+            ],
+            "body": {
+              "type": "multipart-form",
+              "data": [
+                {
+                  "name": "purpose",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "file",
+                  "type": "text",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Upload a file to the platform for processing"
+        },
+        {
+          "info": {
+            "name": "Retrieve File",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.minimax.io/v1/files/retrieve",
+            "params": [
+              {
+                "name": "GroupId",
+                "value": "",
+                "type": "query",
+                "description": "Group ID"
+              },
+              {
+                "name": "file_id",
+                "value": "",
+                "type": "query",
+                "description": "File ID to retrieve"
+              }
+            ]
+          },
+          "docs": "Retrieve file information by ID"
+        },
+        {
+          "info": {
+            "name": "List Files",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.minimax.io/v1/files/list",
+            "params": [
+              {
+                "name": "GroupId",
+                "value": "",
+                "type": "query",
+                "description": "Group ID"
+              },
+              {
+                "name": "purpose",
+                "value": "",
+                "type": "query",
+                "description": "Filter by file purpose"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Page number for pagination"
+              },
+              {
+                "name": "size",
+                "value": "",
+                "type": "query",
+                "description": "Number of files per page"
+              },
+              {
+                "name": "after_file_id",
+                "value": "",
+                "type": "query",
+                "description": "File ID to start listing after"
+              }
+            ]
+          },
+          "docs": "List files with optional filtering and pagination"
+        },
+        {
+          "info": {
+            "name": "Retrieve File Content",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.minimax.io/v1/files/retrieve_content",
+            "params": [
+              {
+                "name": "GroupId",
+                "value": "",
+                "type": "query",
+                "description": "Group ID"
+              },
+              {
+                "name": "file_id",
+                "value": "",
+                "type": "query",
+                "description": "File ID to retrieve content"
+              }
+            ]
+          },
+          "docs": "Retrieve file content by ID"
+        },
+        {
+          "info": {
+            "name": "Delete File",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.minimax.io/v1/files/delete",
+            "params": [
+              {
+                "name": "GroupId",
+                "value": "",
+                "type": "query",
+                "description": "Group ID"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Delete a file by ID"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

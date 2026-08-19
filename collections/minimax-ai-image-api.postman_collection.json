@@ -1,0 +1,298 @@
+{
+  "item": [
+    {
+      "id": "c4f8c921-fae4-425a-ba41-14cb626bc759",
+      "name": "Image",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "37f57eab-01d1-49f2-96d8-e1e0fee3998c",
+          "name": "Image Generation",
+          "request": {
+            "name": "Image Generation",
+            "description": {
+              "content": "Generate images from text prompt",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "image_generation"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"prompt\": \"<string>\",\n  \"model\": \"<string>\",\n  \"prompt_optimizer\": \"<boolean>\",\n  \"seed\": \"<long>\",\n  \"aspect_ratio\": \"<string>\",\n  \"response_format\": \"<string>\",\n  \"n\": \"<long>\",\n  \"metadata\": {\n    \"key_0\": \"<string>\"\n  },\n  \"subject_reference\": [\n    {\n      \"type\": \"<string>\",\n      \"image_file\": \"<string>\"\n    },\n    {\n      \"type\": \"<string>\",\n      \"image_file\": \"<string>\"\n    }\n  ],\n  \"style\": {\n    \"type\": \"<string>\",\n    \"weight\": \"<double>\"\n  },\n  \"width\": \"<long>\",\n  \"height\": \"<long>\",\n  \"aigc_watermark\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "c0160f20-1bab-42ca-aea8-57b3d6ee5c06",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "image_generation"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"prompt\": \"<string>\",\n  \"model\": \"<string>\",\n  \"prompt_optimizer\": \"<boolean>\",\n  \"seed\": \"<long>\",\n  \"aspect_ratio\": \"<string>\",\n  \"response_format\": \"base64\",\n  \"n\": \"<long>\",\n  \"metadata\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  },\n  \"subject_reference\": [\n    {\n      \"type\": \"string\",\n      \"image_file\": \"string\"\n    },\n    {\n      \"type\": \"string\",\n      \"image_file\": \"string\"\n    }\n  ],\n  \"style\": {\n    \"type\": \"水彩\",\n    \"weight\": 2764.0818238134834\n  },\n  \"width\": \"<long>\",\n  \"height\": \"<long>\",\n  \"aigc_watermark\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"data\": {\n    \"image_urls\": [\n      \"string\",\n      \"string\"\n    ],\n    \"image_base64\": [\n      \"string\",\n      \"string\"\n    ]\n  },\n  \"metadata\": {\n    \"key_0\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "2355b387-edad-48b2-b6a8-3c20b34e0324",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "image_generation"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"prompt\": \"<string>\",\n  \"model\": \"<string>\",\n  \"prompt_optimizer\": \"<boolean>\",\n  \"seed\": \"<long>\",\n  \"aspect_ratio\": \"<string>\",\n  \"response_format\": \"base64\",\n  \"n\": \"<long>\",\n  \"metadata\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  },\n  \"subject_reference\": [\n    {\n      \"type\": \"string\",\n      \"image_file\": \"string\"\n    },\n    {\n      \"type\": \"string\",\n      \"image_file\": \"string\"\n    }\n  ],\n  \"style\": {\n    \"type\": \"水彩\",\n    \"weight\": 2764.0818238134834\n  },\n  \"width\": \"<long>\",\n  \"height\": \"<long>\",\n  \"aigc_watermark\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": 2667,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "32ce067e-1c91-4ce2-907b-6012c4ad9367",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "image_generation"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"prompt\": \"<string>\",\n  \"model\": \"<string>\",\n  \"prompt_optimizer\": \"<boolean>\",\n  \"seed\": \"<long>\",\n  \"aspect_ratio\": \"<string>\",\n  \"response_format\": \"base64\",\n  \"n\": \"<long>\",\n  \"metadata\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  },\n  \"subject_reference\": [\n    {\n      \"type\": \"string\",\n      \"image_file\": \"string\"\n    },\n    {\n      \"type\": \"string\",\n      \"image_file\": \"string\"\n    }\n  ],\n  \"style\": {\n    \"type\": \"水彩\",\n    \"weight\": 2764.0818238134834\n  },\n  \"width\": \"<long>\",\n  \"height\": \"<long>\",\n  \"aigc_watermark\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": 2667,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "004551ad-d692-4e85-bf7c-dd83f5507b60",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "image_generation"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"prompt\": \"<string>\",\n  \"model\": \"<string>\",\n  \"prompt_optimizer\": \"<boolean>\",\n  \"seed\": \"<long>\",\n  \"aspect_ratio\": \"<string>\",\n  \"response_format\": \"base64\",\n  \"n\": \"<long>\",\n  \"metadata\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  },\n  \"subject_reference\": [\n    {\n      \"type\": \"string\",\n      \"image_file\": \"string\"\n    },\n    {\n      \"type\": \"string\",\n      \"image_file\": \"string\"\n    }\n  ],\n  \"style\": {\n    \"type\": \"水彩\",\n    \"weight\": 2764.0818238134834\n  },\n  \"width\": \"<long>\",\n  \"height\": \"<long>\",\n  \"aigc_watermark\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": 2667,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.minimax.io",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "05302871-9273-48dc-bc18-bee1855e5b2b",
+    "name": "MiniMax Files Image API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "MiniMax text generation API with support for chat completion and streaming output",
+      "type": "text/plain"
+    }
+  }
+}

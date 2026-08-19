@@ -1,0 +1,69 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "MiniMax Files Text to Audio API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Text to Audio",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Text to Audio V2",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.minimax.io/v1/t2a_v2",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Convert text to audio using MiniMax T2A V2 API with support for streaming and non-streaming output"
+        },
+        {
+          "info": {
+            "name": "Text to Audio Async V2",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.minimax.io/v1/t2a_async_v2",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Convert text to audio asynchronously using MiniMax T2A Async V2 API with support for long text processing"
+        },
+        {
+          "info": {
+            "name": "Query T2A Async V2 Task Status",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.minimax.io/v1/query/t2a_async_query_v2",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Query the status of an asynchronous text-to-audio task"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

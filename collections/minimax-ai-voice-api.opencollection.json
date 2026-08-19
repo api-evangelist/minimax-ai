@@ -1,0 +1,84 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "MiniMax Files Voice API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Voice",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Voice Clone",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.minimax.io/v1/voice_clone",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a voice clone from an audio file"
+        },
+        {
+          "info": {
+            "name": "Voice Design",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.minimax.io/v1/voice_design",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Generate voice design based on text prompt"
+        },
+        {
+          "info": {
+            "name": "Get Voice",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.minimax.io/v1/get_voice",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Get available voices by type"
+        },
+        {
+          "info": {
+            "name": "Delete Voice",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.minimax.io/v1/delete_voice",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Delete a voice by ID and type"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

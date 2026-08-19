@@ -1,0 +1,817 @@
+{
+  "item": [
+    {
+      "id": "6bcbe11f-0887-4433-b9b9-336e87609b34",
+      "name": "Text to Audio",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "ea7dba8d-2559-4165-a0fc-0e2f4e2f0474",
+          "name": "Text to Audio V2",
+          "request": {
+            "name": "Text to Audio V2",
+            "description": {
+              "content": "Convert text to audio using MiniMax T2A V2 API with support for streaming and non-streaming output",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "t2a_v2"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"model\": \"<string>\",\n  \"text\": \"<string>\",\n  \"voice_setting\": {\n    \"voice_id\": \"<string>\",\n    \"speed\": \"<double>\",\n    \"vol\": \"<double>\",\n    \"pitch\": \"<long>\",\n    \"emotion\": \"<string>\",\n    \"latex_read\": \"<boolean>\",\n    \"add_silence\": \"<double>\",\n    \"english_normalization\": \"<boolean>\",\n    \"text_normalization\": \"<boolean>\"\n  },\n  \"audio_setting\": {\n    \"sample_rate\": \"<long>\",\n    \"bitrate\": \"<long>\",\n    \"format\": \"<string>\",\n    \"channel\": \"<long>\",\n    \"force_cbr\": \"<boolean>\"\n  },\n  \"pronunciation_dict\": {\n    \"tone\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"phonetic\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"timber_weights\": [\n    {\n      \"weight\": \"<double>\",\n      \"voice_id\": \"<string>\"\n    },\n    {\n      \"weight\": \"<double>\",\n      \"voice_id\": \"<string>\"\n    }\n  ],\n  \"speed_rate\": \"<long>\",\n  \"stream\": \"<boolean>\",\n  \"language_boost\": \"<string>\",\n  \"subtitle_enable\": \"<boolean>\",\n  \"output_format\": \"<string>\",\n  \"voice_modify\": {\n    \"modify_type\": \"<string>\",\n    \"modify_value\": \"<double>\"\n  },\n  \"stream_options\": {\n    \"include_usage\": \"<boolean>\"\n  },\n  \"subtitle_type\": \"<string>\",\n  \"aigc_watermark\": \"<boolean>\",\n  \"with_propagator_meta\": \"<boolean>\",\n  \"timbre_weights\": [\n    {\n      \"weight\": \"<double>\",\n      \"voice_id\": \"<string>\"\n    },\n    {\n      \"weight\": \"<double>\",\n      \"voice_id\": \"<string>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "b7f8e60a-f67f-4818-8d80-850d4353380e",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "t2a_v2"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"model\": \"<string>\",\n  \"text\": \"<string>\",\n  \"voice_setting\": {\n    \"voice_id\": \"string\",\n    \"speed\": 7176.968821157168,\n    \"vol\": 2599.032265160983,\n    \"pitch\": 3240,\n    \"emotion\": \"string\",\n    \"latex_read\": false,\n    \"add_silence\": 7595.296699520335,\n    \"english_normalization\": false,\n    \"text_normalization\": true\n  },\n  \"audio_setting\": {\n    \"sample_rate\": 5864,\n    \"bitrate\": 28,\n    \"format\": \"string\",\n    \"channel\": 3570,\n    \"force_cbr\": false\n  },\n  \"pronunciation_dict\": {\n    \"tone\": [\n      \"string\",\n      \"string\"\n    ],\n    \"phonetic\": [\n      \"string\",\n      \"string\"\n    ]\n  },\n  \"timber_weights\": [\n    {\n      \"weight\": 7925.995904317312,\n      \"voice_id\": \"string\"\n    },\n    {\n      \"weight\": 8879.604737711903,\n      \"voice_id\": \"string\"\n    }\n  ],\n  \"speed_rate\": \"<long>\",\n  \"stream\": \"<boolean>\",\n  \"language_boost\": \"<string>\",\n  \"subtitle_enable\": \"<boolean>\",\n  \"output_format\": \"<string>\",\n  \"voice_modify\": {\n    \"modify_type\": \"string\",\n    \"modify_value\": 5556.042237593255\n  },\n  \"stream_options\": {\n    \"include_usage\": false\n  },\n  \"subtitle_type\": \"<string>\",\n  \"aigc_watermark\": \"<boolean>\",\n  \"with_propagator_meta\": \"<boolean>\",\n  \"timbre_weights\": [\n    {\n      \"weight\": 3370.0637586960356,\n      \"voice_id\": \"string\"\n    },\n    {\n      \"weight\": 6094.659090660926,\n      \"voice_id\": \"string\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"audio\": \"string\",\n    \"status\": 2150,\n    \"ced\": \"string\",\n    \"subtitle_file\": \"string\",\n    \"subtitle\": {\n      \"text\": \"string\",\n      \"start_time\": 4140.7791097185,\n      \"end_time\": 7242.727735850009\n    }\n  },\n  \"extra_info\": {\n    \"usage\": {\n      \"total_characters\": 632,\n      \"total_tokens\": 8169\n    }\n  },\n  \"trace_id\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "76a179b7-e940-44a5-b98f-1e482f6c44e8",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "t2a_v2"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"model\": \"<string>\",\n  \"text\": \"<string>\",\n  \"voice_setting\": {\n    \"voice_id\": \"string\",\n    \"speed\": 7176.968821157168,\n    \"vol\": 2599.032265160983,\n    \"pitch\": 3240,\n    \"emotion\": \"string\",\n    \"latex_read\": false,\n    \"add_silence\": 7595.296699520335,\n    \"english_normalization\": false,\n    \"text_normalization\": true\n  },\n  \"audio_setting\": {\n    \"sample_rate\": 5864,\n    \"bitrate\": 28,\n    \"format\": \"string\",\n    \"channel\": 3570,\n    \"force_cbr\": false\n  },\n  \"pronunciation_dict\": {\n    \"tone\": [\n      \"string\",\n      \"string\"\n    ],\n    \"phonetic\": [\n      \"string\",\n      \"string\"\n    ]\n  },\n  \"timber_weights\": [\n    {\n      \"weight\": 7925.995904317312,\n      \"voice_id\": \"string\"\n    },\n    {\n      \"weight\": 8879.604737711903,\n      \"voice_id\": \"string\"\n    }\n  ],\n  \"speed_rate\": \"<long>\",\n  \"stream\": \"<boolean>\",\n  \"language_boost\": \"<string>\",\n  \"subtitle_enable\": \"<boolean>\",\n  \"output_format\": \"<string>\",\n  \"voice_modify\": {\n    \"modify_type\": \"string\",\n    \"modify_value\": 5556.042237593255\n  },\n  \"stream_options\": {\n    \"include_usage\": false\n  },\n  \"subtitle_type\": \"<string>\",\n  \"aigc_watermark\": \"<boolean>\",\n  \"with_propagator_meta\": \"<boolean>\",\n  \"timbre_weights\": [\n    {\n      \"weight\": 3370.0637586960356,\n      \"voice_id\": \"string\"\n    },\n    {\n      \"weight\": 6094.659090660926,\n      \"voice_id\": \"string\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": 8862,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "45e3d8d9-0b06-420f-93c8-cb84edba9621",
+              "name": "Authentication failed",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "t2a_v2"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"model\": \"<string>\",\n  \"text\": \"<string>\",\n  \"voice_setting\": {\n    \"voice_id\": \"string\",\n    \"speed\": 7176.968821157168,\n    \"vol\": 2599.032265160983,\n    \"pitch\": 3240,\n    \"emotion\": \"string\",\n    \"latex_read\": false,\n    \"add_silence\": 7595.296699520335,\n    \"english_normalization\": false,\n    \"text_normalization\": true\n  },\n  \"audio_setting\": {\n    \"sample_rate\": 5864,\n    \"bitrate\": 28,\n    \"format\": \"string\",\n    \"channel\": 3570,\n    \"force_cbr\": false\n  },\n  \"pronunciation_dict\": {\n    \"tone\": [\n      \"string\",\n      \"string\"\n    ],\n    \"phonetic\": [\n      \"string\",\n      \"string\"\n    ]\n  },\n  \"timber_weights\": [\n    {\n      \"weight\": 7925.995904317312,\n      \"voice_id\": \"string\"\n    },\n    {\n      \"weight\": 8879.604737711903,\n      \"voice_id\": \"string\"\n    }\n  ],\n  \"speed_rate\": \"<long>\",\n  \"stream\": \"<boolean>\",\n  \"language_boost\": \"<string>\",\n  \"subtitle_enable\": \"<boolean>\",\n  \"output_format\": \"<string>\",\n  \"voice_modify\": {\n    \"modify_type\": \"string\",\n    \"modify_value\": 5556.042237593255\n  },\n  \"stream_options\": {\n    \"include_usage\": false\n  },\n  \"subtitle_type\": \"<string>\",\n  \"aigc_watermark\": \"<boolean>\",\n  \"with_propagator_meta\": \"<boolean>\",\n  \"timbre_weights\": [\n    {\n      \"weight\": 3370.0637586960356,\n      \"voice_id\": \"string\"\n    },\n    {\n      \"weight\": 6094.659090660926,\n      \"voice_id\": \"string\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": 8862,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5d51c895-6fb2-4658-a115-d6ce969f1102",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "t2a_v2"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"model\": \"<string>\",\n  \"text\": \"<string>\",\n  \"voice_setting\": {\n    \"voice_id\": \"string\",\n    \"speed\": 7176.968821157168,\n    \"vol\": 2599.032265160983,\n    \"pitch\": 3240,\n    \"emotion\": \"string\",\n    \"latex_read\": false,\n    \"add_silence\": 7595.296699520335,\n    \"english_normalization\": false,\n    \"text_normalization\": true\n  },\n  \"audio_setting\": {\n    \"sample_rate\": 5864,\n    \"bitrate\": 28,\n    \"format\": \"string\",\n    \"channel\": 3570,\n    \"force_cbr\": false\n  },\n  \"pronunciation_dict\": {\n    \"tone\": [\n      \"string\",\n      \"string\"\n    ],\n    \"phonetic\": [\n      \"string\",\n      \"string\"\n    ]\n  },\n  \"timber_weights\": [\n    {\n      \"weight\": 7925.995904317312,\n      \"voice_id\": \"string\"\n    },\n    {\n      \"weight\": 8879.604737711903,\n      \"voice_id\": \"string\"\n    }\n  ],\n  \"speed_rate\": \"<long>\",\n  \"stream\": \"<boolean>\",\n  \"language_boost\": \"<string>\",\n  \"subtitle_enable\": \"<boolean>\",\n  \"output_format\": \"<string>\",\n  \"voice_modify\": {\n    \"modify_type\": \"string\",\n    \"modify_value\": 5556.042237593255\n  },\n  \"stream_options\": {\n    \"include_usage\": false\n  },\n  \"subtitle_type\": \"<string>\",\n  \"aigc_watermark\": \"<boolean>\",\n  \"with_propagator_meta\": \"<boolean>\",\n  \"timbre_weights\": [\n    {\n      \"weight\": 3370.0637586960356,\n      \"voice_id\": \"string\"\n    },\n    {\n      \"weight\": 6094.659090660926,\n      \"voice_id\": \"string\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": 8862,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e294db4b-881c-4e44-a37a-1222671e9576",
+          "name": "Text to Audio Async V2",
+          "request": {
+            "name": "Text to Audio Async V2",
+            "description": {
+              "content": "Convert text to audio asynchronously using MiniMax T2A Async V2 API with support for long text processing",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "t2a_async_v2"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"model\": \"<string>\",\n  \"voice_setting\": {\n    \"voice_id\": \"<string>\",\n    \"speed\": \"<double>\",\n    \"vol\": \"<double>\",\n    \"pitch\": \"<long>\",\n    \"emotion\": \"<string>\",\n    \"english_normalization\": \"<boolean>\",\n    \"add_silence\": \"<double>\",\n    \"text_normalization\": \"<boolean>\"\n  },\n  \"text\": \"<string>\",\n  \"text_file_id\": \"<long>\",\n  \"audio_setting\": {\n    \"audio_sample_rate\": \"<long>\",\n    \"bitrate\": \"<long>\",\n    \"format\": \"<string>\",\n    \"channel\": \"<string>\",\n    \"force_cbr\": \"<boolean>\"\n  },\n  \"pronunciation_dict\": {\n    \"tone\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"language_boost\": \"<string>\",\n  \"callback_url\": \"<string>\",\n  \"voice_modify\": {\n    \"modify_type\": \"<string>\",\n    \"modify_value\": \"<double>\"\n  },\n  \"aigc_watermark\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "c4f4e5ab-4c01-4675-a880-9f6f04ee577c",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "t2a_async_v2"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"model\": \"<string>\",\n  \"voice_setting\": {\n    \"voice_id\": \"string\",\n    \"speed\": 9375.62107948493,\n    \"vol\": 9084.688608826815,\n    \"pitch\": 1127,\n    \"emotion\": \"string\",\n    \"english_normalization\": false,\n    \"add_silence\": 1897.602200601013,\n    \"text_normalization\": false\n  },\n  \"text\": \"<string>\",\n  \"text_file_id\": \"<long>\",\n  \"audio_setting\": {\n    \"audio_sample_rate\": 898,\n    \"bitrate\": 3733,\n    \"format\": \"string\",\n    \"channel\": \"Mono\",\n    \"force_cbr\": true\n  },\n  \"pronunciation_dict\": {\n    \"tone\": [\n      \"string\",\n      \"string\"\n    ]\n  },\n  \"language_boost\": \"<string>\",\n  \"callback_url\": \"<string>\",\n  \"voice_modify\": {\n    \"modify_type\": \"string\",\n    \"modify_value\": 570.1361839602171\n  },\n  \"aigc_watermark\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"task_id\": 4709,\n  \"task_token\": \"string\",\n  \"file_id\": 2161,\n  \"usage_characters\": 8212\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3b34f5e3-86d8-4c59-b549-a0940bc1c111",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "t2a_async_v2"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"model\": \"<string>\",\n  \"voice_setting\": {\n    \"voice_id\": \"string\",\n    \"speed\": 9375.62107948493,\n    \"vol\": 9084.688608826815,\n    \"pitch\": 1127,\n    \"emotion\": \"string\",\n    \"english_normalization\": false,\n    \"add_silence\": 1897.602200601013,\n    \"text_normalization\": false\n  },\n  \"text\": \"<string>\",\n  \"text_file_id\": \"<long>\",\n  \"audio_setting\": {\n    \"audio_sample_rate\": 898,\n    \"bitrate\": 3733,\n    \"format\": \"string\",\n    \"channel\": \"Mono\",\n    \"force_cbr\": true\n  },\n  \"pronunciation_dict\": {\n    \"tone\": [\n      \"string\",\n      \"string\"\n    ]\n  },\n  \"language_boost\": \"<string>\",\n  \"callback_url\": \"<string>\",\n  \"voice_modify\": {\n    \"modify_type\": \"string\",\n    \"modify_value\": 570.1361839602171\n  },\n  \"aigc_watermark\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": 8862,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "be1a3429-7f1b-4b2b-80d2-de653900ae59",
+              "name": "Authentication failed",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "t2a_async_v2"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"model\": \"<string>\",\n  \"voice_setting\": {\n    \"voice_id\": \"string\",\n    \"speed\": 9375.62107948493,\n    \"vol\": 9084.688608826815,\n    \"pitch\": 1127,\n    \"emotion\": \"string\",\n    \"english_normalization\": false,\n    \"add_silence\": 1897.602200601013,\n    \"text_normalization\": false\n  },\n  \"text\": \"<string>\",\n  \"text_file_id\": \"<long>\",\n  \"audio_setting\": {\n    \"audio_sample_rate\": 898,\n    \"bitrate\": 3733,\n    \"format\": \"string\",\n    \"channel\": \"Mono\",\n    \"force_cbr\": true\n  },\n  \"pronunciation_dict\": {\n    \"tone\": [\n      \"string\",\n      \"string\"\n    ]\n  },\n  \"language_boost\": \"<string>\",\n  \"callback_url\": \"<string>\",\n  \"voice_modify\": {\n    \"modify_type\": \"string\",\n    \"modify_value\": 570.1361839602171\n  },\n  \"aigc_watermark\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": 8862,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "062c2365-d9f8-47cb-a95b-8a779054531d",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "t2a_async_v2"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"model\": \"<string>\",\n  \"voice_setting\": {\n    \"voice_id\": \"string\",\n    \"speed\": 9375.62107948493,\n    \"vol\": 9084.688608826815,\n    \"pitch\": 1127,\n    \"emotion\": \"string\",\n    \"english_normalization\": false,\n    \"add_silence\": 1897.602200601013,\n    \"text_normalization\": false\n  },\n  \"text\": \"<string>\",\n  \"text_file_id\": \"<long>\",\n  \"audio_setting\": {\n    \"audio_sample_rate\": 898,\n    \"bitrate\": 3733,\n    \"format\": \"string\",\n    \"channel\": \"Mono\",\n    \"force_cbr\": true\n  },\n  \"pronunciation_dict\": {\n    \"tone\": [\n      \"string\",\n      \"string\"\n    ]\n  },\n  \"language_boost\": \"<string>\",\n  \"callback_url\": \"<string>\",\n  \"voice_modify\": {\n    \"modify_type\": \"string\",\n    \"modify_value\": 570.1361839602171\n  },\n  \"aigc_watermark\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": 8862,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "317f99ac-7ca0-4918-9a42-82070146e215",
+          "name": "Query T2A Async V2 Task Status",
+          "request": {
+            "name": "Query T2A Async V2 Task Status",
+            "description": {
+              "content": "Query the status of an asynchronous text-to-audio task",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "query",
+                "t2a_async_query_v2"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"task_id\": \"<long>\",\n  \"group_id\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "1fab117c-1669-4d3b-9498-63843d419eef",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "query",
+                    "t2a_async_query_v2"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"task_id\": \"<long>\",\n  \"group_id\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"failed\",\n  \"task_id\": 4850,\n  \"file_id\": 9492\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5bb2c1bc-7d99-41f6-a237-453c7c3dc7a8",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "query",
+                    "t2a_async_query_v2"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"task_id\": \"<long>\",\n  \"group_id\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": 8862,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c435bc75-b6cf-4bce-998c-ceb3dacffcfc",
+              "name": "Authentication failed",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "query",
+                    "t2a_async_query_v2"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"task_id\": \"<long>\",\n  \"group_id\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": 8862,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a275726a-145f-4b50-b64b-7a51532c6c09",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "query",
+                    "t2a_async_query_v2"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"task_id\": \"<long>\",\n  \"group_id\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": 8862,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.minimax.io",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "3fae68c7-696c-4c56-973f-3190e0d50b65",
+    "name": "MiniMax Files Text to Audio API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "MiniMax text generation API with support for chat completion and streaming output",
+      "type": "text/plain"
+    }
+  }
+}

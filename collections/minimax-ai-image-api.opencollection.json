@@ -1,0 +1,39 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "MiniMax Files Image API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Image",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Image Generation",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.minimax.io/v1/image_generation",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Generate images from text prompt"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

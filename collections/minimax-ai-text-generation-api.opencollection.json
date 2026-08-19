@@ -1,0 +1,39 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "MiniMax Files Text Generation API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Text Generation",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Text Generation V2",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.minimax.io/v1/text/chatcompletion_v2",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Generate text using MiniMax models with support for single-turn and multi-turn conversations"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

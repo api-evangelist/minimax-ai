@@ -1,0 +1,298 @@
+{
+  "item": [
+    {
+      "id": "086873a5-2037-4b8e-9c0a-dcd3df4fe8fb",
+      "name": "Music",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "e0ca4108-0e32-441a-ae79-c3a03ac13986",
+          "name": "Music Generation",
+          "request": {
+            "name": "Music Generation",
+            "description": {
+              "content": "Generate music from text prompt",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "music_generation"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"lyrics\": \"<string>\",\n  \"model\": \"<string>\",\n  \"refer_voice\": \"<string>\",\n  \"refer_instrumental\": \"<string>\",\n  \"stream\": \"<boolean>\",\n  \"audio_setting\": {\n    \"value\": \"reference #/components/schemas/AudioSetting not found in the OpenAPI spec\"\n  },\n  \"refer_vocal\": \"<string>\",\n  \"prompt\": \"<string>\",\n  \"reference_music_id\": \"<string>\",\n  \"seed\": \"<long>\",\n  \"output_format\": \"<string>\",\n  \"aigc_watermark\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "cae46e9d-6171-4ae5-887a-af225de52021",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "music_generation"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"lyrics\": \"<string>\",\n  \"model\": \"<string>\",\n  \"refer_voice\": \"<string>\",\n  \"refer_instrumental\": \"<string>\",\n  \"stream\": \"<boolean>\",\n  \"audio_setting\": {\n    \"value\": \"reference #/components/schemas/AudioSetting not found in the OpenAPI spec\"\n  },\n  \"refer_vocal\": \"<string>\",\n  \"prompt\": \"<string>\",\n  \"reference_music_id\": \"<string>\",\n  \"seed\": \"<long>\",\n  \"output_format\": \"<string>\",\n  \"aigc_watermark\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"audio\": \"string\",\n    \"status\": 5260\n  },\n  \"trace_id\": \"string\",\n  \"extra_info\": {\n    \"audio_length\": 6829,\n    \"audio_size\": 5107,\n    \"audio_bitrate\": 3108,\n    \"audio_sample_rate\": 8682,\n    \"music_duration\": 8091,\n    \"create_at\": 40,\n    \"finish_at\": 185,\n    \"music_sample_rate\": 7981,\n    \"music_channel\": 8784,\n    \"bitrate\": 3609,\n    \"music_size\": 3011\n  },\n  \"analysis_info\": {\n    \"song_information_analysis\": {},\n    \"vocal_information_analysis\": {},\n    \"arrangement_features_analysis\": {}\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "71af998a-d930-4ed5-9056-7ae2460c1134",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "music_generation"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"lyrics\": \"<string>\",\n  \"model\": \"<string>\",\n  \"refer_voice\": \"<string>\",\n  \"refer_instrumental\": \"<string>\",\n  \"stream\": \"<boolean>\",\n  \"audio_setting\": {\n    \"value\": \"reference #/components/schemas/AudioSetting not found in the OpenAPI spec\"\n  },\n  \"refer_vocal\": \"<string>\",\n  \"prompt\": \"<string>\",\n  \"reference_music_id\": \"<string>\",\n  \"seed\": \"<long>\",\n  \"output_format\": \"<string>\",\n  \"aigc_watermark\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": 6627,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5b3fe333-972b-451c-b33e-8c9b0b5e2510",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "music_generation"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"lyrics\": \"<string>\",\n  \"model\": \"<string>\",\n  \"refer_voice\": \"<string>\",\n  \"refer_instrumental\": \"<string>\",\n  \"stream\": \"<boolean>\",\n  \"audio_setting\": {\n    \"value\": \"reference #/components/schemas/AudioSetting not found in the OpenAPI spec\"\n  },\n  \"refer_vocal\": \"<string>\",\n  \"prompt\": \"<string>\",\n  \"reference_music_id\": \"<string>\",\n  \"seed\": \"<long>\",\n  \"output_format\": \"<string>\",\n  \"aigc_watermark\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": 6627,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "652eab8e-0296-45c8-aade-ceb00a5be5f1",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "music_generation"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"lyrics\": \"<string>\",\n  \"model\": \"<string>\",\n  \"refer_voice\": \"<string>\",\n  \"refer_instrumental\": \"<string>\",\n  \"stream\": \"<boolean>\",\n  \"audio_setting\": {\n    \"value\": \"reference #/components/schemas/AudioSetting not found in the OpenAPI spec\"\n  },\n  \"refer_vocal\": \"<string>\",\n  \"prompt\": \"<string>\",\n  \"reference_music_id\": \"<string>\",\n  \"seed\": \"<long>\",\n  \"output_format\": \"<string>\",\n  \"aigc_watermark\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": 6627,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.minimax.io",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "a464eec8-3f48-46d0-b6cc-df6f6357d183",
+    "name": "MiniMax Files Music API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "MiniMax text generation API with support for chat completion and streaming output",
+      "type": "text/plain"
+    }
+  }
+}

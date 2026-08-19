@@ -1,0 +1,73 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "MiniMax Files Video API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Video",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Video Generation",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.minimax.io/v1/video_generation",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Generate video from text prompt"
+        },
+        {
+          "info": {
+            "name": "Video Template Generation",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.minimax.io/v1/video_template_generation",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Generate video using template"
+        },
+        {
+          "info": {
+            "name": "Query Video Template Generation Task",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.minimax.io/v1/query/video_template_generation",
+            "params": [
+              {
+                "name": "task_id",
+                "value": "",
+                "type": "query",
+                "description": "Task ID to query"
+              }
+            ]
+          },
+          "docs": "Query the status of a video template generation task"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
