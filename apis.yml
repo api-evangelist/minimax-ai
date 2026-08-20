@@ -21,6 +21,15 @@ accessModel:
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/minimax-ai.png
 tags:
+  - Artificial Intelligence
+  - LLM
+  - Inference
+  - Multi-Modal
+  - Voice
+  - Video
+  - Music
+  - Image
+tags_raw:
   - AI
   - LLM
   - Inference
@@ -39,6 +48,8 @@ apis:
   humanURL: https://platform.minimax.io/docs/api-reference/api-overview
   baseURL: https://api.minimax.io
   tags:
+  - File
+  tags_raw:
   - Files
   properties:
   - type: OpenAPI
