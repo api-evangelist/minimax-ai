@@ -6,6 +6,18 @@ description: >-
   MiniMax is a Chinese foundation model company offering full-stack multimodal APIs: text generation (M2.7, M2.5, M2.1,
   M2, M1, Text-01), speech synthesis (Speech 2.8/2.6/2.5), voice cloning, voice design, image generation (Image-01),
   video generation (Hailuo 2.3), and music generation (Music-2.6).
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: paid
   onboarding: self-serve
