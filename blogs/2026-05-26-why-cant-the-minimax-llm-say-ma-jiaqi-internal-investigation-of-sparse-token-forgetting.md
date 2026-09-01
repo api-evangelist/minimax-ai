@@ -1,5 +1,5 @@
 ---
-title: "Why Can't the MiniMax LLM Say "Ma Jiaqi"? Internal Investigation of Sparse Token Forgetting"
+title: "Why Can't the MiniMax LLM Say \"Ma Jiaqi\"? Internal Investigation of Sparse Token Forgetting"
 url: "https://www.minimax.io/blog/sparse-token-forgetting"
 date: "2026-05-26"
 author: ""
