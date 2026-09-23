@@ -1,13 +1,7 @@
 {
   "provider": "minimax-ai",
   "sources": [
-    "minimax-ai-files-api-openapi.yml",
-    "minimax-ai-image-api-openapi.yml",
-    "minimax-ai-music-api-openapi.yml",
-    "minimax-ai-text-generation-api-openapi.yml",
-    "minimax-ai-text-to-audio-api-openapi.yml",
-    "minimax-ai-video-api-openapi.yml",
-    "minimax-ai-voice-api-openapi.yml"
+    "_original/minimax-ai-openapi.json"
   ],
   "outputs": [
     "minimax-ai-files-api-openapi.yml",
@@ -20,11 +14,30 @@
   ],
   "archived": [],
   "errors": [
-    "minimax-ai-music-api-openapi.yml: dangling $ref: #/components/schemas/AudioSetting",
-    "minimax-ai-video-api-openapi.yml: dangling $ref: #/components/schemas/VideoTemplateGenerationReq",
-    "minimax-ai-video-api-openapi.yml: dangling $ref: #/components/schemas/VideoTemplateGenerationResp"
+    "minimax-ai-openapi.json: dangling $ref: #/components/schemas/AudioSetting",
+    "minimax-ai-openapi.json: dangling $ref: #/components/schemas/VideoTemplateGenerationReq",
+    "minimax-ai-openapi.json: dangling $ref: #/components/schemas/VideoTemplateGenerationResp"
   ],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "minimax-ai-openapi.json: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "minimax-ai-openapi.json: declared missing tag: Files",
+    "minimax-ai-openapi.json: declared missing tag: Image",
+    "minimax-ai-openapi.json: declared missing tag: Music",
+    "minimax-ai-openapi.json: declared missing tag: Text Generation",
+    "minimax-ai-openapi.json: declared missing tag: Text to Audio",
+    "minimax-ai-openapi.json: declared missing tag: Video",
+    "minimax-ai-openapi.json: declared missing tag: Voice",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "minimax-ai-files-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "minimax-ai-image-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "minimax-ai-music-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "minimax-ai-text-generation-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "minimax-ai-text-to-audio-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "minimax-ai-video-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "minimax-ai-voice-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

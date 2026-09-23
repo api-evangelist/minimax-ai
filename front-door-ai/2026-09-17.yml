@@ -1,0 +1,30 @@
+# Front Door AI Index — minimax-ai — 2026-09-17
+# AI vocabulary counted on the provider's root page. Generated; do not edit.
+# `score` is null unless ownership is `own` — see front_door_ai.py.
+front_door_ai:
+  slug: minimax-ai
+  lexicon_version: '1.0'
+  probed_at: '2026-09-17'
+  host: www.minimax.io
+  final_host: www.minimax.io
+  ownership: unresolved
+  owner: null
+  shares_host_with:
+  - hailuo-ai
+  inherited_from: null
+  verdict: scored
+  score: null
+  host_score: 7
+  density: null
+  words: 390
+  tiers:
+    agentic: 1
+    core: 6
+    model: 0
+  ambiguous: 7
+  top_terms:
+    AI: 5
+    intelligence: 4
+    agent: 3
+    agentic: 1
+    foundation model: 1
