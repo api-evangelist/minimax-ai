@@ -53,51 +53,6 @@ paths:
                 $ref: '#/components/schemas/Error'
 components:
   schemas:
-    ImageGenerationResp:
-      type: object
-      properties:
-        id:
-          type: string
-          description: Trace ID
-        data:
-          $ref: '#/components/schemas/ImageObject'
-        metadata:
-          type: object
-          additionalProperties:
-            type: string
-          description: Additional metadata
-    ImageObject:
-      type: object
-      properties:
-        image_urls:
-          type: array
-          items:
-            type: string
-          description: Generated image URLs
-        image_base64:
-          type: array
-          items:
-            type: string
-          description: Generated images in base64 format
-    ImageDataFormat:
-      type: string
-      enum:
-      - url
-      - base64
-      description: Image data format
-    Error:
-      type: object
-      required:
-      - error
-      - message
-      properties:
-        error:
-          type: integer
-          format: int32
-          description: Error code
-        message:
-          type: string
-          description: Error message
     ImageSubjectReference:
       type: object
       required:
@@ -160,17 +115,19 @@ components:
         aigc_watermark:
           type: boolean
           description: Whether to add AIGC watermark
-    ImageStyleType:
-      type: string
-      enum:
-      - 漫画
-      - 元气
-      - 中世纪
-      - 水彩
-      description: Image style type
-    ReferType:
-      type: string
-      description: Reference type
+    Error:
+      type: object
+      required:
+      - error
+      - message
+      properties:
+        error:
+          type: integer
+          format: int32
+          description: Error code
+        message:
+          type: string
+          description: Error message
     ImageStyle:
       type: object
       required:
@@ -182,6 +139,49 @@ components:
           type: number
           format: double
           description: Style weight
+    ImageDataFormat:
+      type: string
+      enum:
+      - url
+      - base64
+      description: Image data format
+    ImageStyleType:
+      type: string
+      enum:
+      - 漫画
+      - 元气
+      - 中世纪
+      - 水彩
+      description: Image style type
+    ImageObject:
+      type: object
+      properties:
+        image_urls:
+          type: array
+          items:
+            type: string
+          description: Generated image URLs
+        image_base64:
+          type: array
+          items:
+            type: string
+          description: Generated images in base64 format
+    ImageGenerationResp:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Trace ID
+        data:
+          $ref: '#/components/schemas/ImageObject'
+        metadata:
+          type: object
+          additionalProperties:
+            type: string
+          description: Additional metadata
+    ReferType:
+      type: string
+      description: Reference type
   securitySchemes:
     bearerAuth:
       type: http

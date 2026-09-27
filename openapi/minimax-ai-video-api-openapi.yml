@@ -148,6 +148,28 @@ components:
         video_url:
           type: string
           description: Generated video URL
+    Error:
+      type: object
+      required:
+      - error
+      - message
+      properties:
+        error:
+          type: integer
+          format: int32
+          description: Error code
+        message:
+          type: string
+          description: Error message
+    VideoProcessStatus:
+      type: string
+      enum:
+      - Preparing
+      - Queueing
+      - Processing
+      - Success
+      - Fail
+      description: Video processing status
     VideoGenerationReq:
       type: object
       required:
@@ -210,28 +232,6 @@ components:
           type: integer
           format: int64
           description: Task priority
-    VideoProcessStatus:
-      type: string
-      enum:
-      - Preparing
-      - Queueing
-      - Processing
-      - Success
-      - Fail
-      description: Video processing status
-    Error:
-      type: object
-      required:
-      - error
-      - message
-      properties:
-        error:
-          type: integer
-          format: int32
-          description: Error code
-        message:
-          type: string
-          description: Error message
     VideoGenerationResp:
       type: object
       properties:

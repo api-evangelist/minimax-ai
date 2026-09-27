@@ -53,6 +53,29 @@ paths:
                 $ref: '#/components/schemas/Error'
 components:
   schemas:
+    Error:
+      type: object
+      required:
+      - error
+      - message
+      properties:
+        error:
+          type: integer
+          format: int32
+          description: Error code
+        message:
+          type: string
+          description: Error message
+    MusicData:
+      type: object
+      properties:
+        audio:
+          type: string
+          description: Generated music data in hex encoding
+        status:
+          type: integer
+          format: int64
+          description: 'Synthesis status: 1-synthesizing, 2-completed'
     MusicExtraInfo:
       type: object
       properties:
@@ -100,44 +123,6 @@ components:
           type: integer
           format: int32
           description: Music size
-    MusicAnalysisInfo:
-      type: object
-      properties:
-        song_information_analysis:
-          $ref: '#/components/schemas/SongInformationAnalysis'
-        vocal_information_analysis:
-          $ref: '#/components/schemas/VocalInformationAnalysis'
-        arrangement_features_analysis:
-          $ref: '#/components/schemas/ArrangementFeaturesAnalysis'
-    ArrangementFeaturesAnalysis:
-      type: object
-      description: Arrangement features analysis
-    Error:
-      type: object
-      required:
-      - error
-      - message
-      properties:
-        error:
-          type: integer
-          format: int32
-          description: Error code
-        message:
-          type: string
-          description: Error message
-    VocalInformationAnalysis:
-      type: object
-      description: Vocal information analysis
-    MusicData:
-      type: object
-      properties:
-        audio:
-          type: string
-          description: Generated music data in hex encoding
-        status:
-          type: integer
-          format: int64
-          description: 'Synthesis status: 1-synthesizing, 2-completed'
     SongInformationAnalysis:
       type: object
       description: Song information analysis
@@ -195,6 +180,21 @@ components:
           $ref: '#/components/schemas/MusicExtraInfo'
         analysis_info:
           $ref: '#/components/schemas/MusicAnalysisInfo'
+    ArrangementFeaturesAnalysis:
+      type: object
+      description: Arrangement features analysis
+    MusicAnalysisInfo:
+      type: object
+      properties:
+        song_information_analysis:
+          $ref: '#/components/schemas/SongInformationAnalysis'
+        vocal_information_analysis:
+          $ref: '#/components/schemas/VocalInformationAnalysis'
+        arrangement_features_analysis:
+          $ref: '#/components/schemas/ArrangementFeaturesAnalysis'
+    VocalInformationAnalysis:
+      type: object
+      description: Vocal information analysis
   securitySchemes:
     bearerAuth:
       type: http
