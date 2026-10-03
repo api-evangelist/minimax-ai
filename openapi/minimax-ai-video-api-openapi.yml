@@ -137,39 +137,6 @@ paths:
                 $ref: '#/components/schemas/Error'
 components:
   schemas:
-    QueryVideoTemplateGenerationTaskResp:
-      type: object
-      properties:
-        task_id:
-          type: string
-          description: Task ID
-        status:
-          $ref: '#/components/schemas/VideoProcessStatus'
-        video_url:
-          type: string
-          description: Generated video URL
-    Error:
-      type: object
-      required:
-      - error
-      - message
-      properties:
-        error:
-          type: integer
-          format: int32
-          description: Error code
-        message:
-          type: string
-          description: Error message
-    VideoProcessStatus:
-      type: string
-      enum:
-      - Preparing
-      - Queueing
-      - Processing
-      - Success
-      - Fail
-      description: Video processing status
     VideoGenerationReq:
       type: object
       required:
@@ -232,12 +199,45 @@ components:
           type: integer
           format: int64
           description: Task priority
+    Error:
+      type: object
+      required:
+      - error
+      - message
+      properties:
+        error:
+          type: integer
+          format: int32
+          description: Error code
+        message:
+          type: string
+          description: Error message
     VideoGenerationResp:
       type: object
       properties:
         task_id:
           type: string
           description: Task ID for tracking video generation
+    QueryVideoTemplateGenerationTaskResp:
+      type: object
+      properties:
+        task_id:
+          type: string
+          description: Task ID
+        status:
+          $ref: '#/components/schemas/VideoProcessStatus'
+        video_url:
+          type: string
+          description: Generated video URL
+    VideoProcessStatus:
+      type: string
+      enum:
+      - Preparing
+      - Queueing
+      - Processing
+      - Success
+      - Fail
+      description: Video processing status
     SubjectReference:
       type: object
       required:

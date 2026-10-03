@@ -184,19 +184,103 @@ components:
         trace_id:
           type: string
           description: Trace ID for request tracking
-    Error:
+    DeleteVoiceResp:
+      type: object
+      properties:
+        voice_id:
+          type: string
+          description: Deleted voice ID
+        description:
+          type: array
+          items:
+            type: string
+          description: Deletion description
+        created_time:
+          type: string
+          description: Voice creation time
+    DeleteVoiceReq:
       type: object
       required:
-      - error
-      - message
+      - voice_id
       properties:
-        error:
-          type: integer
-          format: int32
-          description: Error code
-        message:
+        voice_id:
           type: string
-          description: Error message
+          description: Voice ID to delete
+        voice_type:
+          type: string
+          description: Type of voice to delete
+          enum:
+          - system_voice
+          - voice_cloning
+          - voice_generation
+          - music_generation
+          - voice_slots
+    SensitiveType:
+      type: string
+      enum:
+      - Politics
+      - Porn
+      - Ad
+      - Illegal
+      - Abuse
+      - Terror
+      - Other
+      description: Sensitive content type
+    T2VResp:
+      type: object
+      properties:
+        trial_audio:
+          type: string
+          description: Trial audio URL
+        voice_id:
+          type: string
+          description: Generated voice ID
+    VoiceInfo:
+      type: object
+      properties:
+        voice_id:
+          type: string
+          description: Voice ID
+        name:
+          type: string
+          description: Voice name
+        description:
+          type: string
+          description: Voice description
+        gender:
+          type: string
+          description: Voice gender
+        language:
+          type: string
+          description: Voice language
+        age:
+          type: string
+          description: Voice age
+        style:
+          type: string
+          description: Voice style
+        created_at:
+          type: integer
+          format: int64
+          description: Creation timestamp
+        updated_at:
+          type: integer
+          format: int64
+          description: Last update timestamp
+    GetVoiceReq:
+      type: object
+      required:
+      - voice_type
+      properties:
+        voice_type:
+          type: string
+          description: Type of voice to retrieve
+          enum:
+          - system_voice
+          - voice_cloning
+          - voice_generation
+          - music_generation
+          - voice_slots
     VoiceCloneReq:
       type: object
       required:
@@ -247,17 +331,32 @@ components:
         aigc_watermark:
           type: boolean
           description: Whether to add AIGC watermark
-    SensitiveType:
-      type: string
-      enum:
-      - Politics
-      - Porn
-      - Ad
-      - Illegal
-      - Abuse
-      - Terror
-      - Other
-      description: Sensitive content type
+    Error:
+      type: object
+      required:
+      - error
+      - message
+      properties:
+        error:
+          type: integer
+          format: int32
+          description: Error code
+        message:
+          type: string
+          description: Error message
+    ClonePrompt:
+      type: object
+      required:
+      - prompt_audio
+      - prompt_text
+      properties:
+        prompt_audio:
+          type: integer
+          format: int64
+          description: Prompt audio ID
+        prompt_text:
+          type: string
+          description: Prompt text
     GetVoiceResp:
       type: object
       properties:
@@ -286,91 +385,6 @@ components:
           items:
             $ref: '#/components/schemas/VoiceInfo'
           description: Voice slots
-    T2VResp:
-      type: object
-      properties:
-        trial_audio:
-          type: string
-          description: Trial audio URL
-        voice_id:
-          type: string
-          description: Generated voice ID
-    DeleteVoiceReq:
-      type: object
-      required:
-      - voice_id
-      properties:
-        voice_id:
-          type: string
-          description: Voice ID to delete
-        voice_type:
-          type: string
-          description: Type of voice to delete
-          enum:
-          - system_voice
-          - voice_cloning
-          - voice_generation
-          - music_generation
-          - voice_slots
-    ClonePrompt:
-      type: object
-      required:
-      - prompt_audio
-      - prompt_text
-      properties:
-        prompt_audio:
-          type: integer
-          format: int64
-          description: Prompt audio ID
-        prompt_text:
-          type: string
-          description: Prompt text
-    DeleteVoiceResp:
-      type: object
-      properties:
-        voice_id:
-          type: string
-          description: Deleted voice ID
-        description:
-          type: array
-          items:
-            type: string
-          description: Deletion description
-        created_time:
-          type: string
-          description: Voice creation time
-    VoiceInfo:
-      type: object
-      properties:
-        voice_id:
-          type: string
-          description: Voice ID
-        name:
-          type: string
-          description: Voice name
-        description:
-          type: string
-          description: Voice description
-        gender:
-          type: string
-          description: Voice gender
-        language:
-          type: string
-          description: Voice language
-        age:
-          type: string
-          description: Voice age
-        style:
-          type: string
-          description: Voice style
-        created_at:
-          type: integer
-          format: int64
-          description: Creation timestamp
-        updated_at:
-          type: integer
-          format: int64
-          description: Last update timestamp
     T2VReq:
       type: object
       required:
@@ -389,20 +403,6 @@ components:
         aigc_watermark:
           type: boolean
           description: Whether to add AIGC watermark
-    GetVoiceReq:
-      type: object
-      required:
-      - voice_type
-      properties:
-        voice_type:
-          type: string
-          description: Type of voice to retrieve
-          enum:
-          - system_voice
-          - voice_cloning
-          - voice_generation
-          - music_generation
-          - voice_slots
   securitySchemes:
     bearerAuth:
       type: http

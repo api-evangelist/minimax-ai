@@ -53,22 +53,6 @@ paths:
                 $ref: '#/components/schemas/Error'
 components:
   schemas:
-    Message:
-      type: object
-      required:
-      - role
-      - content
-      properties:
-        role:
-          type: string
-          enum:
-          - system
-          - user
-          - assistant
-          description: Role of the message sender
-        content:
-          type: string
-          description: Content of the message
     Error:
       type: object
       required:
@@ -82,6 +66,31 @@ components:
         message:
           type: string
           description: Error message
+    ChatCompletionResp:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Unique identifier for the completion
+        object:
+          type: string
+          description: Object type
+          enum:
+          - chat.completion
+        created:
+          type: integer
+          format: int64
+          description: Unix timestamp of creation
+        model:
+          type: string
+          description: Model used for completion
+        choices:
+          type: array
+          description: List of completion choices
+          items:
+            $ref: '#/components/schemas/Choice'
+        usage:
+          $ref: '#/components/schemas/Usage'
     Usage:
       type: object
       properties:
@@ -109,6 +118,22 @@ components:
           - length
           - content_filter
           description: Reason for completion
+    Message:
+      type: object
+      required:
+      - role
+      - content
+      properties:
+        role:
+          type: string
+          enum:
+          - system
+          - user
+          - assistant
+          description: Role of the message sender
+        content:
+          type: string
+          description: Content of the message
     ChatCompletionReq:
       type: object
       required:
@@ -149,31 +174,6 @@ components:
           minimum: 0.0
           maximum: 1.0
           default: 0.9
-    ChatCompletionResp:
-      type: object
-      properties:
-        id:
-          type: string
-          description: Unique identifier for the completion
-        object:
-          type: string
-          description: Object type
-          enum:
-          - chat.completion
-        created:
-          type: integer
-          format: int64
-          description: Unix timestamp of creation
-        model:
-          type: string
-          description: Model used for completion
-        choices:
-          type: array
-          description: List of completion choices
-          items:
-            $ref: '#/components/schemas/Choice'
-        usage:
-          $ref: '#/components/schemas/Usage'
   securitySchemes:
     bearerAuth:
       type: http
