@@ -304,11 +304,22 @@ paths:
                 $ref: '#/components/schemas/Error'
 components:
   schemas:
-    RetrieveFileResp:
+    DeleteFileResp:
       type: object
       properties:
-        file:
-          $ref: '#/components/schemas/FileObject'
+        file_id:
+          type: integer
+          format: int64
+          description: Deleted file ID
+    DeleteFileReq:
+      type: object
+      required:
+      - file_id
+      properties:
+        file_id:
+          type: integer
+          format: int64
+          description: File ID to delete
     UploadFileResp:
       type: object
       properties:
@@ -365,22 +376,6 @@ components:
         message:
           type: string
           description: Error message
-    DeleteFileResp:
-      type: object
-      properties:
-        file_id:
-          type: integer
-          format: int64
-          description: Deleted file ID
-    DeleteFileReq:
-      type: object
-      required:
-      - file_id
-      properties:
-        file_id:
-          type: integer
-          format: int64
-          description: File ID to delete
     ListFileResp:
       type: object
       properties:
@@ -389,6 +384,11 @@ components:
           items:
             $ref: '#/components/schemas/FileObject'
           description: List of files
+    RetrieveFileResp:
+      type: object
+      properties:
+        file:
+          $ref: '#/components/schemas/FileObject'
   securitySchemes:
     bearerAuth:
       type: http

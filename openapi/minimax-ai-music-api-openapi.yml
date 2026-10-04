@@ -95,34 +95,9 @@ components:
         aigc_watermark:
           type: boolean
           description: Whether to add AIGC watermark
-    SongInformationAnalysis:
+    ArrangementFeaturesAnalysis:
       type: object
-      description: Song information analysis
-    Error:
-      type: object
-      required:
-      - error
-      - message
-      properties:
-        error:
-          type: integer
-          format: int32
-          description: Error code
-        message:
-          type: string
-          description: Error message
-    GenerateMusicResp:
-      type: object
-      properties:
-        data:
-          $ref: '#/components/schemas/MusicData'
-        trace_id:
-          type: string
-          description: Request unique identifier
-        extra_info:
-          $ref: '#/components/schemas/MusicExtraInfo'
-        analysis_info:
-          $ref: '#/components/schemas/MusicAnalysisInfo'
+      description: Arrangement features analysis
     MusicExtraInfo:
       type: object
       properties:
@@ -170,9 +145,46 @@ components:
           type: integer
           format: int32
           description: Music size
-    ArrangementFeaturesAnalysis:
+    Error:
       type: object
-      description: Arrangement features analysis
+      required:
+      - error
+      - message
+      properties:
+        error:
+          type: integer
+          format: int32
+          description: Error code
+        message:
+          type: string
+          description: Error message
+    GenerateMusicResp:
+      type: object
+      properties:
+        data:
+          $ref: '#/components/schemas/MusicData'
+        trace_id:
+          type: string
+          description: Request unique identifier
+        extra_info:
+          $ref: '#/components/schemas/MusicExtraInfo'
+        analysis_info:
+          $ref: '#/components/schemas/MusicAnalysisInfo'
+    MusicAnalysisInfo:
+      type: object
+      properties:
+        song_information_analysis:
+          $ref: '#/components/schemas/SongInformationAnalysis'
+        vocal_information_analysis:
+          $ref: '#/components/schemas/VocalInformationAnalysis'
+        arrangement_features_analysis:
+          $ref: '#/components/schemas/ArrangementFeaturesAnalysis'
+    SongInformationAnalysis:
+      type: object
+      description: Song information analysis
+    VocalInformationAnalysis:
+      type: object
+      description: Vocal information analysis
     MusicData:
       type: object
       properties:
@@ -183,18 +195,6 @@ components:
           type: integer
           format: int64
           description: 'Synthesis status: 1-synthesizing, 2-completed'
-    MusicAnalysisInfo:
-      type: object
-      properties:
-        song_information_analysis:
-          $ref: '#/components/schemas/SongInformationAnalysis'
-        vocal_information_analysis:
-          $ref: '#/components/schemas/VocalInformationAnalysis'
-        arrangement_features_analysis:
-          $ref: '#/components/schemas/ArrangementFeaturesAnalysis'
-    VocalInformationAnalysis:
-      type: object
-      description: Vocal information analysis
   securitySchemes:
     bearerAuth:
       type: http

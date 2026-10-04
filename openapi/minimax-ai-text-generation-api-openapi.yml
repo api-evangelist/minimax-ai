@@ -53,6 +53,18 @@ paths:
                 $ref: '#/components/schemas/Error'
 components:
   schemas:
+    Usage:
+      type: object
+      properties:
+        prompt_tokens:
+          type: integer
+          description: Number of tokens in the prompt
+        completion_tokens:
+          type: integer
+          description: Number of tokens in the completion
+        total_tokens:
+          type: integer
+          description: Total number of tokens used
     Error:
       type: object
       required:
@@ -66,6 +78,21 @@ components:
         message:
           type: string
           description: Error message
+    Choice:
+      type: object
+      properties:
+        index:
+          type: integer
+          description: Index of the choice
+        message:
+          $ref: '#/components/schemas/Message'
+        finish_reason:
+          type: string
+          enum:
+          - stop
+          - length
+          - content_filter
+          description: Reason for completion
     ChatCompletionResp:
       type: object
       properties:
@@ -91,33 +118,6 @@ components:
             $ref: '#/components/schemas/Choice'
         usage:
           $ref: '#/components/schemas/Usage'
-    Usage:
-      type: object
-      properties:
-        prompt_tokens:
-          type: integer
-          description: Number of tokens in the prompt
-        completion_tokens:
-          type: integer
-          description: Number of tokens in the completion
-        total_tokens:
-          type: integer
-          description: Total number of tokens used
-    Choice:
-      type: object
-      properties:
-        index:
-          type: integer
-          description: Index of the choice
-        message:
-          $ref: '#/components/schemas/Message'
-        finish_reason:
-          type: string
-          enum:
-          - stop
-          - length
-          - content_filter
-          description: Reason for completion
     Message:
       type: object
       required:
