@@ -136,3 +136,49 @@ plans:
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
+x-canonical:
+  generated: '2026-10-08'
+  vocabulary: all/0-working/economics/plans-canonical.yml
+  models:
+  - metered
+  - prepaid
+  - subscription
+  units:
+  - compute
+  - object
+  - token
+  plans:
+  - name: Pay As You Go
+    access: other
+    model: metered
+    model_how: stated
+    units:
+    - compute
+    - object
+    - token
+    periods:
+    - per-use
+  - name: Token Plan
+    access: other
+    model: subscription
+    model_how: stated
+    units:
+    - token
+    periods:
+    - month
+  - name: Audio Subscription
+    access: other
+    model: subscription
+    model_how: stated
+    units:
+    - other
+    periods:
+    - month
+  - name: Video Packages
+    access: other
+    model: prepaid
+    model_how: stated
+    units:
+    - other
+    periods:
+    - per-use

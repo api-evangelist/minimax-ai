@@ -220,6 +220,8 @@ common:
     url: finops/minimax-ai-finops.yml
   - type: Blog
     url: https://www.minimax.io/blog
+  - type: SpectralRules
+    url: https://github.com/MiniMax-AI/minimax-desgin-plugin/blob/bef9de2101e9d873619c83553b8f03ebb0c10663/comfyui-plugin/backend/.spectral.yaml
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
