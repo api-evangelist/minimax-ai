@@ -38,7 +38,7 @@ edges:
   - provider
   router_signals:
     provider:
-      models: 10
+      models: 12
       router_ids:
       - minimax
       tools_share: 1.0
