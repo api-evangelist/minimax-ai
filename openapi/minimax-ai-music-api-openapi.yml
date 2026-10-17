@@ -98,6 +98,22 @@ components:
     ArrangementFeaturesAnalysis:
       type: object
       description: Arrangement features analysis
+    SongInformationAnalysis:
+      type: object
+      description: Song information analysis
+    VocalInformationAnalysis:
+      type: object
+      description: Vocal information analysis
+    MusicData:
+      type: object
+      properties:
+        audio:
+          type: string
+          description: Generated music data in hex encoding
+        status:
+          type: integer
+          format: int64
+          description: 'Synthesis status: 1-synthesizing, 2-completed'
     MusicExtraInfo:
       type: object
       properties:
@@ -145,6 +161,18 @@ components:
           type: integer
           format: int32
           description: Music size
+    GenerateMusicResp:
+      type: object
+      properties:
+        data:
+          $ref: '#/components/schemas/MusicData'
+        trace_id:
+          type: string
+          description: Request unique identifier
+        extra_info:
+          $ref: '#/components/schemas/MusicExtraInfo'
+        analysis_info:
+          $ref: '#/components/schemas/MusicAnalysisInfo'
     Error:
       type: object
       required:
@@ -158,18 +186,6 @@ components:
         message:
           type: string
           description: Error message
-    GenerateMusicResp:
-      type: object
-      properties:
-        data:
-          $ref: '#/components/schemas/MusicData'
-        trace_id:
-          type: string
-          description: Request unique identifier
-        extra_info:
-          $ref: '#/components/schemas/MusicExtraInfo'
-        analysis_info:
-          $ref: '#/components/schemas/MusicAnalysisInfo'
     MusicAnalysisInfo:
       type: object
       properties:
@@ -179,22 +195,6 @@ components:
           $ref: '#/components/schemas/VocalInformationAnalysis'
         arrangement_features_analysis:
           $ref: '#/components/schemas/ArrangementFeaturesAnalysis'
-    SongInformationAnalysis:
-      type: object
-      description: Song information analysis
-    VocalInformationAnalysis:
-      type: object
-      description: Vocal information analysis
-    MusicData:
-      type: object
-      properties:
-        audio:
-          type: string
-          description: Generated music data in hex encoding
-        status:
-          type: integer
-          format: int64
-          description: 'Synthesis status: 1-synthesizing, 2-completed'
   securitySchemes:
     bearerAuth:
       type: http

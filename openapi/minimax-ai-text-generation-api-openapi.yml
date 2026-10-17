@@ -53,87 +53,6 @@ paths:
                 $ref: '#/components/schemas/Error'
 components:
   schemas:
-    Usage:
-      type: object
-      properties:
-        prompt_tokens:
-          type: integer
-          description: Number of tokens in the prompt
-        completion_tokens:
-          type: integer
-          description: Number of tokens in the completion
-        total_tokens:
-          type: integer
-          description: Total number of tokens used
-    Error:
-      type: object
-      required:
-      - error
-      - message
-      properties:
-        error:
-          type: integer
-          format: int32
-          description: Error code
-        message:
-          type: string
-          description: Error message
-    Choice:
-      type: object
-      properties:
-        index:
-          type: integer
-          description: Index of the choice
-        message:
-          $ref: '#/components/schemas/Message'
-        finish_reason:
-          type: string
-          enum:
-          - stop
-          - length
-          - content_filter
-          description: Reason for completion
-    ChatCompletionResp:
-      type: object
-      properties:
-        id:
-          type: string
-          description: Unique identifier for the completion
-        object:
-          type: string
-          description: Object type
-          enum:
-          - chat.completion
-        created:
-          type: integer
-          format: int64
-          description: Unix timestamp of creation
-        model:
-          type: string
-          description: Model used for completion
-        choices:
-          type: array
-          description: List of completion choices
-          items:
-            $ref: '#/components/schemas/Choice'
-        usage:
-          $ref: '#/components/schemas/Usage'
-    Message:
-      type: object
-      required:
-      - role
-      - content
-      properties:
-        role:
-          type: string
-          enum:
-          - system
-          - user
-          - assistant
-          description: Role of the message sender
-        content:
-          type: string
-          description: Content of the message
     ChatCompletionReq:
       type: object
       required:
@@ -174,6 +93,87 @@ components:
           minimum: 0.0
           maximum: 1.0
           default: 0.9
+    Choice:
+      type: object
+      properties:
+        index:
+          type: integer
+          description: Index of the choice
+        message:
+          $ref: '#/components/schemas/Message'
+        finish_reason:
+          type: string
+          enum:
+          - stop
+          - length
+          - content_filter
+          description: Reason for completion
+    Message:
+      type: object
+      required:
+      - role
+      - content
+      properties:
+        role:
+          type: string
+          enum:
+          - system
+          - user
+          - assistant
+          description: Role of the message sender
+        content:
+          type: string
+          description: Content of the message
+    Usage:
+      type: object
+      properties:
+        prompt_tokens:
+          type: integer
+          description: Number of tokens in the prompt
+        completion_tokens:
+          type: integer
+          description: Number of tokens in the completion
+        total_tokens:
+          type: integer
+          description: Total number of tokens used
+    ChatCompletionResp:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Unique identifier for the completion
+        object:
+          type: string
+          description: Object type
+          enum:
+          - chat.completion
+        created:
+          type: integer
+          format: int64
+          description: Unix timestamp of creation
+        model:
+          type: string
+          description: Model used for completion
+        choices:
+          type: array
+          description: List of completion choices
+          items:
+            $ref: '#/components/schemas/Choice'
+        usage:
+          $ref: '#/components/schemas/Usage'
+    Error:
+      type: object
+      required:
+      - error
+      - message
+      properties:
+        error:
+          type: integer
+          format: int32
+          description: Error code
+        message:
+          type: string
+          description: Error message
   securitySchemes:
     bearerAuth:
       type: http

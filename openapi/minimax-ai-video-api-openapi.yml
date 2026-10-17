@@ -151,6 +151,12 @@ components:
           items:
             type: string
           description: Reference image URLs
+    VideoGenerationResp:
+      type: object
+      properties:
+        task_id:
+          type: string
+          description: Task ID for tracking video generation
     QueryVideoTemplateGenerationTaskResp:
       type: object
       properties:
@@ -162,6 +168,15 @@ components:
         video_url:
           type: string
           description: Generated video URL
+    VideoProcessStatus:
+      type: string
+      enum:
+      - Preparing
+      - Queueing
+      - Processing
+      - Success
+      - Fail
+      description: Video processing status
     Error:
       type: object
       required:
@@ -237,21 +252,6 @@ components:
           type: integer
           format: int64
           description: Task priority
-    VideoProcessStatus:
-      type: string
-      enum:
-      - Preparing
-      - Queueing
-      - Processing
-      - Success
-      - Fail
-      description: Video processing status
-    VideoGenerationResp:
-      type: object
-      properties:
-        task_id:
-          type: string
-          description: Task ID for tracking video generation
   securitySchemes:
     bearerAuth:
       type: http
