@@ -1,4 +1,4 @@
-# MiniMax (minimax-ai)
+# MiniMax
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,67 +66,134 @@
 
 MiniMax is a Chinese foundation model company offering full-stack multimodal APIs: text generation (M2.7, M2.5, M2.1, M2, M1, Text-01), speech synthesis (Speech 2.8/2.6/2.5), voice cloning, voice design, image generation (Image-01), video generation (Hailuo 2.3), and music generation (Music-2.6).
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/minimax-ai/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/minimax-ai/refs/heads/main/apis.yml)
+**Areas:** Artificial Intelligence · LLM · Inference · Multi-Modal · Voice · Video · Music · Image
 
-## Tags
+## MiniMax on APIs.io
 
-- AI
-- LLM
-- Inference
-- Multimodal
-- Voice
-- Video
-- Music
-- Image
+Everything profiled for MiniMax is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/minimax-ai/](https://apis.io/providers/minimax-ai/)** — or go straight to one of the APIs or properties below.
 
-## Timestamps
+### APIs (7)
 
-- **Created:** 2026-05-08
-- **Modified:** 2026-05-19
+- [MiniMax Files API](https://apis.io/apis/minimax-ai/minimax-ai-files-api/) — The Files API from MiniMax — 5 operation(s) for files.
+- [MiniMax Image API](https://apis.io/apis/minimax-ai/minimax-ai-image-api/) — The Image API from MiniMax — 1 operation(s) for image.
+- [MiniMax Music API](https://apis.io/apis/minimax-ai/minimax-ai-music-api/) — The Music API from MiniMax — 1 operation(s) for music.
+- [MiniMax Text Generation API](https://apis.io/apis/minimax-ai/minimax-ai-text-generation-api/) — The Text Generation API from MiniMax — 1 operation(s) for text generation.
+- [MiniMax Text to Audio API](https://apis.io/apis/minimax-ai/minimax-ai-text-to-audio-api/) — The Text to Audio API from MiniMax — 3 operation(s) for text to audio.
+- [MiniMax Video API](https://apis.io/apis/minimax-ai/minimax-ai-video-api/) — The Video API from MiniMax — 3 operation(s) for video.
+- [MiniMax Voice API](https://apis.io/apis/minimax-ai/minimax-ai-voice-api/) — The Voice API from MiniMax — 4 operation(s) for voice.
 
-## APIs
+### Published properties
 
-### MiniMax Platform API
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-Multimodal generative AI API covering text chat (native + OpenAI-compatible + Anthropic- compatible), image generation, video generation (Hailuo), speech synthesis, voice cloning, voice design, music generation, and file management. International base URL https://api.minimax.io; China base URL https://api.minimaxi.com.
+#### Agentic access (1)
 
-- **Human URL:** [https://platform.minimax.io/docs/api-reference/api-overview](https://platform.minimax.io/docs/api-reference/api-overview)
-- **Base URL:** `https://api.minimax.io`
+Which operations an agent can call, which act, and which need a human in the loop.
 
-#### Tags
+- [Minimax Ai Agentic Access](https://apis.io/agentic-access/minimax-ai/minimax-ai-agentic-access/)
 
-- AI
-- LLM
-- Chat Completions
-- Image Generation
-- Video Generation
-- Audio
-- Music
-- Voice Cloning
-- Files
+#### Collections (8)
 
-#### Properties
+Postman and Open Collection request collections.
 
-- [Documentation](https://platform.minimax.io/docs/api-reference/api-overview)
-- [OpenAPI](openapi/minimax-ai-openapi.json) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/minimax-ai.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/minimax-ai.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Sign Up](https://platform.minimax.io)
-- [Pricing](https://platform.minimax.io/docs/pricing/overview)
-- [Rate Limits](https://platform.minimax.io/docs/guides/rate-limits)
-- [China Base U R L](https://api.minimaxi.com)
+- [MiniMax API](https://apis.io/collections/minimax-ai/open-minimax-ai/)
+- [MiniMax Files API](https://apis.io/collections/minimax-ai/open-minimax-ai-files-api/)
+- [MiniMax Files Image API](https://apis.io/collections/minimax-ai/open-minimax-ai-image-api/)
+- [MiniMax Files Music API](https://apis.io/collections/minimax-ai/open-minimax-ai-music-api/)
+- [MiniMax Files Text Generation API](https://apis.io/collections/minimax-ai/open-minimax-ai-text-generation-api/)
+- [MiniMax Files Text to Audio API](https://apis.io/collections/minimax-ai/open-minimax-ai-text-to-audio-api/)
+- [MiniMax Files Video API](https://apis.io/collections/minimax-ai/open-minimax-ai-video-api/)
+- [MiniMax Files Voice API](https://apis.io/collections/minimax-ai/open-minimax-ai-voice-api/)
 
-## Common Properties
+#### Governance rules (1)
 
-- [GitHub Organization](https://github.com/MiniMax-AI)
-- [LinkedIn](https://www.linkedin.com/company/minimax-ai)
+Spectral rulesets for the provider's contracts.
+
+- [MiniMax — minimax desgin plugin rules](https://apis.io/rules/minimax-ai/minimax-ai-minimax-desgin-plugin-spectral-rules/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Minimax Ai Authentication](https://apis.io/security/minimax-ai/minimax-ai-authentication/)
+- [Minimax Ai Domain Security](https://apis.io/security/minimax-ai/minimax-ai-domain-security/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Minimax Ai Plans Pricing](https://apis.io/plans/minimax-ai/minimax-ai-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Minimax Ai Rate Limits](https://apis.io/rate-limits/minimax-ai/minimax-ai-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Minimax Ai Finops](https://apis.io/finops/minimax-ai/minimax-ai-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
 - [Website](https://www.minimax.io/)
 - [Documentation](https://platform.minimax.io/docs)
-- [Plans](plans/minimax-ai-plans-pricing.yml)
-- [Rate Limits](rate-limits/minimax-ai-rate-limits.yml)
-- [Fin Ops](finops/minimax-ai-finops.yml)
+- [Blog](https://www.minimax.io/blog)
+- [GitHub](https://github.com/MiniMax-AI)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 35.0** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 66.1 |
+| Contract quality | 50.8 |
+| Contract governance | 45.5 |
+| Operational transparency | 10.5 |
+| Developer ergonomics | 21.4 |
+| Access clarity | 31.6 |
+
+**Agent readiness 25.5** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | verified |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 10.9** — AI & Biometrics
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/minimax-ai/](https://apis.io/providers/minimax-ai/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for MiniMax: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/minimax-ai/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
